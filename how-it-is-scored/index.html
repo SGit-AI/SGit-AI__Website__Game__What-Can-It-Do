@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How it&#x27;s scored — what-can-it-do.games.sgit.ai</title>
+<meta name="description" content="+30 for right, −50 for wrong, 0 for don&#x27;t know — and why a wrong answer costs more than a right one earns.">
+<link rel="canonical" href="https://what-can-it-do.games.sgit.ai/how-it-is-scored/index.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="what-can-it-do.games.sgit.ai">
+<meta property="og:url" content="https://what-can-it-do.games.sgit.ai/how-it-is-scored/index.html">
+<meta property="og:title" content="How it&#x27;s scored — what-can-it-do.games.sgit.ai">
+<meta property="og:description" content="+30 for right, −50 for wrong, 0 for don&#x27;t know — and why a wrong answer costs more than a right one earns.">
+<meta name="twitter:card" content="summary">
+<link rel="alternate" type="text/markdown" href="index.md" title="This page as markdown">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="mask-icon" href="../assets/favicon.svg" color="#0f766e">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">what-can-it-do<span>.games.sgit.ai</span></a>
+  <a class="parent" href="https://games.sgit.ai" title="games.sgit.ai — why this family builds games, and the others it has">↗ part of <b>games.sgit.ai</b></a>
+  <span class="stage-pill">about 5 minutes</span>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.1.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni"><a class="nl" href="../index.html">Play</a></div>
+    <div class="ni"><a class="nl here" href="../how-it-is-scored/index.html">How it's scored</a></div>
+    <div class="ni"><a class="nl" href="../the-ceiling/index.html">Some are impossible</a></div>
+    <div class="ni"><a class="nl" href="../what-we-learn/index.html">What we learn</a></div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/index.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/index.html">About the game</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Game__What-Can-It-Do">&#9733; GitHub</a>
+  <script src="../assets/nav.js" defer></script>
+</div></nav>
+
+<main class="doc">
+  <p class="crumb"><a href="../index.html">Play</a> / How it's scored</p>
+  <h1>How it's scored</h1>
+  <p class="lead">The rule is published before you play, because a score you cannot check the rule behind is just a number.</p>
+  <div class="tablewrap"><table><thead><tr><th>You answer</th><th>If you're right</th><th>If you're wrong</th></tr></thead><tbody><tr><td><b>Yes</b> or <b>No</b></td><td>+30</td><td>−50</td></tr><tr><td><b>Don't know</b></td><td>0</td><td>0</td></tr></tbody></table></div>
+  <h2 id="why-wrong-costs-more-than-right-earns">Why wrong costs more than right earns</h2>
+  <p>Because otherwise the way to win is to say <b>yes to everything</b>.</p>
+  <p>Real permissions are wider than people expect. If you answered yes to every question you would be right more often than not — and you would have demonstrated nothing, and learned nothing. Making a wrong answer cost nearly twice what a right one earns removes that strategy. The game's own automated test checks it: answering <em>yes</em> to everything scores <b>deeply negative</b> for every setup in the game, while answering perfectly scores about +3,800.</p>
+  <h2 id="why-don-t-know-is-worth-exactly-nothing">Why “don't know” is worth exactly nothing</h2>
+  <p>Not a small penalty. Nothing. The game is measuring how well you know what you know, and a person who correctly recognises the edge of their knowledge is doing the right thing. Punishing that would be measuring confidence instead, which is the opposite of the point.</p>
+  <p>So there is no forced guess anywhere. If you do not know, say so and move on.</p>
+  <h2 id="the-number-that-actually-matters">The number that actually matters</h2>
+  <p>Not the points — the <b>calibration</b> figure. It answers: when you said yes, how often were you right? When you said no, how often were you right? Somebody with a modest score and honest uncertainty is in better shape than somebody with a high score who got there by being confidently right about easy things and confidently wrong about hard ones.</p>
+  <p>The end screen breaks it down both ways, and shows you specifically <b>where you were confidently wrong</b> — which is the part most worth reading.</p>
+  <h2 id="the-second-score-kept-separate">The second score, kept separate</h2>
+  <p>After you answer <em>can it?</em>, a <b>but…</b> appears — <em>but it shouldn't be able to</em>, or <em>but I'd want it to</em>. Ticking it is worth <b>+20 if you are flagging something real</b> and <b>−20 if you are flagging something that is not there</b>. It is counted separately from the main score and never mixed into it, because it is measuring a different thing: not what you know, but what you want.</p>
+  <p>Under all of this is a standard statistical scoring rule (a Brier score, shifted so <em>don't know</em> lands on zero). <a href="https://games.sgit.ai/method/calibration.html">The full working, if you want it</a>.</p>
+  <div class="note"><b>Honest caveat:</b> the exact numbers — +30, −50, ±20 — are a starting point, not a finding. They will be adjusted once enough people have played for the spread to mean something. That is stated in the game too.</div>
+</main>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">what-can-it-do<span>.games.sgit.ai</span></div>
+    <p>A game about the gap between what your AI agent <em>can</em> do and what you <em>wanted</em> it to do. Free, no sign-up, nothing stored. <a href="../about/index.html" style="display:inline;padding:0">Who made it, and how to check what it says</a>.</p>
+    <p class="netline"><a href="https://games.sgit.ai"><b>↗ games.sgit.ai</b></a> — why we build games, and the others · <a href="https://sgit.ai">↗ sgit.ai</a> — the encrypted vault the game is published in · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — where the capability data comes from</p>
+    <p class="partnote">⚠ This game sends anonymous usage events while you play — no name, no id, no fingerprint — and every screen has a pause switch. <a href="../what-we-learn/index.html" style="display:inline;padding:0">Exactly what is sent</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.1.0</a> · <a href="../admin/index.html">engineering</a> · <a href="../llms.txt">llms.txt</a> · CC BY 4.0 · <a href="../how-it-is-scored/index.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The game</h4>
+    <a href="../index.html">&#8594; Play</a>
+    <a href="../how-it-is-scored/index.html">How it's scored</a>
+    <a href="../the-ceiling/index.html">Why some are impossible</a>
+  </div>
+  <div>
+    <h4>Straight answers</h4>
+    <a href="../what-we-learn/index.html">What we learn from you</a>
+    <a href="../about/index.html">Who made it</a>
+    <a href="https://dev.vault.sgraph.ai/#f94c8b1d42352d95703ac3d39032735d9b4e388d16ab5b87c948928d8e111118%3A4evnlwrj">Open the game's source</a>
+  </div>
+  <div>
+    <h4>More</h4>
+    <a href="https://games.sgit.ai">games.sgit.ai</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+</body>
+</html>

@@ -216,3 +216,13 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ── this is a website, not a compiled project ────────────────────────────
+# The generic `build/` rule above comes from a language template and is wrong here:
+# it matches a directory named build at ANY depth, which silently excluded both
+# `admin/build/` (the entire build toolchain and the release gate) and, on
+# games.sgit.ai, `/build/` — a real page of the site. Neither is build output.
+# Re-include the two by path. A file cannot be re-included while its directory is
+# excluded, so these have to negate the DIRECTORIES, not the files inside them.
+!/build/
+!/admin/build/

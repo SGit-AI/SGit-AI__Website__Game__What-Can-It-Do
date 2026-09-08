@@ -1,0 +1,22 @@
+# what-can-it-do.games.sgit.ai
+
+> A five-minute game about what your AI agent can actually do — and whether you wanted it to.
+
+Site version: v0.1.0
+
+Every page below has a markdown twin generated from the same content as the
+HTML page. Fetch the `.md` and you have the page, without the chrome.
+
+## Pages
+
+- [Do you know what your AI agent can actually do?](https://what-can-it-do.games.sgit.ai/index.md): A five-minute game. Name the AI assistant you use, and answer forty questions about what it can do — and whether you wanted it to. You score for how well you know what you know. Free, no sign-up.
+- [How it's scored](https://what-can-it-do.games.sgit.ai/how-it-is-scored/index.md): +30 for right, −50 for wrong, 0 for don't know — and why a wrong answer costs more than a right one earns.
+- [Some questions are impossible](https://what-can-it-do.games.sgit.ai/the-ceiling/index.md): Roughly two in five questions are things no AI agent can do anywhere. They are in the game on purpose, and each one names the thing that stops it.
+- [What we learn from you](https://what-can-it-do.games.sgit.ai/what-we-learn/index.md): Exactly what the game sends while you play, what it deliberately does not send, what it can and cannot prove, and how to switch it off.
+- [About the game](https://what-can-it-do.games.sgit.ai/about/index.md): Who made it, where the answers come from, what it cannot tell you, and how to open the whole thing yourself and check.
+- [How this site is built](https://what-can-it-do.games.sgit.ai/admin/index.md): One content file, generated HTML and markdown twins, and a release gate that fails a page mounting the game without its telemetry notice.
+- [Release history](https://what-can-it-do.games.sgit.ai/admin/versions.md): Every release of this site. The game inside it has its own, in the vault.
+
+## Release history
+
+- v0.1.0 (2026-09-08) — First publish. The game mounted and playable on arrival, over the SG/Vault embed protocol with the vault-browser surface suppressed, so a player sees a game and not a file manager. Four supporting pages — the scoring rule, the impossible questions, what is sent while you play, and who made it. The telemetry notice sits with the game rather than in the footer, and the release gate fails a page that mounts the game without one.
