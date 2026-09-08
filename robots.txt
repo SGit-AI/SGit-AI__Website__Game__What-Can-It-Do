@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://what-can-it-do.games.sgit.ai/sitemap.xml
