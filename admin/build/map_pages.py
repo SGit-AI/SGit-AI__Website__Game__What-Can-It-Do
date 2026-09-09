@@ -26,9 +26,11 @@ The palette was checked with the data-viz validator rather than judged by eye: t
 pair passes every gate on the light surface; the teal steps are a sequential ramp (monotone
 in lightness), and the two lightest carry a dark glyph because they sit under 3:1 on white.
 """
+import datetime as dt
 import hashlib
 import html
 import json
+import urllib.request
 from pathlib import Path
 
 import shell
@@ -887,7 +889,17 @@ def pages(root, ctx):
               "hash it read. Its build fetches the same files, hashes them in the order `contents` "
               "lists, refuses a mismatch with `content_hash`, and inlines the verified copy as the "
               "fallback for a page that cannot reach this site — labelled as a snapshot, with the "
-              "hash, so the two are never confused. `?pack=<url>` points the game at another pack."),
+              "hash, so the two are never confused. `?pack=<url>` points the game at another pack; "
+              "`?pack=<id>` looks the id up in [`packs.json`](data/packs.json), the registry beside "
+              "this manifest."),
+        ("h2", "Load a pack"),
+        ("p", "Pick a pack from the registry, or paste the URL of a folder that holds a `pack.json`. "
+              "The control reads the manifest and opens the game on it, here. The front page does not "
+              "change: it plays the public pack. Whether the vault host carries the choice through to "
+              "the game is the one thing this site cannot check from the outside — the game's own "
+              "footer names the pack it actually read, and that is the answer."),
+        ("raw", load_pack_html(ctx)),
+        ("disclose", ctx.get("disclose", "")),
         ("p", f"[The folder on GitHub]({GH_BLOB}) · [how to contribute](map/contribute/index.html)"),
       ]}
     return P, pack
@@ -897,7 +909,8 @@ def write_pack(root, version, pack):
     """data/pack.json — the manifest the game fetches. Generated: counts and a content hash over
     every file in the pack, so a change anywhere is a new pack version."""
     d = Path(root) / "data"
-    files = sorted(p for p in d.rglob("*.json") if p.name != "pack.json")
+    # pack.json is the manifest and packs.json the registry: both generated, neither hashed
+    files = sorted(p for p in d.rglob("*.json") if p.name not in ("pack.json", "packs.json"))
     h = hashlib.sha256()
     for p in files:
         h.update(p.relative_to(d).as_posix().encode())
@@ -915,6 +928,7 @@ def write_pack(root, version, pack):
         "base": PACK_BASE,
         "licence": "CC BY 4.0",
         "provenance": "PROVENANCE.md",
+        "registry": "packs.json",
         "files": {
             "vocabulary": "vocabulary.json",
             "primitives": "primitives.json",
@@ -941,4 +955,72 @@ def write_pack(root, version, pack):
         },
     }
     (d / "pack.json").write_text(json.dumps(manifest, indent=2) + "\n")
+    resolve_registry(root, manifest)
     return manifest
+
+
+def pack_hash(folder):
+    """The content hash of a pack folder, by the rule write_pack uses — for a registry entry
+    that lives on this site, so its stated hash is recomputed rather than copied."""
+    files = sorted(p for p in Path(folder).rglob("*.json") if p.name not in ("pack.json", "packs.json"))
+    h = hashlib.sha256()
+    for p in files:
+        h.update(p.relative_to(folder).as_posix().encode())
+        h.update(p.read_bytes())
+    return "sha256:" + h.hexdigest()
+
+
+def resolve_registry(root, manifest):
+    """data/packs.json — every entry's `resolved` block, from the pack's own manifest.
+
+    The public pack resolves to the manifest just written; a pack served from this site
+    resolves from its folder, hash recomputed; anything else is fetched. An entry that does
+    not resolve stops the build, because a registry that lists a pack the game cannot read is
+    a promise the game will break in front of a player."""
+    d = Path(root) / "data"
+    reg = json.loads((d / "packs.json").read_text())
+    if reg.get("type") != "packs-registry/v1":
+        raise SystemExit("data/packs.json is not a packs-registry/v1")
+    origin = PACK_BASE.split("/data/")[0] + "/"
+    today = dt.date.today().isoformat()
+    for e in reg["packs"]:
+        base = e["base"]
+        if not base.startswith("http") or not base.endswith("/"):
+            raise SystemExit(f"data/packs.json: {e.get('id')}: base must be an http(s) URL ending in /")
+        if base == PACK_BASE:
+            m, how = manifest, "this build"
+        elif base.startswith(origin):
+            folder = Path(root) / base[len(origin):]
+            m, how = json.loads((folder / "pack.json").read_text()), f"{base[len(origin):]}pack.json on this site"
+            if pack_hash(folder) != m["content_hash"]:
+                raise SystemExit(f"data/packs.json: {e['id']}: {folder}/pack.json says {m['content_hash']}, "
+                                 f"the folder hashes to {pack_hash(folder)} — rebuild that pack")
+        else:
+            with urllib.request.urlopen(base + "pack.json", timeout=20) as r:
+                m, how = json.load(r), "fetched"
+        if m.get("type") != "pack/v1":
+            raise SystemExit(f"data/packs.json: {e['id']}: {base}pack.json is not a pack/v1 manifest")
+        e["resolved"] = {
+            "_generated": "by the site build, from the pack's manifest — not edited by hand",
+            "version": m["version"], "content_hash": m["content_hash"],
+            "files": len(m.get("contents", [])), "counts": m.get("counts", {}),
+            "resolved_at": today, "from": how,
+        }
+    (d / "packs.json").write_text(json.dumps(reg, indent=2, ensure_ascii=False) + "\n")
+    return reg
+
+
+def load_pack_html(ctx):
+    """The "Load a pack" control: a form the reader fills, a mount the embed opens into. The
+    behaviour is in assets/load-pack.js; the vault and read key come from the site's constants
+    so this page mounts the same vault as the front page and no other."""
+    return (
+        '<form class="loadpack" data-vault="{vault}" data-readkey="{readkey}" data-registry="packs.json">'
+        '<label>From the registry <select><option value="">— pick a pack —</option></select></label>'
+        '<label>or a manifest URL <input type="url" placeholder="https://…/my-pack/" spellcheck="false"></label>'
+        '<button type="submit">Load the pack</button>'
+        '<p class="lp-out">Nothing loaded yet.</p></form>'
+        '<div id="lp-mount"></div>'
+        '<script src="../assets/vault-app-embed.js" defer></script>'
+        '<script src="../assets/load-pack.js" defer></script>'
+    ).format(vault=ctx["vault"], readkey=ctx["readkey"])

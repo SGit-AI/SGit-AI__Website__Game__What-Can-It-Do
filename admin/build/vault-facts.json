@@ -1,0 +1,16 @@
+{
+  "type": "vault-facts/v1",
+  "_what_this_is": "What the game's vault says about itself, read from a clone of it by admin/build/vault_facts.py and dated. validate.js check 10 holds the site to this file; the file holds itself to the vault by its date and commit.",
+  "vault": "pg87npy3",
+  "version": "1.2.0",
+  "released": "2026-09-09",
+  "releases": 44,
+  "signals": false,
+  "telemetry_vault": "kqngdecz",
+  "taken": "2026-09-09",
+  "commit": "6a1c51f925cf",
+  "read_from": [
+    "version.json",
+    "telemetry/telemetry.config.json"
+  ]
+}

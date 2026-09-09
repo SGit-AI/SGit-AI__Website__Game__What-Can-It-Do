@@ -12,7 +12,7 @@ below point at them.*
 
 # Release history
 
-This is the history of the **site**. The game has its own, in the vault — 42 releases, at v1.0.0 since 9 September 2026 — reachable from the menu inside the game.
+This is the history of the **site**. The game has its own, in the vault — 44 releases, at v1.2.0 when this site was built (2026-09-09) — reachable from the menu inside the game.
 
 ---
 

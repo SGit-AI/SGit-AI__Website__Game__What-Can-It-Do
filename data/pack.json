@@ -8,6 +8,7 @@
   "base": "https://what-can-it-do.games.sgit.ai/data/",
   "licence": "CC BY 4.0",
   "provenance": "PROVENANCE.md",
+  "registry": "packs.json",
   "files": {
     "vocabulary": "vocabulary.json",
     "primitives": "primitives.json",

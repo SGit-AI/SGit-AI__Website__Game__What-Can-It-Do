@@ -165,4 +165,8 @@
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mountAll);
   else mountAll();
+
+  // For a frame created after load — the "Load a pack" control on /data/ builds a mount for
+  // the pack the reader chose and hands it here. Same protocol, same pinned origin.
+  window.SGVaultApp = { mount: mount, mountAll: mountAll };
 }());

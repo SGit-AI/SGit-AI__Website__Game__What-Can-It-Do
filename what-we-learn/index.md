@@ -35,7 +35,7 @@ So why the notice at all? Not because this is invasive — it is not. Because th
 ## What is deliberately not sent
 
 - **No name, no email, no account** — the game has none to send.
-- **No fingerprint.** No browser fingerprinting of any kind. The sender *can* compute one; the switch that would turn it on (`signals` in the vault's `telemetry/telemetry.config.json`) ships **off** since the game's vault v1.0.0, 9 September 2026, and the vault's own telemetry page says so.
+- **No fingerprint.** No browser fingerprinting of any kind. The sender *can* compute one; the switch that would turn it on (`signals` in the vault's `telemetry/telemetry.config.json`) is **off** in the game's vault at v1.2.0 (checked 2026-09-09), and the vault's own telemetry page says so. The release gate refuses a build where this sentence and the vault's config disagree.
 - **No URL and no referrer** — not the page you came from, not the link you followed.
 - **Not your full browser string, not your screen size.**
 - **Nothing you type.** The game has a chat panel; the fact that you used it is counted, the words are not sent and are not stored.

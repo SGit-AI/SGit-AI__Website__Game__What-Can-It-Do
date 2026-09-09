@@ -1,0 +1,31 @@
+{
+  "type": "packs-registry/v1",
+  "_what_this_is": "Known packs the game can be pointed at: an id, a name, where the pack is served, who maintains it. `?pack=<id>` on the game resolves here; `?pack=<url>` does not need it. The `resolved` block on each entry is written by the site build (admin/build/map_pages.py, write_pack) from the pack's own manifest — version, hash, counts and the day it was read — so an entry never claims a hash it did not read, and the release gate refuses an entry whose manifest does not resolve. Add a pack by pull request: id, name, base, maintainer, licence. A pack is a folder with a pack.json manifest of type pack/v1, served with CORS open; the public pack lists itself first.",
+  "packs": [
+    {
+      "id": "public",
+      "name": "What Can It Do? — the public pack",
+      "base": "https://what-can-it-do.games.sgit.ai/data/",
+      "maintainer": "this site, by pull request",
+      "licence": "CC BY 4.0",
+      "about": "https://what-can-it-do.games.sgit.ai/data/index.html",
+      "resolved": {
+        "_generated": "by the site build, from the pack's manifest — not edited by hand",
+        "version": "v0.5.0",
+        "content_hash": "sha256:d6d4ba40f1fb1f93f660687e4787ac10c2e1835efeb3929a4c8ad62cee8897ef",
+        "files": 27,
+        "counts": {
+          "profiles": 9,
+          "capabilities": 23,
+          "reductions": 22,
+          "ceiling": 17,
+          "questions": 25,
+          "mandates": 8,
+          "files": 27
+        },
+        "resolved_at": "2026-09-09",
+        "from": "this build"
+      }
+    }
+  ]
+}

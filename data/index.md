@@ -41,7 +41,13 @@ What a customised pack changes: which profiles the picker offers, what each row 
 
 ## For the game
 
-Since its vault v1.0.0 (9 September 2026) the game reads this pack on every load: `pack.json` first, then the files, over CORS. Its footer names the pack version and hash it read. Its build fetches the same files, hashes them in the order `contents` lists, refuses a mismatch with `content_hash`, and inlines the verified copy as the fallback for a page that cannot reach this site — labelled as a snapshot, with the hash, so the two are never confused. `?pack=<url>` points the game at another pack.
+Since its vault v1.0.0 (9 September 2026) the game reads this pack on every load: `pack.json` first, then the files, over CORS. Its footer names the pack version and hash it read. Its build fetches the same files, hashes them in the order `contents` lists, refuses a mismatch with `content_hash`, and inlines the verified copy as the fallback for a page that cannot reach this site — labelled as a snapshot, with the hash, so the two are never confused. `?pack=<url>` points the game at another pack; `?pack=<id>` looks the id up in [`packs.json`](../data/packs.json), the registry beside this manifest.
+
+## Load a pack
+
+Pick a pack from the registry, or paste the URL of a folder that holds a `pack.json`. The control reads the manifest and opens the game on it, here. The front page does not change: it plays the public pack. Whether the vault host carries the choice through to the game is the one thing this site cannot check from the outside — the game's own footer names the pack it actually read, and that is the answer.
+
+> This game counts usage anonymously — which screens people reach, which answers are common. No cookies, no analytics script, nothing that identifies you or your machine, and a pause switch on every screen. [What is sent](../what-we-learn/index.md).
 
 [The folder on GitHub](https://github.com/SGit-AI/SGit-AI__Website__Game__What-Can-It-Do/blob/dev/data/) · [how to contribute](../map/contribute/index.md)
 

@@ -16,6 +16,7 @@ usage events, and putting it on a public domain extends that obligation rather t
 discharging it — so the disclosure sits with the game rather than in a footer, and
 `admin/build/validate.js` fails the build on a page that mounts the game without one.
 """
+import json
 import sys
 from pathlib import Path
 
@@ -52,6 +53,10 @@ LTO_VAULT = "posrhzp3"
 LTO_READKEY = "d990a52efb9af32c8463e2962f3ca5ccf92b3b6e8ea788e55009073c29b4da29"
 LTO_UI = f"https://dev.vault.sgraph.ai/#{LTO_READKEY}%3A{LTO_VAULT}"
 LTO_PAGE = "https://sgit.ai/demos/vaults/licence-to-operate/index.html"
+
+# What the game's vault says about itself — read from a clone of it by admin/build/vault_facts.py
+# and dated, never typed here. validate.js check 10 holds the pages to this file.
+FACTS = json.loads((ROOT / "admin/build/vault-facts.json").read_text())
 
 SITE = {
     "host": "what-can-it-do.games.sgit.ai",
@@ -137,6 +142,16 @@ FOOTER = [
 ]
 
 VERSION_LOG = [
+    ("v0.6.0", "2026-09-09",
+     "Packs, on the page packs already live. data/packs.json is the registry — id, name, where "
+     "a pack is served — and the build resolves every entry from the pack's own manifest before "
+     "it can ship; pack.json names it. /data/ gets one control, Load a pack: pick from the "
+     "registry or paste a manifest URL, and the game opens on it, here. Two new gate checks: "
+     "every registry entry resolves (a pack on this site has its hash recomputed), and "
+     "/what-we-learn/ must state the same signals value the game's vault carries, read from a "
+     "clone of the vault into admin/build/vault-facts.json and dated. The game's vault v1.2.0 "
+     "resolves ?pack=<id> through the registry, drops the other game from its bar, and folds "
+     "the what-we-know page in as a screen."),
     ("v0.5.0", "2026-09-09",
      "The game reads this pack, live. The embed now opens the game's own vault (pg87npy3, "
      "v1.0.0), which fetches data/pack.json on every load and falls back to a verified "
@@ -561,8 +576,9 @@ PAGES = {
       "**No name, no email, no account** — the game has none to send.",
       "**No fingerprint.** No browser fingerprinting of any kind. The sender *can* compute one; "
       "the switch that would turn it on (`signals` in the vault's `telemetry/telemetry.config.json`) "
-      "ships **off** since the game's vault v1.0.0, 9 September 2026, and the vault's own "
-      "telemetry page says so.",
+      f"is **{'on' if FACTS['signals'] else 'off'}** in the game's vault at v{FACTS['version']} "
+      f"(checked {FACTS['taken']}), and the vault's own telemetry page says so. The release gate "
+      "refuses a build where this sentence and the vault's config disagree.",
       "**No URL and no referrer** — not the page you came from, not the link you followed.",
       "**Not your full browser string, not your screen size.**",
       "**Nothing you type.** The game has a chat panel; the fact that you used it is counted, "
@@ -694,8 +710,9 @@ PAGES = {
   "blocks": [
     ("crumb", "[Play](index.html) / [About](about/index.html) / Release history"),
     ("h1", "Release history"),
-    ("lead", "This is the history of the **site**. The game has its own, in the vault — 42 "
-             "releases, at v1.0.0 since 9 September 2026 — reachable from the menu inside the game."),
+    ("lead", f"This is the history of the **site**. The game has its own, in the vault — "
+             f"{FACTS['releases']} releases, at v{FACTS['version']} when this site was built "
+             f"({FACTS['taken']}) — reachable from the menu inside the game."),
     ("raw", versions_table()),
   ]},
 }
@@ -704,7 +721,8 @@ PAGES = {
 def main():
     # The map's pages are computed from data/, not written here. Merging them in at build
     # time is what lets a merged pull request change the site with no hand in between.
-    generated, pack = map_pages.pages(ROOT, {"site": SITE})
+    generated, pack = map_pages.pages(ROOT, {"site": SITE, "vault": VAULT, "readkey": READKEY,
+                                            "disclose": DISCLOSE_SHORT})
     clash = set(generated) & set(PAGES)
     if clash:
         raise SystemExit(f"generated pages collide with authored ones: {sorted(clash)}")
