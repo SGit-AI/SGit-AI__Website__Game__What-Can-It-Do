@@ -2,7 +2,7 @@
 
 > Exactly what the game sends while you play, what it deliberately does not send, what it can and cannot prove, and how to switch it off.
 
-*Source: <https://what-can-it-do.games.sgit.ai/what-we-learn/index.html> · site v0.1.0 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/what-we-learn/index.html> · site v0.2.0 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 
@@ -12,9 +12,17 @@ below point at them.*
 
 # What we learn from you
 
-The game sends anonymous usage events while you play. Here is exactly what is in them, what is deliberately left out, and how to stop it. Nothing on this page is a summary of something less flattering.
+The game counts usage anonymously while you play. Here is exactly what is in those counts, what is deliberately left out, and how to stop it. Nothing on this page is a summary of something less flattering.
 
-> **Before you start:** this game sends **anonymous usage events** while you play — which screens you reach, your answers, your score. No name, no account, no id, no fingerprint, nothing that identifies you or your machine. There is a **pause switch** on every screen, and it works before the first question. [Exactly what is sent](../what-we-learn/index.md).
+> This game counts usage anonymously — which screens people reach, which answers are common. No cookies, no analytics script, nothing that identifies you or your machine, and a pause switch on every screen. [What is sent](../what-we-learn/index.md).
+
+## How much is this, really?
+
+**Less than almost every other site you will open today.** No cookies. No analytics script — no Google Analytics, no tag manager, no third-party pixel of any kind. No account, because there is nothing to sign up for. No fingerprinting. Not even the page you came from.
+
+It is less than a **default web-server access log**, which by default records your IP address, the exact page, the time, your full browser string and the site that referred you, for every request, on essentially every website in existence.
+
+So why the notice at all? Not because this is invasive — it is not. Because the thing the game is published *inside* normally sends nothing anywhere, and a departure from that promise gets stated plainly wherever the game appears. It would be strange to write a game about knowing what software does on your behalf and then be vague about what this one does.
 
 ## What is sent
 

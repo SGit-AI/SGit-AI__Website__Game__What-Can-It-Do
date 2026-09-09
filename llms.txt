@@ -2,7 +2,7 @@
 
 > A five-minute game about what your AI agent can actually do — and whether you wanted it to.
 
-Site version: v0.1.0
+Site version: v0.2.0
 
 Every page below has a markdown twin generated from the same content as the
 HTML page. Fetch the `.md` and you have the page, without the chrome.
@@ -12,6 +12,7 @@ HTML page. Fetch the `.md` and you have the page, without the chrome.
 - [Do you know what your AI agent can actually do?](https://what-can-it-do.games.sgit.ai/index.md): A five-minute game. Name the AI assistant you use, and answer forty questions about what it can do — and whether you wanted it to. You score for how well you know what you know. Free, no sign-up.
 - [How it's scored](https://what-can-it-do.games.sgit.ai/how-it-is-scored/index.md): +30 for right, −50 for wrong, 0 for don't know — and why a wrong answer costs more than a right one earns.
 - [Some questions are impossible](https://what-can-it-do.games.sgit.ai/the-ceiling/index.md): Roughly two in five questions are things no AI agent can do anywhere. They are in the game on purpose, and each one names the thing that stops it.
+- [What to do next](https://what-can-it-do.games.sgit.ai/what-next/index.md): You finished the game and you have a list of things your agent can do that you did not want. You cannot un-decide them. Here is what the decision actually looks like, and where it gets made.
 - [What we learn from you](https://what-can-it-do.games.sgit.ai/what-we-learn/index.md): Exactly what the game sends while you play, what it deliberately does not send, what it can and cannot prove, and how to switch it off.
 - [About the game](https://what-can-it-do.games.sgit.ai/about/index.md): Who made it, where the answers come from, what it cannot tell you, and how to open the whole thing yourself and check.
 - [How this site is built](https://what-can-it-do.games.sgit.ai/admin/index.md): One content file, generated HTML and markdown twins, and a release gate that fails a page mounting the game without its telemetry notice.
@@ -19,4 +20,6 @@ HTML page. Fetch the `.md` and you have the page, without the chrome.
 
 ## Release history
 
+- v0.2.0 (2026-09-09) — What to do next — the page the game was missing. A player finishes with a list of things their agent can do that they did not want, and until now the site said nothing about what to do with it. It opens with the thing most people get wrong first: you cannot deny it, because the agent already has the access, so the only real question is how long you will live with each one and who says so. Three things you can do this afternoon with no system at all — narrow the one grant that surprised you, write the mandate down, put a date on the rest — then where it goes when it is somebody's job: RiskMandate, the business risk layer this game is part of, whose answer is accept, fund, or fix, from a named owner, with an expiry. It closes with Licence to Operate embedded — a published vault where one agent's grant of 12, mandate of 4 and delta of 8 are priced, and every reply costs something. That vault sends nothing and asks for no write permission at all, and the page says so.
+- v0.1.1 (2026-09-09) — The notice above the game got proportionate. It was an amber warning panel; it is now one quiet line. What it describes is anonymous counting with no cookies, no analytics script and nothing that identifies anyone — less than a default web-server access log, and less than the analytics on nearly every site a player will visit today. Warning loudly about something ordinary implies a risk that is not there and teaches people to skim the next notice; it also pushed the game a screen further down, which is the opposite of what this domain is for. What we learn now opens with the comparison in plain terms, and says why the notice exists at all: not because the counting is invasive, but because it would be strange to write a game about knowing what software does on your behalf and then be vague about what this one does.
 - v0.1.0 (2026-09-08) — First publish. The game mounted and playable on arrival, over the SG/Vault embed protocol with the vault-browser surface suppressed, so a player sees a game and not a file manager. Four supporting pages — the scoring rule, the impossible questions, what is sent while you play, and who made it. The telemetry notice sits with the game rather than in the footer, and the release gate fails a page that mounts the game without one.

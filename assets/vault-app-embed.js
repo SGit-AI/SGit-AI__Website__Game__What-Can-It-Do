@@ -31,6 +31,7 @@
  *
  * Usage:
  *   <div class="sgv-app" data-vault="4evnlwrj" data-readkey="<64 hex>"
+ *        data-label="The game, running out of the vault"
  *        data-entry="which-agent-is-it/index.html"   <!-- optional deep link -->
  *        data-chromeless="1"                          <!-- optional -->
  *        data-browser="1"></div>                      <!-- optional: also show the browser -->
@@ -62,7 +63,11 @@
     var withBrowser= el.getAttribute('data-browser') === '1';
     var cred       = 'sgit_rk1_' + readKey + ':' + vaultId;
 
-    var sections = [section(el, cred, entry, 'app', '▶ The game, running out of the vault', chromeless)];
+    // The label names the surface. It has to come from the mount: this component is used
+    // for the games AND for Licence to Operate, and a page embedding the simulation that
+    // announces "the game" is simply lying to the reader.
+    var label = el.getAttribute('data-label') || 'Running live out of the vault';
+    var sections = [section(el, cred, entry, 'app', '▶ ' + label, chromeless)];
     if (withBrowser) {
       sections.push(section(el, cred, '', 'vault', '▤ Vault browser — FILES / SGIT / SETTINGS', chromeless));
     }
@@ -135,7 +140,7 @@
     s.frame.setAttribute('allow', 'fullscreen');
     s.frame.setAttribute('allowfullscreen', '');
     s.frame.title = mode === 'app'
-      ? 'The game, running out of the vault, opened read-only'
+      ? label.replace(/^▶\s*/, '') + ', opened read-only'
       : 'The SG/Vault browser, opened read-only';
     el.appendChild(s.frame);
 
