@@ -2,7 +2,7 @@
 
 > A five-minute game. Name the AI assistant you use, and answer forty questions about what it can do — and whether you wanted it to. You score for how well you know what you know. Free, no sign-up.
 
-*Source: <https://what-can-it-do.games.sgit.ai/index.html> · site v0.1.1 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/index.html> · site v0.2.0 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 
@@ -39,6 +39,8 @@ You have given an AI assistant access to something — your laptop, a repository
 A calibration figure — how often you were right when you said you were sure — and **a draft of what you actually wanted your agent to be allowed to do**, assembled from your answers to the second question. Most people have never written that down. You will not have set out to write it either.
 
 Then the gap between the two: the things it can do that you did not want, split by whether you saw them coming. And one thing to change.
+
+**That list is not the end of it.** You cannot un-decide those permissions — the agent already has them — so the only real question is how long you are prepared to live with each one, and who says so. [What to do next](what-next/index.md) is three things you can do this afternoon, and where this goes when it is somebody's job: [RiskMandate](https://riskmandate.ai), the business risk layer this game is part of.
 
 ## Free, no sign-up, nothing stored
 

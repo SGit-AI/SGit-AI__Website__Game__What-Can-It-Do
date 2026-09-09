@@ -122,6 +122,11 @@ const PUBLISHED = [
   // and re-published here on purpose: it is what lets a reader open the vault themselves.
   'sgit_rk1_f94c8b1d42352d95703ac3d39032735d9b4e388d16ab5b87c948928d8e111118:4evnlwrj',
   'f94c8b1d42352d95703ac3d39032735d9b4e388d16ab5b87c948928d8e111118:4evnlwrj',
+  // Licence to Operate (posrhzp3), read-only. Published on
+  // sgit.ai/demos/vaults/licence-to-operate/ — the worked example of the delta the game
+  // hands a player, embedded on /what-next/.
+  'sgit_rk1_d990a52efb9af32c8463e2962f3ca5ccf92b3b6e8ea788e55009073c29b4da29:posrhzp3',
+  'd990a52efb9af32c8463e2962f3ca5ccf92b3b6e8ea788e55009073c29b4da29:posrhzp3',
 ];
 const KEY_SHAPES = [
   /[A-Za-z0-9_-]{20,}:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/g,

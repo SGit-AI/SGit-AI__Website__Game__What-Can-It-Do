@@ -31,6 +31,24 @@ VAULT = "4evnlwrj"
 READKEY = "f94c8b1d42352d95703ac3d39032735d9b4e388d16ab5b87c948928d8e111118"
 VAULT_UI = f"https://dev.vault.sgraph.ai/#{READKEY}%3A{VAULT}"
 CONCEPT_SITE = "https://games.sgit.ai"
+# Where a player goes after the game. The game surfaces a delta and can do nothing about
+# it; RiskMandate is the layer that turns one into a named owner and a time-bound
+# decision. Deep links rather than a bare homepage, so the nudge lands on the page that
+# answers the question the game just raised.
+RM = "https://riskmandate.ai"
+RM_GRANT = "https://riskmandate.ai/v0/v0.11/v0.11.0/index.html"
+RM_ACCEPT = "https://riskmandate.ai/v0/v0.10/v0.10.0/index.html"
+RM_SCENARIOS = "https://riskmandate.ai/scenarios.html"
+RM_HOW = "https://riskmandate.ai/how-it-works.html"
+
+# Licence to Operate — the same idea taken seriously, as a published vault: one agent, a grant
+# of 12 capabilities, a mandate of 4, and the 8-capability delta no policy covers. Read key
+# published on sgit.ai; read-only, like the games'. It is the worked example of what the game
+# hands you, which is why it is embedded rather than linked.
+LTO_VAULT = "posrhzp3"
+LTO_READKEY = "d990a52efb9af32c8463e2962f3ca5ccf92b3b6e8ea788e55009073c29b4da29"
+LTO_UI = f"https://dev.vault.sgraph.ai/#{LTO_READKEY}%3A{LTO_VAULT}"
+LTO_PAGE = "https://sgit.ai/demos/vaults/licence-to-operate/index.html"
 
 SITE = {
     "host": "what-can-it-do.games.sgit.ai",
@@ -46,10 +64,12 @@ SITE = {
              '<em>wanted</em> it to do. Free, no sign-up, nothing stored. '
              '<a href="{up}about/index.html" style="display:inline;padding:0">Who made it, and '
              'how to check what it says</a>.',
-    "netline": (f'<a href="{CONCEPT_SITE}"><b>↗ games.sgit.ai</b></a> — why we build games, and '
-                'the others · <a href="https://sgit.ai">↗ sgit.ai</a> — the encrypted vault the '
-                'game is published in · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — where '
-                'the capability data comes from'),
+    "netline": ('<a href="https://riskmandate.ai"><b>↗ RiskMandate.ai</b></a> — where the delta '
+                'this game hands you becomes a named owner and a time-bound decision · '
+                f'<a href="{CONCEPT_SITE}">↗ games.sgit.ai</a> — why we build games · '
+                '<a href="https://sgit.ai">↗ sgit.ai</a> — the encrypted vault the game is '
+                'published in · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — where the '
+                'capability data comes from'),
     "telemetry_note": 'This game counts usage anonymously — no cookies, no analytics script, '
                       'nothing that identifies you, and a pause switch on every screen. '
                       '<a href="{up}what-we-learn/index.html" style="display:inline;padding:0">'
@@ -60,12 +80,13 @@ NAV = [
     ("Play", "index.html", [], ()),
     ("How it's scored", "how-it-is-scored/index.html", [], ("how-it-is-scored/",)),
     ("Some are impossible", "the-ceiling/index.html", [], ("the-ceiling/",)),
-    ("What we learn", "what-we-learn/index.html", [], ("what-we-learn/",)),
+    ("What next", "what-next/index.html", [], ("what-next/",)),
     ("About", "about/index.html", [
         ("About the game", "about/index.html"),
+        ("What we learn from you", "what-we-learn/index.html"),
         ("Release history", "admin/versions.html"),
         ("How this site is built", "admin/index.html"),
-    ], ("about/", "admin/")),
+    ], ("about/", "admin/", "what-we-learn/")),
 ]
 
 FOOTER = [
@@ -73,6 +94,7 @@ FOOTER = [
         ("&#8594; Play", "index.html"),
         ("How it's scored", "how-it-is-scored/index.html"),
         ("Why some are impossible", "the-ceiling/index.html"),
+        ("What to do next", "what-next/index.html"),
     ]),
     ("Straight answers", [
         ("What we learn from you", "what-we-learn/index.html"),
@@ -80,6 +102,7 @@ FOOTER = [
         ("Open the game's source", VAULT_UI),
     ]),
     ("More", [
+        ("&#8594; RiskMandate.ai", RM),
         ("games.sgit.ai", CONCEPT_SITE),
         ("Release history", "admin/versions.html"),
         ("llms.txt", "llms.txt"),
@@ -87,6 +110,19 @@ FOOTER = [
 ]
 
 VERSION_LOG = [
+    ("v0.2.0", "2026-09-09",
+     "What to do next — the page the game was missing. A player finishes with a list of things "
+     "their agent can do that they did not want, and until now the site said nothing about "
+     "what to do with it. It opens with the thing most people get wrong first: you cannot deny "
+     "it, because the agent already has the access, so the only real question is how long you "
+     "will live with each one and who says so. Three things you can do this afternoon with no "
+     "system at all — narrow the one grant that surprised you, write the mandate down, put a "
+     "date on the rest — then where it goes when it is somebody's job: RiskMandate, the "
+     "business risk layer this game is part of, whose answer is accept, fund, or fix, from a "
+     "named owner, with an expiry. It closes with Licence to Operate embedded — a published "
+     "vault where one agent's grant of 12, mandate of 4 and delta of 8 are priced, and every "
+     "reply costs something. That vault sends nothing and asks for no write permission at all, "
+     "and the page says so."),
     ("v0.1.1", "2026-09-09",
      "The notice above the game got proportionate. It was an amber warning panel; it is now one "
      "quiet line. What it describes is anonymous counting with no cookies, no analytics script "
@@ -177,6 +213,11 @@ PAGES = {
           "You will not have set out to write it either."),
     ("p", "Then the gap between the two: the things it can do that you did not want, split by "
           "whether you saw them coming. And one thing to change."),
+    ("p", "**That list is not the end of it.** You cannot un-decide those permissions — the "
+          "agent already has them — so the only real question is how long you are prepared to "
+          "live with each one, and who says so. [What to do next](what-next/index.html) is "
+          "three things you can do this afternoon, and where this goes when it is somebody's "
+          f"job: [RiskMandate]({RM}), the business risk layer this game is part of."),
     ("h2", "Free, no sign-up, nothing stored"),
     ("p", "No account. No email. Nothing is saved between visits — close the tab and the run "
           "is gone. The game runs entirely in your browser: the scoring is arithmetic, there "
@@ -269,6 +310,94 @@ PAGES = {
              "question names the specific thing that blocks it, so a counter-example is a "
              "concrete, checkable claim rather than a matter of opinion. Use the 👍/👎 on the "
              "question itself — that is the fastest way to reach us, and it takes one tap."),
+  ]},
+# ---------------------------------------------------------------------------
+"what-next/index.html": {
+  "title": "What to do next",
+  "description": "You finished the game and you have a list of things your agent can do that "
+                 "you did not want. You cannot un-decide them. Here is what the decision "
+                 "actually looks like, and where it gets made.",
+  "blocks": [
+    ("crumb", "[Play](index.html) / What to do next"),
+    ("h1", "You have a list. Now what?"),
+    ("lead", "At the end of the game you have a handful of things your agent can do that you "
+             "did not want it to. That list is the whole point of playing. The game can do "
+             "nothing about it — this page is what happens next."),
+    ("h2", "The first instinct is to deny it, and you cannot"),
+    ("p", "The natural reaction to *my assistant can send email on my behalf and I never "
+          "agreed to that* is to decide it is not allowed. But it already is. The access was "
+          "granted when you set the thing up, and it has been in place the whole time you were "
+          "playing. **You cannot deny a risk that has already materialised** — and a list of "
+          "things you have privately decided are not allowed, while they remain possible, is "
+          "worse than no list, because it feels like a decision."),
+    ("p", "So there is no deny button. There is only: **how long are you prepared to live with "
+          "this, and who says so?**"),
+    ("h2", "The real decision is an interval and a name"),
+    ("p", "Which sounds like bureaucracy and is actually the opposite — it is the thing that "
+          "makes anything happen:"),
+    ("ul", [
+      "**How long.** An hour, a day, a week, six months. The interval *is* the priority: if "
+      "you accept something for an hour, it gets fixed within the hour. If you accept it for "
+      "six months, you have said out loud that it is not urgent — which is a real answer, and "
+      "a checkable one, because it expires.",
+      "**Which direction.** Get more data, reduce it, hold it where it is — or, occasionally, "
+      "increase it deliberately because the capability is worth the exposure.",
+      "**Who.** A named person, not a team and not a policy document. Authority that nobody "
+      "holds is authority nobody reviews.",
+      "**And then it expires**, which is the part that separates this from a risk register. A "
+      "decision with a date on it comes back. One without a date quietly becomes permanent.",
+    ]),
+    ("h2", "What you can do this afternoon, with none of that"),
+    ("p", "You do not need a system to act on what the game showed you. Three things, in order "
+          "of how much they are worth:"),
+    ("ol", [
+      "**Narrow the grant for the one that surprised you most.** Not all of them — the one you "
+      "actually reacted to. Most agent setups have a confirmation setting, a scope selector or "
+      "a token permission that takes two minutes.",
+      "**Write down the mandate.** The draft the game handed you, in a file, in your own words: "
+      "what you want this thing to do. It takes ten minutes and almost nobody has one. You "
+      "cannot notice authority drifting from something you never wrote down.",
+      "**Put a date on the rest.** Even in a calendar reminder. *Review what this agent can "
+      "reach — 1 December.* That is a time-bound acceptance, and it is the whole mechanism.",
+    ]),
+    ("h2", "Where this goes when it is somebody's job"),
+    ("p", "Everything above scales badly. One person and one assistant is a calendar reminder; "
+          "a company with two hundred agents acting on delegated authority is not. That is what "
+          f"[**RiskMandate**]({RM}) is — *the business risk layer for autonomous systems*, and "
+          f"the project this game is part of."),
+    ("p", f"It starts from the same place this page does: [there is no deny button]({RM_ACCEPT}) "
+          f"— a risk can only be accepted, in a direction, for an interval, and underwritten "
+          f"upward until it aggregates into one board-level view. [The grant is not the "
+          f"mandate]({RM_GRANT}) is the same distinction the game just walked you through, "
+          f"written for the person who has to sign. And its "
+          f"[risk scenarios]({RM_SCENARIOS}) ask you the question this page is built around — "
+          f"*how long will you accept this?* — about situations rather than capabilities."),
+    ("p", f"[How it works]({RM_HOW}) is the short version: every mandate gets a time-bound "
+          f"decision from a named owner — **accept, fund, or fix**."),
+    ("h2", "What it looks like when the delta has a price"),
+    ("p", "There is a published simulation of exactly this, and it is the best answer to *so "
+          "what?* that we have. One agent with a **grant of 12 capabilities**, a **mandate of "
+          "4** — read the customer's record, search the help centre, draft a reply, never send "
+          "it — and the **8-capability delta** in between, which includes sending mail and "
+          "running shell commands. Nobody asked for those. Nothing insures them. The agent can "
+          "reach them."),
+    ("p", "Then it makes you spend it. A customer cannot log in; you pick the reply; every "
+          "option shows its cost before you commit — one inside the band, one that draws on the "
+          "pool, one outside cover entirely. It answers *does this agent have the licence to "
+          "operate* by letting you find out."),
+    ("disclose", "This one does **not** send anything anywhere — it is a different vault, with "
+                 "no telemetry at all. It also asks for no write permission of any kind, so the "
+                 "app simulating spending against a policy is structurally unable to edit the "
+                 "policy. Nothing you do in it changes anything."),
+    ("embed", {"vault": LTO_VAULT, "readkey": LTO_READKEY, "open_url": LTO_UI, "breakout": True,
+               "label": "Licence to Operate — the simulation, running out of its vault"}),
+    ("p", f"[Open it in its own tab]({LTO_UI}) — it is an interactive simulation and it has far "
+          f"more room there. [The full write-up]({LTO_PAGE}), including the audit of what is "
+          f"inside it, is on sgit.ai."),
+    ("note", "**It says it is simulated, on the surface, while you use it:** *\"the terms are "
+             "real files in this vault; the replies are scripted; the numbers are made up.\"* "
+             "The structure is the real part — the grant, the mandate, the delta, and a policy "
+             "that only ever covered the mandate."),
   ]},
 # ---------------------------------------------------------------------------
 "what-we-learn/index.html": {
@@ -385,7 +514,12 @@ PAGES = {
     ("p", "Because the gap between what an AI agent is *allowed* to do and what you *meant* it "
           "to do is real, mostly unmeasured, and nobody fills in a form about it honestly. A "
           "game gets an answer out of you while you are thinking about something else."),
-    ("p", f"The longer version of that argument — and the other games — is at "
+    ("p", f"It is part of [**RiskMandate**]({RM}) — *the business risk layer for autonomous "
+          f"systems* — which starts where this game stops. The game gets a person to say what "
+          f"they wanted; RiskMandate is what turns the gap into a named owner and a decision "
+          f"with a date on it. [What to do next](what-next/index.html) is the short version of "
+          f"that handover."),
+    ("p", f"The longer version of the argument — and the other games — is at "
           f"[games.sgit.ai]({CONCEPT_SITE})."),
     ("h2", "Say something"),
     ("p", "The fastest route is the 👍/👎 on any question in the game: one tap, no form, and it "

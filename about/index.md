@@ -2,7 +2,7 @@
 
 > Who made it, where the answers come from, what it cannot tell you, and how to open the whole thing yourself and check.
 
-*Source: <https://what-can-it-do.games.sgit.ai/about/index.html> · site v0.1.1 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/about/index.html> · site v0.2.0 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 
@@ -39,7 +39,9 @@ The game you played above is that vault, opened live in this page. There is no c
 
 Because the gap between what an AI agent is *allowed* to do and what you *meant* it to do is real, mostly unmeasured, and nobody fills in a form about it honestly. A game gets an answer out of you while you are thinking about something else.
 
-The longer version of that argument — and the other games — is at [games.sgit.ai](https://games.sgit.ai).
+It is part of [**RiskMandate**](https://riskmandate.ai) — *the business risk layer for autonomous systems* — which starts where this game stops. The game gets a person to say what they wanted; RiskMandate is what turns the gap into a named owner and a decision with a date on it. [What to do next](../what-next/index.md) is the short version of that handover.
+
+The longer version of the argument — and the other games — is at [games.sgit.ai](https://games.sgit.ai).
 
 ## Say something
 

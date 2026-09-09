@@ -186,6 +186,8 @@ def embed_html(cfg):
     ]
     if cfg.get("entry"):
         attrs.append(f'data-entry="{cfg["entry"]}"')
+    if cfg.get("label"):
+        attrs.append(f'data-label="{cfg["label"]}"')
     if cfg.get("chromeless"):
         attrs.append('data-chromeless="1"')
     if cfg.get("browser"):
