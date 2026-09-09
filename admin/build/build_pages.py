@@ -50,8 +50,8 @@ SITE = {
                 'the others · <a href="https://sgit.ai">↗ sgit.ai</a> — the encrypted vault the '
                 'game is published in · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — where '
                 'the capability data comes from'),
-    "telemetry_note": '⚠ This game sends anonymous usage events while you play — no name, no '
-                      'id, no fingerprint — and every screen has a pause switch. '
+    "telemetry_note": 'This game counts usage anonymously — no cookies, no analytics script, '
+                      'nothing that identifies you, and a pause switch on every screen. '
                       '<a href="{up}what-we-learn/index.html" style="display:inline;padding:0">'
                       'Exactly what is sent</a>.',
 }
@@ -87,6 +87,17 @@ FOOTER = [
 ]
 
 VERSION_LOG = [
+    ("v0.1.1", "2026-09-09",
+     "The notice above the game got proportionate. It was an amber warning panel; it is now one "
+     "quiet line. What it describes is anonymous counting with no cookies, no analytics script "
+     "and nothing that identifies anyone — less than a default web-server access log, and less "
+     "than the analytics on nearly every site a player will visit today. Warning loudly about "
+     "something ordinary implies a risk that is not there and teaches people to skim the next "
+     "notice; it also pushed the game a screen further down, which is the opposite of what this "
+     "domain is for. What we learn now opens with the comparison in plain terms, and says why "
+     "the notice exists at all: not because the counting is invasive, but because it would be "
+     "strange to write a game about knowing what software does on your behalf and then be vague "
+     "about what this one does."),
     ("v0.1.0", "2026-09-08",
      "First publish. The game mounted and playable on arrival, over the SG/Vault embed "
      "protocol with the vault-browser surface suppressed, so a player sees a game and not a "
@@ -95,14 +106,16 @@ VERSION_LOG = [
      "than in the footer, and the release gate fails a page that mounts the game without one."),
 ]
 
-# One sentence, above the game, where somebody who never scrolls still reads it. The longer
-# statement is on /what-we-learn/ and the authoritative one is inside the vault.
+# One quiet line, above the game. It used to be an amber warning panel, which was the wrong
+# size for what it says: this is anonymous counting with no cookies, no analytics script and
+# nothing that identifies anyone — less than a default server log, and less than the analytics
+# on nearly every site a player will visit today. Warning loudly about something ordinary
+# implies a risk that is not there and teaches people to skim the next notice. The full
+# statement is on /what-we-learn/, and the authoritative one is inside the vault.
 DISCLOSE_SHORT = (
-    "**Before you start:** this game sends **anonymous usage events** while you play — which "
-    "screens you reach, your answers, your score. No name, no account, no id, no fingerprint, "
-    "nothing that identifies you or your machine. There is a **pause switch** on every screen, "
-    "and it works before the first question. "
-    "[Exactly what is sent](/what-we-learn/index.html).")
+    "This game counts usage anonymously — which screens people reach, which answers are "
+    "common. No cookies, no analytics script, nothing that identifies you or your machine, "
+    "and a pause switch on every screen. [What is sent](/what-we-learn/index.html).")
 
 
 def versions_table():
@@ -265,10 +278,23 @@ PAGES = {
   "blocks": [
     ("crumb", "[Play](index.html) / What we learn"),
     ("h1", "What we learn from you"),
-    ("lead", "The game sends anonymous usage events while you play. Here is exactly what is in "
-             "them, what is deliberately left out, and how to stop it. Nothing on this page is "
-             "a summary of something less flattering."),
+    ("lead", "The game counts usage anonymously while you play. Here is exactly what is in "
+             "those counts, what is deliberately left out, and how to stop it. Nothing on this "
+             "page is a summary of something less flattering."),
     ("disclose", DISCLOSE_SHORT),
+    ("h2", "How much is this, really?"),
+    ("p", "**Less than almost every other site you will open today.** No cookies. No analytics "
+          "script — no Google Analytics, no tag manager, no third-party pixel of any kind. No "
+          "account, because there is nothing to sign up for. No fingerprinting. Not even the "
+          "page you came from."),
+    ("p", "It is less than a **default web-server access log**, which by default records your "
+          "IP address, the exact page, the time, your full browser string and the site that "
+          "referred you, for every request, on essentially every website in existence."),
+    ("p", "So why the notice at all? Not because this is invasive — it is not. Because the "
+          "thing the game is published *inside* normally sends nothing anywhere, and a "
+          "departure from that promise gets stated plainly wherever the game appears. It would "
+          "be strange to write a game about knowing what software does on your behalf and then "
+          "be vague about what this one does."),
     ("h2", "What is sent"),
     ("ul", [
       "**Which screens you reached** — that you started, got to question 12, finished.",

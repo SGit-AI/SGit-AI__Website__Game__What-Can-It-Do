@@ -474,13 +474,22 @@ main.doc pre.shell{overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere}
 }
 
 /* ---------- telemetry disclosure ---------- */
-/* This is a notice about data leaving the reader's browser, so it is styled to be READ:
-   warm rather than grey, and never collapsed behind a toggle. */
-.disclose{border:1px solid var(--warm);background:#fdf6ec;border-radius:10px;
-  padding:.95rem 1.1rem;margin:1.1rem 0;font-size:.9rem}
-.disclose b{color:var(--warm)}
+/* This used to be an amber warning panel. It was the wrong size for what it says: we
+   count how far people get, with no cookies, no analytics script and nothing that
+   identifies anyone — less than a default server log, and far less than the analytics
+   on almost every site a reader will visit today. A box that shouts implies a risk
+   that is not there, and a page that over-warns about something ordinary teaches
+   readers to skim the next notice too.
+   So: one quiet line, in the reading column, before the thing it describes. Still
+   unmissable if you are looking, still enforced by the release gate, no longer
+   dressed as a hazard. */
+.disclose{font-size:.84rem;color:var(--dim);margin:1rem 0;padding:.1rem 0 .1rem .9rem;
+  border-left:2px solid var(--line2);max-width:66ch}
 .disclose p{margin:0}
-.disclose p + p{margin-top:.5rem}
+.disclose p + p{margin-top:.4rem}
+.disclose b{color:var(--fg);font-weight:600}
+.disclose a{color:var(--accent-dk);border-bottom:1px solid var(--line2)}
+.disclose a:hover{border-bottom-color:var(--accent);text-decoration:none}
 
 /* ---------- maturity rungs ---------- */
 /* The label is a claim with a test behind it (see /maturity/), so it gets one shape and

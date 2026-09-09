@@ -2,7 +2,7 @@
 
 > Who made it, where the answers come from, what it cannot tell you, and how to open the whole thing yourself and check.
 
-*Source: <https://what-can-it-do.games.sgit.ai/about/index.html> · site v0.1.0 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/about/index.html> · site v0.1.1 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 
