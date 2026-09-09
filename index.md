@@ -2,7 +2,7 @@
 
 > A five-minute game. Name the AI assistant you use, and answer forty questions about what it can do — and whether you wanted it to. You score for how well you know what you know. Free, no sign-up.
 
-*Source: <https://what-can-it-do.games.sgit.ai/index.html> · site v0.4.1 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/index.html> · site v0.5.0 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 
@@ -12,7 +12,7 @@ below point at them.*
 
 You have given an AI assistant access to something — your laptop, a repository, a mailbox, a cloud account. This is a five-minute game about whether you can predict what it can do with that. Most people cannot, in both directions.
 
-*[A live vault surface here in the HTML page — the game running out of vault `4evnlwrj`. In this markdown twin, [open it in the vault UI](https://dev.vault.sgraph.ai/#f94c8b1d42352d95703ac3d39032735d9b4e388d16ab5b87c948928d8e111118%3A4evnlwrj).]*
+*[A live vault surface here in the HTML page — the game running out of vault `pg87npy3`. In this markdown twin, [open it in the vault UI](https://dev.vault.sgraph.ai/#cf04d8a9bac6185dcb71e9c6f19ae13238b6434780324b1873504f2d6f7b505f%3Apg87npy3).]*
 
 ## What actually happens
 

@@ -882,10 +882,12 @@ def pages(root, ctx):
               "share of the set — those are the engine's, and they are what make one pack's "
               "scores comparable with another's."),
         ("h2", "For the game"),
-        ("p", "The game currently vendors this data at build time with a dated snapshot, and takes "
-              "`?live=1` to fetch instead. Pointing the live path at this pack's base URL is the "
-              "handover — and the manifest's hash is what tells a running game whether its "
-              "snapshot is behind."),
+        ("p", "Since its vault v1.0.0 (9 September 2026) the game reads this pack on every load: "
+              "`pack.json` first, then the files, over CORS. Its footer names the pack version and "
+              "hash it read. Its build fetches the same files, hashes them in the order `contents` "
+              "lists, refuses a mismatch with `content_hash`, and inlines the verified copy as the "
+              "fallback for a page that cannot reach this site — labelled as a snapshot, with the "
+              "hash, so the two are never confused. `?pack=<url>` points the game at another pack."),
         ("p", f"[The folder on GitHub]({GH_BLOB}) · [how to contribute](map/contribute/index.html)"),
       ]}
     return P, pack
@@ -925,6 +927,9 @@ def write_pack(root, version, pack):
                           "ceiling": "ceiling.json"},
             "mandates": "mandates/index.json",
         },
+        # every file the hash covers, in the order it was hashed — so a consumer can fetch the pack
+        # and verify it against content_hash rather than take the hash on trust; the game's build does
+        "contents": [p.relative_to(d).as_posix() for p in files],
         "counts": {
             "profiles": len(pack["profiles"]),
             "capabilities": len(pack["caps"]),

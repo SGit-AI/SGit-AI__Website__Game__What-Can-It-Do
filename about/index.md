@@ -2,7 +2,7 @@
 
 > Who made it, where the answers come from, what it cannot tell you, and how to open the whole thing yourself and check.
 
-*Source: <https://what-can-it-do.games.sgit.ai/about/index.html> · site v0.4.1 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/about/index.html> · site v0.5.0 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 
@@ -29,9 +29,9 @@ That list is copied from the game's own source, where it is called the *does-not
 
 ## Open the whole thing
 
-The game is published as an **encrypted vault**: the questions, the scoring engine, the automated tests, the data it runs on, and the build script. Not a description of them — the actual files, which is what makes any of the claims above checkable.
+The game is published as an **encrypted vault**: the scoring engine, the automated tests, the build script, and the readable source. Not a description of them — the actual files, which is what makes any of the claims above checkable. The data it runs on is [the pack](../data/index.md) on this site, read live on every load, so a row that changes here changes in the game with no copy in between.
 
-[Open the vault read-only in a new tab](https://dev.vault.sgraph.ai/#f94c8b1d42352d95703ac3d39032735d9b4e388d16ab5b87c948928d8e111118%3A4evnlwrj) — no account, no install. The key that opens it is published on [its page at sgit.ai](https://sgit.ai/demos/vaults/agent-permission-games/), alongside a security audit of what is inside it. It is a **read** key: it cannot change anything.
+[Open the vault read-only in a new tab](https://dev.vault.sgraph.ai/#cf04d8a9bac6185dcb71e9c6f19ae13238b6434780324b1873504f2d6f7b505f%3Apg87npy3) — no account, no install. The key that opens it is a **read** key: it cannot change anything. Since 9 September 2026 the game has a vault of its own (`pg87npy3`, v1.0.0); the version that shipped inside the two-game vault described on [its page at sgit.ai](https://sgit.ai/demos/vaults/agent-permission-games/) is locked there on branch `release-2026-09-09`, beside a security audit of what was inside it.
 
 The game you played above is that vault, opened live in this page. There is no copy of it on this site.
 

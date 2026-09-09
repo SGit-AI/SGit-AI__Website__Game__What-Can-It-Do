@@ -2,7 +2,7 @@
 
 > One agent, a grant of 12 capabilities, a mandate of 4, and the 8-capability delta no policy covers — a published simulation where every reply carries its cost before you commit.
 
-*Source: <https://what-can-it-do.games.sgit.ai/licence-to-operate/index.html> · site v0.4.1 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/licence-to-operate/index.html> · site v0.5.0 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 

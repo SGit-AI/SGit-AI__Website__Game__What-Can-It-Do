@@ -312,3 +312,23 @@ the site control) is on the path already.
 *This plan is CC BY 4.0. Every claim about the vault names the file or the release note it
 came from; every claim about Mavs comes from mavsai.ai's own `llms.txt` and should be checked
 with them before it is built on.*
+
+---
+
+## Status — 9 September 2026, end of day
+
+What was executed, against the sections above. Where the plan and what happened differ, what happened is stated.
+
+| Section | Done | Where |
+|---|---|---|
+| §1 the lock | **Done.** Branch `release-2026-09-09` on `4evnlwrj` at v0.25.0 (commit `9fab669bf4cf`), pushed and verified from a fresh clone. | `sgit branch switch release-2026-09-09` |
+| §1 D1 rotate | **Not done, by decision.** `4evnlwrj` keeps its key and id: it is the vault for the next games experiments. | — |
+| §2 new vault | **Done.** `pg87npy3` v1.0.0, *What Can It Do?* alone, reading `data/` from this site on every load; verified snapshot as the fallback; `?pack=<url>` and `?pack=snapshot`; `ideas/`, `what-we-know/`, `telemetry/` with it. Read key `cf04d8a9…7b505f`. | `admin/build/build_pages.py` (`VAULT`, `READKEY`) |
+| §2 D2 signals | **(a) taken.** `signals: false` in the new vault; `/what-we-learn/` now dates the promise to the switch. | vault `telemetry/telemetry.config.json` |
+| §3 wider vault `main` | **Done** as `current` v0.26.1: lane, events, notice, `ideas/`, `what-we-know/` removed; `what-can-it-do/` is a pointer; every manifest `permissions: {}`; root `build.mjs` with tripwires. Cost stated on games.sgit.ai: the floor plan's profile handover does not cross a vault boundary. | vault `4evnlwrj` |
+| §4 propose/browse vault | Not started. | — |
+| §5 packs on the site | Started: `data/pack.json` lists `contents` in hashing order, and the game verifies against `content_hash`. No `packs.json` registry, no *Load a pack* control yet. | `admin/build/map_pages.py` |
+| §6 Mavs PoC | Not started; needs the Mavs input session. | — |
+| §7 credentials | The new vault's key was generated in-session and sealed with `sgit pki encrypt` to the *Games telemetry* key (`sha256:ae79ec1b3a9cde91`); a first vault, `k4nw8toe`, was abandoned after its passphrase was printed by `sgit vault info` in the session — it holds an identical tree, nothing points at it, and it can be deleted with `sgit vault delete-on-remote`. Both published read keys are in `PUBLISHED` in both sites' `validate.js`. | — |
+
+Not yet updated: the catalogue page at `sgit.ai/demos/vaults/agent-permission-games/`, which describes the two-game vault at v0.16.1 and should name both vaults.

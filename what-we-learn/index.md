@@ -2,7 +2,7 @@
 
 > Exactly what the game sends while you play, what it deliberately does not send, what it can and cannot prove, and how to switch it off.
 
-*Source: <https://what-can-it-do.games.sgit.ai/what-we-learn/index.html> · site v0.4.1 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/what-we-learn/index.html> · site v0.5.0 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 
@@ -35,7 +35,7 @@ So why the notice at all? Not because this is invasive — it is not. Because th
 ## What is deliberately not sent
 
 - **No name, no email, no account** — the game has none to send.
-- **No fingerprint.** No browser fingerprinting of any kind.
+- **No fingerprint.** No browser fingerprinting of any kind. The sender *can* compute one; the switch that would turn it on (`signals` in the vault's `telemetry/telemetry.config.json`) ships **off** since the game's vault v1.0.0, 9 September 2026, and the vault's own telemetry page says so.
 - **No URL and no referrer** — not the page you came from, not the link you followed.
 - **Not your full browser string, not your screen size.**
 - **Nothing you type.** The game has a chat panel; the fact that you used it is counted, the words are not sent and are not stored.

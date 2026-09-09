@@ -55,7 +55,7 @@ contributing.
 
 ## The game is embedded, not copied
 
-It lives in encrypted vault `4evnlwrj` (v0.16.1). `assets/vault-app-embed.js` opens it over
+It lives in encrypted vault `pg87npy3` (v1.0.0, 9 September 2026 — its own vault since then; the version that shipped inside the two-game vault `4evnlwrj` is locked there on branch `release-2026-09-09`). The game reads `data/` from this site on every load. `assets/vault-app-embed.js` opens it over
 the SG/Vault **embed protocol**: load the vault host in an iframe, wait for it to report
 ready, then hand over the read key by `postMessage` with the target origin pinned — so the
 credential never appears in a URL, and therefore never in browser history, a Referer header,
@@ -78,7 +78,7 @@ root is hand-edited. Every push to `dev` runs **validate → tag → deploy**.
 
 ## Credentials
 
-The read key for vault `4evnlwrj` is published on purpose — it is what lets a player open the
+The read key for vault `pg87npy3` is published on purpose — it is what lets a player open the
 game's source and check it. It cannot write. The vault key is not published and never will be.
 
 ## Licence

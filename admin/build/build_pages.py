@@ -26,10 +26,12 @@ import map_pages  # noqa: E402
 ROOT = Path(__file__).resolve().parents[2]
 VERSION = (ROOT / "admin/build/version.txt").read_text().strip()
 
-# The games vault, read-only, published on purpose. See the note in the sibling site's
-# build_pages.py and in validate.js: this is a READ key. It cannot write.
-VAULT = "4evnlwrj"
-READKEY = "f94c8b1d42352d95703ac3d39032735d9b4e388d16ab5b87c948928d8e111118"
+# The game's own vault since 9 September 2026 (v1.0.0), read-only, published on purpose. See the
+# note in the sibling site's build_pages.py and in validate.js: this is a READ key. It cannot
+# write. The version that shipped inside the games vault 4evnlwrj is locked there on branch
+# release-2026-09-09; the current game reads the pack from this site instead of carrying a copy.
+VAULT = "pg87npy3"
+READKEY = "cf04d8a9bac6185dcb71e9c6f19ae13238b6434780324b1873504f2d6f7b505f"
 VAULT_UI = f"https://dev.vault.sgraph.ai/#{READKEY}%3A{VAULT}"
 CONCEPT_SITE = "https://games.sgit.ai"
 # Where a player goes after the game. The game surfaces a delta and can do nothing about
@@ -135,6 +137,14 @@ FOOTER = [
 ]
 
 VERSION_LOG = [
+    ("v0.5.0", "2026-09-09",
+     "The game reads this pack, live. The embed now opens the game's own vault (pg87npy3, "
+     "v1.0.0), which fetches data/pack.json on every load and falls back to a verified "
+     "snapshot only when this site cannot be reached; the games vault 4evnlwrj keeps the 9 "
+     "September version locked on branch release-2026-09-09 and sends nothing from v0.26.0. "
+     "data/pack.json now lists every file it hashes, in hashing order, so a consumer can verify "
+     "the pack it fetched against content_hash; the game's build does. what-we-learn dates the "
+     "no-fingerprinting promise to the switch that keeps it."),
     ("v0.4.1", "2026-09-09",
      "Publishes the plan for what comes next, as a brief: the vault split — a locked 9 Sep "
      "branch, a new vault for this game alone that reads the pack live, the tracking removed "
@@ -549,7 +559,10 @@ PAGES = {
     ("h2", "What is deliberately not sent"),
     ("ul", [
       "**No name, no email, no account** — the game has none to send.",
-      "**No fingerprint.** No browser fingerprinting of any kind.",
+      "**No fingerprint.** No browser fingerprinting of any kind. The sender *can* compute one; "
+      "the switch that would turn it on (`signals` in the vault's `telemetry/telemetry.config.json`) "
+      "ships **off** since the game's vault v1.0.0, 9 September 2026, and the vault's own "
+      "telemetry page says so.",
       "**No URL and no referrer** — not the page you came from, not the link you followed.",
       "**Not your full browser string, not your screen size.**",
       "**Nothing you type.** The game has a chat panel; the fact that you used it is counted, "
@@ -612,13 +625,17 @@ PAGES = {
     ("p", "That list is copied from the game's own source, where it is called the "
           "*does-not-prove* list. We would rather you read it here than discover it later."),
     ("h2", "Open the whole thing"),
-    ("p", "The game is published as an **encrypted vault**: the questions, the scoring engine, "
-          "the automated tests, the data it runs on, and the build script. Not a description "
-          "of them — the actual files, which is what makes any of the claims above checkable."),
+    ("p", "The game is published as an **encrypted vault**: the scoring engine, the automated "
+          "tests, the build script, and the readable source. Not a description of them — the "
+          "actual files, which is what makes any of the claims above checkable. The data it "
+          "runs on is [the pack](data/index.html) on this site, read live on every load, so a "
+          "row that changes here changes in the game with no copy in between."),
     ("p", f"[Open the vault read-only in a new tab]({VAULT_UI}) — no account, no install. The "
-          f"key that opens it is published on [its page at sgit.ai]"
-          f"(https://sgit.ai/demos/vaults/agent-permission-games/), alongside a security audit "
-          f"of what is inside it. It is a **read** key: it cannot change anything."),
+          f"key that opens it is a **read** key: it cannot change anything. Since 9 September "
+          f"2026 the game has a vault of its own (`{VAULT}`, v1.0.0); the version that shipped "
+          f"inside the two-game vault described on [its page at sgit.ai]"
+          f"(https://sgit.ai/demos/vaults/agent-permission-games/) is locked there on branch "
+          f"`release-2026-09-09`, beside a security audit of what was inside it."),
     ("p", "The game you played above is that vault, opened live in this page. There is no copy "
           "of it on this site."),
     ("h2", "Why it exists"),
@@ -677,8 +694,8 @@ PAGES = {
   "blocks": [
     ("crumb", "[Play](index.html) / [About](about/index.html) / Release history"),
     ("h1", "Release history"),
-    ("lead", "This is the history of the **site**. The game has its own, in the vault — 28 "
-             "releases at v0.16.1 — reachable from the menu inside the game."),
+    ("lead", "This is the history of the **site**. The game has its own, in the vault — 42 "
+             "releases, at v1.0.0 since 9 September 2026 — reachable from the menu inside the game."),
     ("raw", versions_table()),
   ]},
 }

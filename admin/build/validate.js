@@ -124,6 +124,9 @@ const PUBLISHED = [
   // and re-published here on purpose: it is what lets a reader open the vault themselves.
   'sgit_rk1_f94c8b1d42352d95703ac3d39032735d9b4e388d16ab5b87c948928d8e111118:4evnlwrj',
   'f94c8b1d42352d95703ac3d39032735d9b4e388d16ab5b87c948928d8e111118:4evnlwrj',
+  // the game's own vault since 9 September 2026 (v1.0.0) — the read key, published on purpose
+  'sgit_rk1_cf04d8a9bac6185dcb71e9c6f19ae13238b6434780324b1873504f2d6f7b505f:pg87npy3',
+  'cf04d8a9bac6185dcb71e9c6f19ae13238b6434780324b1873504f2d6f7b505f:pg87npy3',
   // Licence to Operate (posrhzp3), read-only. Published on
   // sgit.ai/demos/vaults/licence-to-operate/ — the worked example of the delta the game
   // hands a player, embedded on /what-next/.

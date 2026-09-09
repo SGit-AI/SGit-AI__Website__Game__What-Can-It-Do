@@ -2,7 +2,7 @@
 
 > The map as JSON at a stable URL with CORS: primitives, profiles, reductions, ceiling, mesh, questions and mandates, versioned together. This is what the game reads.
 
-*Source: <https://what-can-it-do.games.sgit.ai/data/index.html> · site v0.4.1 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/data/index.html> · site v0.5.0 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 
@@ -41,7 +41,7 @@ What a customised pack changes: which profiles the picker offers, what each row 
 
 ## For the game
 
-The game currently vendors this data at build time with a dated snapshot, and takes `?live=1` to fetch instead. Pointing the live path at this pack's base URL is the handover — and the manifest's hash is what tells a running game whether its snapshot is behind.
+Since its vault v1.0.0 (9 September 2026) the game reads this pack on every load: `pack.json` first, then the files, over CORS. Its footer names the pack version and hash it read. Its build fetches the same files, hashes them in the order `contents` lists, refuses a mismatch with `content_hash`, and inlines the verified copy as the fallback for a page that cannot reach this site — labelled as a snapshot, with the hash, so the two are never confused. `?pack=<url>` points the game at another pack.
 
 [The folder on GitHub](https://github.com/SGit-AI/SGit-AI__Website__Game__What-Can-It-Do/blob/dev/data/) · [how to contribute](../map/contribute/index.md)
 
