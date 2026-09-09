@@ -203,23 +203,30 @@ def _slug(s):
 # chrome
 # ---------------------------------------------------------------------------
 
+def _nav_href(href, up):
+    """A nav entry may point off-site (the parent project, a sibling). The footer has always
+    handled that; the nav did not, and quietly emitted `../https://…` — which the link check
+    caught the moment one was added. Same rule in both places now."""
+    return href if href.startswith(("http", "mailto:", "#")) else up + href
+
+
 def nav_html(site, nav, rel, up, version):
     groups = []
     for label, own, subs, prefixes in nav:
         active = rel == own or any(rel.startswith(p) for p in prefixes)
         links = "\n".join(
-            f'      <a class="sl{" here" if h == rel else ""}" href="{up}{h}">{t}</a>'
+            f'      <a class="sl{" here" if h == rel else ""}" href="{_nav_href(h, up)}">{t}</a>'
             for t, h in subs)
         if subs:
             groups.append(
                 '    <div class="ni ni-has">\n'
-                f'      <a class="nl{" here" if active else ""}" href="{up}{own}">{label}'
+                f'      <a class="nl{" here" if active else ""}" href="{_nav_href(own, up)}">{label}'
                 '<span class="caret">&#9662;</span></a>\n'
                 f'      <div class="sub">\n{links}\n      </div>\n'
                 "    </div>")
         else:
             groups.append(f'    <div class="ni"><a class="nl{" here" if active else ""}" '
-                          f'href="{up}{own}">{label}</a></div>')
+                          f'href="{_nav_href(own, up)}">{label}</a></div>')
     brand, dot = site["brand"]
     return (
         '<nav class="site"><div class="row">\n'

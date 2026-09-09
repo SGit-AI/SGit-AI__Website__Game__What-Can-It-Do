@@ -2,7 +2,7 @@
 
 > A five-minute game. Name the AI assistant you use, and answer forty questions about what it can do — and whether you wanted it to. You score for how well you know what you know. Free, no sign-up.
 
-*Source: <https://what-can-it-do.games.sgit.ai/index.html> · site v0.2.0 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/index.html> · site v0.3.0 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 
@@ -11,8 +11,6 @@ below point at them.*
 # Do you know what your AI agent can actually do?
 
 You have given an AI assistant access to something — your laptop, a repository, a mailbox, a cloud account. This is a five-minute game about whether you can predict what it can do with that. Most people cannot, in both directions.
-
-> This game counts usage anonymously — which screens people reach, which answers are common. No cookies, no analytics script, nothing that identifies you or your machine, and a pause switch on every screen. [What is sent](what-we-learn/index.md).
 
 *[A live vault surface here in the HTML page — the game running out of vault `4evnlwrj`. In this markdown twin, [open it in the vault UI](https://dev.vault.sgraph.ai/#f94c8b1d42352d95703ac3d39032735d9b4e388d16ab5b87c948928d8e111118%3A4evnlwrj).]*
 
@@ -47,6 +45,8 @@ Then the gap between the two: the things it can do that you did not want, split 
 No account. No email. Nothing is saved between visits — close the tab and the run is gone. The game runs entirely in your browser: the scoring is arithmetic, there is no model deciding whether you were right. The only thing that leaves your browser is the anonymous counting described above, and you can switch it off.
 
 Send it to someone: **`what-can-it-do.games.sgit.ai`**
+
+> This game counts usage anonymously — which screens people reach, which answers are common. No cookies, no analytics script, nothing that identifies you or your machine, and a pause switch on every screen. [What is sent](what-we-learn/index.md).
 
 ---
 

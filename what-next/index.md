@@ -2,7 +2,7 @@
 
 > You finished the game and you have a list of things your agent can do that you did not want. You cannot un-decide them. Here is what the decision actually looks like, and where it gets made.
 
-*Source: <https://what-can-it-do.games.sgit.ai/what-next/index.html> · site v0.2.0 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/what-next/index.html> · site v0.3.0 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 
@@ -47,17 +47,7 @@ It starts from the same place this page does: [there is no deny button](https://
 
 ## What it looks like when the delta has a price
 
-There is a published simulation of exactly this, and it is the best answer to *so what?* that we have. One agent with a **grant of 12 capabilities**, a **mandate of 4** — read the customer's record, search the help centre, draft a reply, never send it — and the **8-capability delta** in between, which includes sending mail and running shell commands. Nobody asked for those. Nothing insures them. The agent can reach them.
-
-Then it makes you spend it. A customer cannot log in; you pick the reply; every option shows its cost before you commit — one inside the band, one that draws on the pool, one outside cover entirely. It answers *does this agent have the licence to operate* by letting you find out.
-
-> This one does **not** send anything anywhere — it is a different vault, with no telemetry at all. It also asks for no write permission of any kind, so the app simulating spending against a policy is structurally unable to edit the policy. Nothing you do in it changes anything.
-
-*[A live vault surface here in the HTML page — the game running out of vault `posrhzp3`. In this markdown twin, [open it in the vault UI](https://dev.vault.sgraph.ai/#d990a52efb9af32c8463e2962f3ca5ccf92b3b6e8ea788e55009073c29b4da29%3Aposrhzp3).]*
-
-[Open it in its own tab](https://dev.vault.sgraph.ai/#d990a52efb9af32c8463e2962f3ca5ccf92b3b6e8ea788e55009073c29b4da29%3Aposrhzp3) — it is an interactive simulation and it has far more room there. [The full write-up](https://sgit.ai/demos/vaults/licence-to-operate/index.html), including the audit of what is inside it, is on sgit.ai.
-
-> **It says it is simulated, on the surface, while you use it:** *"the terms are real files in this vault; the replies are scripted; the numbers are made up."* The structure is the real part — the grant, the mandate, the delta, and a policy that only ever covered the mandate.
+There is a published simulation of exactly this, and it is the best answer to *so what?* that we have: one agent with a grant of 12 capabilities, a mandate of 4, and the 8-capability delta in between — where every reply you choose carries its cost before you commit. [Play it here](../licence-to-operate/index.md).
 
 ---
 

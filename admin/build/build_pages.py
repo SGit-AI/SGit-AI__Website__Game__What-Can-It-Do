@@ -80,7 +80,11 @@ NAV = [
     ("Play", "index.html", [], ()),
     ("How it's scored", "how-it-is-scored/index.html", [], ("how-it-is-scored/",)),
     ("Some are impossible", "the-ceiling/index.html", [], ("the-ceiling/",)),
-    ("What next", "what-next/index.html", [], ("what-next/",)),
+    ("What next", "what-next/index.html", [
+        ("What to do next", "what-next/index.html"),
+        ("Licence to Operate — the delta, priced", "licence-to-operate/index.html"),
+        ("RiskMandate.ai &#8599;", RM),
+    ], ("what-next/", "licence-to-operate/")),
     ("About", "about/index.html", [
         ("About the game", "about/index.html"),
         ("What we learn from you", "what-we-learn/index.html"),
@@ -95,6 +99,7 @@ FOOTER = [
         ("How it's scored", "how-it-is-scored/index.html"),
         ("Why some are impossible", "the-ceiling/index.html"),
         ("What to do next", "what-next/index.html"),
+        ("Licence to Operate", "licence-to-operate/index.html"),
     ]),
     ("Straight answers", [
         ("What we learn from you", "what-we-learn/index.html"),
@@ -110,6 +115,18 @@ FOOTER = [
 ]
 
 VERSION_LOG = [
+    ("v0.3.0", "2026-09-09",
+     "RiskMandate and Licence to Operate move into the top menu, and the notice moves off the "
+     "top of the front page. This is the site that needs those references — it is the one a "
+     "player lands on — but they belong in the nav and on their own pages, not stacked above "
+     "the game. What next is now a menu: what to do next, Licence to Operate, and RiskMandate "
+     "itself. Licence to Operate gets a page of its own, with the simulation embedded and the "
+     "three numbers that make it worth playing — a grant of 12, a mandate of 4, and the "
+     "8-capability delta no policy covers, which is the same shape as the list this game hands "
+     "you, except somebody has put a price on each one. The front page is otherwise untouched, "
+     "because it works: the idea, then the game, immediately. The usage notice now sits at the "
+     "foot of it rather than between the headline and the game, where it was a distraction "
+     "from something ordinary — the gate still requires it on the page, just not in the way."),
     ("v0.2.0", "2026-09-09",
      "What to do next — the page the game was missing. A player finishes with a list of things "
      "their agent can do that they did not want, and until now the site said nothing about "
@@ -174,7 +191,6 @@ PAGES = {
     ("lead", "You have given an AI assistant access to something — your laptop, a repository, "
              "a mailbox, a cloud account. This is a five-minute game about whether you can "
              "predict what it can do with that. Most people cannot, in both directions."),
-    ("disclose", DISCLOSE_SHORT),
     ("embed", {"vault": VAULT, "readkey": READKEY, "open_url": VAULT_UI,
                "chromeless": True, "breakout": True}),
     ("h2", "What actually happens"),
@@ -224,6 +240,12 @@ PAGES = {
           "is no model deciding whether you were right. The only thing that leaves your "
           "browser is the anonymous counting described above, and you can switch it off."),
     ("p", f"Send it to someone: **`{SITE['host']}`**"),
+    # The notice lives here, at the foot of the page, not between the headline and the game.
+    # What it describes is anonymous counting with no cookies and no analytics script — less
+    # than a default server log — and putting that where a reader has to step over it to reach
+    # the game treats an ordinary thing as an obstacle. The gate still requires it on any page
+    # that mounts the game; it does not require it to be in the way.
+    ("disclose", DISCLOSE_SHORT),
   ]},
 # ---------------------------------------------------------------------------
 "how-it-is-scored/index.html": {
@@ -376,28 +398,71 @@ PAGES = {
           f"decision from a named owner — **accept, fund, or fix**."),
     ("h2", "What it looks like when the delta has a price"),
     ("p", "There is a published simulation of exactly this, and it is the best answer to *so "
-          "what?* that we have. One agent with a **grant of 12 capabilities**, a **mandate of "
-          "4** — read the customer's record, search the help centre, draft a reply, never send "
-          "it — and the **8-capability delta** in between, which includes sending mail and "
-          "running shell commands. Nobody asked for those. Nothing insures them. The agent can "
-          "reach them."),
-    ("p", "Then it makes you spend it. A customer cannot log in; you pick the reply; every "
-          "option shows its cost before you commit — one inside the band, one that draws on the "
-          "pool, one outside cover entirely. It answers *does this agent have the licence to "
-          "operate* by letting you find out."),
-    ("disclose", "This one does **not** send anything anywhere — it is a different vault, with "
-                 "no telemetry at all. It also asks for no write permission of any kind, so the "
-                 "app simulating spending against a policy is structurally unable to edit the "
-                 "policy. Nothing you do in it changes anything."),
+          "what?* that we have: one agent with a grant of 12 capabilities, a mandate of 4, and "
+          "the 8-capability delta in between — where every reply you choose carries its cost "
+          "before you commit. [Play it here](licence-to-operate/index.html)."),
+  ]},
+# ---------------------------------------------------------------------------
+"licence-to-operate/index.html": {
+  "title": "Licence to Operate — the delta, priced",
+  "description": "One agent, a grant of 12 capabilities, a mandate of 4, and the 8-capability "
+                 "delta no policy covers — a published simulation where every reply carries "
+                 "its cost before you commit.",
+  "blocks": [
+    ("crumb", "[Play](index.html) / [What next](what-next/index.html) / Licence to Operate"),
+    ("h1", "Licence to Operate — the delta, with a price on it"),
+    ("lead", "The game shows you a gap. This shows you what the gap costs. One agent, one "
+             "customer who cannot log in, and three replies — each with its price on it before "
+             "you commit."),
+    ("h2", "Three numbers, and the gap between two of them"),
+    ("table", ["", "What it is", "Here"],
+     [["**Can do** — the grant", "everything the agent is technically able to do",
+       "**12 capabilities**"],
+      ["**May do** — the mandate", "what the user actually expects, and the only thing the "
+       "policy insures", "**4** — read the customer's record, search the help centre, "
+       "generate, and *draft, never send*"],
+      ["**The delta**", "inside the agent's reach, outside its authority. **No policy covers "
+       "these**", "**8** — including sending mail and running shell commands"]]),
+    ("p", "Written out like that it stops being abstract. The mandate is *answer a customer's "
+          "question from their own record and the help centre, and draft — never send — a "
+          "reply.* The grant includes sending mail. Nobody asked for that; nothing insures it; "
+          "the agent can reach it."),
+    ("p", "**That is the same shape as the list the game hands you** — the things it can do "
+          "that you did not want it to. The difference is that here somebody has put a number "
+          "on each one."),
+    ("h2", "Then it makes you spend it"),
+    ("p", "A customer cannot log in. You are the agent, and you pick the reply. Each option "
+          "shows its cost first: *look up her record* (small, inside the band), *read her "
+          "record plus two linked accounts and write a long answer* (larger — it draws on the "
+          "pool), or *send a password reset right now* — which is outside the mandate "
+          "entirely, and no policy covers it."),
+    ("p", "Underneath is a real rate table: a normal band, an ask-above threshold, a "
+          "per-action ceiling, a pool with an untouchable reserve, and a premium per interval. "
+          "You can let the policy lapse, reinstate it, or trigger a repricing and watch the "
+          "board move. It answers *does this agent have the licence to operate* by letting you "
+          "find out."),
     ("embed", {"vault": LTO_VAULT, "readkey": LTO_READKEY, "open_url": LTO_UI, "breakout": True,
                "label": "Licence to Operate — the simulation, running out of its vault"}),
-    ("p", f"[Open it in its own tab]({LTO_UI}) — it is an interactive simulation and it has far "
-          f"more room there. [The full write-up]({LTO_PAGE}), including the audit of what is "
-          f"inside it, is on sgit.ai."),
-    ("note", "**It says it is simulated, on the surface, while you use it:** *\"the terms are "
+    ("p", f"[Open it in its own tab]({LTO_UI}) — it is an interactive simulation and has far "
+          f"more room there."),
+    ("h2", "What is real and what is not"),
+    ("note", "The simulation says so on its own surface, while you use it: *\"the terms are "
              "real files in this vault; the replies are scripted; the numbers are made up.\"* "
-             "The structure is the real part — the grant, the mandate, the delta, and a policy "
+             "The unit of account is `cr`, and it states plainly that it is not money. **The "
+             "structure is the real part** — the grant, the mandate, the delta, and a policy "
              "that only ever covered the mandate."),
+    ("disclose", "This one sends **nothing at all** — a different vault from the game, with no "
+                 "usage counting of any kind. It also asks for **no write permission**, so the "
+                 "app simulating spending against a policy is structurally unable to edit the "
+                 "policy it is spending against. Not because it is well behaved: because it "
+                 "never asked for the permission that would let it."),
+    ("h2", "Where it comes from"),
+    ("p", f"A published encrypted vault, openable by anyone — the terms, the scenarios, the "
+          f"rate table and the fixtures are real files you can read. [The full write-up, "
+          f"including an independent audit of what is inside it]({LTO_PAGE}) is on sgit.ai."),
+    ("p", f"It is part of the same project as this game: [RiskMandate]({RM}), *the business "
+          f"risk layer for autonomous systems*. [What to do next](what-next/index.html) is the "
+          f"short version of how the two connect."),
   ]},
 # ---------------------------------------------------------------------------
 "what-we-learn/index.html": {

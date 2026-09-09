@@ -146,9 +146,13 @@ for (const f of files) {
 }
 
 // --- 5. an embed page carries its disclosure ------------------------------
-// The games send anonymous usage events. The vault says so on every one of its own pages;
-// a page of ours that mounts the game and does not is a page that quietly extends the
-// collection while looking like it does not. Mechanical, so it cannot be forgotten.
+// The games count usage anonymously. A page of ours that mounts one and says nothing is a
+// page that quietly extends the collection while looking like it does not — the exact defect
+// sgit.ai published against this vault, where two pages read "nothing sent" on the same
+// screen as events being sent. So the check is presence, not position: the notice belongs on
+// the page, and it belongs at the FOOT of it. What it describes is less than a default
+// server log, and a notice a reader has to step over to reach the game treats something
+// ordinary as an obstacle — which is its own kind of dishonesty about the size of the thing.
 for (const f of htmlFiles) {
   const t = read(f);
   if (t.includes('class="sgv-app') && !t.includes('class="disclose"')) {
