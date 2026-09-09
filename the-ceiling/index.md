@@ -2,7 +2,7 @@
 
 > Roughly two in five questions are things no AI agent can do anywhere. They are in the game on purpose, and each one names the thing that stops it.
 
-*Source: <https://what-can-it-do.games.sgit.ai/the-ceiling/index.html> · site v0.4.0 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/the-ceiling/index.html> · site v0.4.1 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 

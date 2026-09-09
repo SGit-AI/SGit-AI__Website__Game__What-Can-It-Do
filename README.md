@@ -28,6 +28,7 @@ mounts the game without one.
 - `map/` — **generated**: the grants matrix, a page per product, per capability, per mandate,
   the deltas, the ceiling, the questions, how to contribute
 - `data/` — the pack the map is generated from, and the manifest the game reads
+- `briefs/` — plans, open for review: `00__PLAN__vaults-and-packs.md` is the vault split, question packs, and the Mavs PoC
 
 ## The map, and the data pack
 

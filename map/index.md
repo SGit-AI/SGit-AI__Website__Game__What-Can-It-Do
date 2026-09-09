@@ -2,7 +2,7 @@
 
 > 23 capabilities across 9 products and setups: what each one can reach, what stands in the way, and how sure anyone is. Generated from the data pack; change it with a pull request.
 
-*Source: <https://what-can-it-do.games.sgit.ai/map/index.html> · site v0.4.0 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/map/index.html> · site v0.4.1 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 

@@ -2,7 +2,7 @@
 
 > A starting mandate for ci: Check out the code, build it, run the tests, fetch what it needs, and — when a release is cut — push the tag. I did not want it reading cred…
 
-*Source: <https://what-can-it-do.games.sgit.ai/map/mandates/ci-job/index.html> · site v0.4.0 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/map/mandates/ci-job/index.html> · site v0.4.1 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 

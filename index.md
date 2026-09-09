@@ -2,7 +2,7 @@
 
 > A five-minute game. Name the AI assistant you use, and answer forty questions about what it can do — and whether you wanted it to. You score for how well you know what you know. Free, no sign-up.
 
-*Source: <https://what-can-it-do.games.sgit.ai/index.html> · site v0.4.0 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/index.html> · site v0.4.1 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 

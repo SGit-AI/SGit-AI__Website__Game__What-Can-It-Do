@@ -2,7 +2,7 @@
 
 > The map as JSON at a stable URL with CORS: primitives, profiles, reductions, ceiling, mesh, questions and mandates, versioned together. This is what the game reads.
 
-*Source: <https://what-can-it-do.games.sgit.ai/data/index.html> · site v0.4.0 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/data/index.html> · site v0.4.1 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 

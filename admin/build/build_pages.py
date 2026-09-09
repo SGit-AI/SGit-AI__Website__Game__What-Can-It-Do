@@ -135,6 +135,14 @@ FOOTER = [
 ]
 
 VERSION_LOG = [
+    ("v0.4.1", "2026-09-09",
+     "Publishes the plan for what comes next, as a brief: the vault split — a locked 9 Sep "
+     "branch, a new vault for this game alone that reads the pack live, the tracking removed "
+     "from the wider vault — plus question packs on the site, a vault to browse and propose "
+     "changes to the map over an append lane, and the Mavs PoC as the same game on a different "
+     "pack. Written against the vault at v0.23.2, whose v0.21.0 release started sending three "
+     "browser fingerprints: this site's what-we-learn page still says it does not, and the "
+     "plan's second decision is about which side gives."),
     ("v0.4.0", "2026-09-09",
      "The map. The claims about what each product can reach — nine profiles, tool by tool, "
      "with an evidence tier and a control tier on every row — move out of the vault and into "

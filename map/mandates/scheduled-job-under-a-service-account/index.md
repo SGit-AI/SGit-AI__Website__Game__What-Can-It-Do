@@ -2,7 +2,7 @@
 
 > A starting mandate for service: Run on schedule, read its own data, talk to the APIs it was built for with the account it was given, and stop. I did not want it spending mo…
 
-*Source: <https://what-can-it-do.games.sgit.ai/map/mandates/scheduled-job-under-a-service-account/index.html> · site v0.4.0 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/map/mandates/scheduled-job-under-a-service-account/index.html> · site v0.4.1 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 
