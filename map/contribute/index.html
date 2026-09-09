@@ -23,7 +23,7 @@
   <a class="brand" href="../../index.html">what-can-it-do<span>.games.sgit.ai</span></a>
   <a class="parent" href="https://games.sgit.ai" title="games.sgit.ai — why this family builds games, and the others it has">↗ part of <b>games.sgit.ai</b></a>
   <span class="stage-pill">about 5 minutes</span>
-  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.6.0</a>
+  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.7.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni"><a class="nl" href="../../index.html">Play</a></div>
@@ -73,7 +73,12 @@
 <main class="doc">
   <p class="crumb"><a href="../../index.html">Play</a> / <a href="../../map/index.html">The map</a> / Contribute</p>
   <h1>Change the map</h1>
-  <p class="lead">Everything on the map is generated from JSON in one folder of one repository. Change the JSON, open a pull request, and the pages change on the next build. There is no other way to edit them, on purpose.</p>
+  <p class="lead">Everything on the map is generated from JSON in one folder of one repository. Change the JSON, open a pull request, and the pages change on the next build. There is no other way to edit them, on purpose — but there is a way to open that pull request without a GitHub account, below.</p>
+  <h2 id="without-a-github-account-the-map-vault">Without a GitHub account: the map vault</h2>
+  <p>The same map, drawn live from this pack inside an encrypted vault, and on every row — a grant row, a cell the profile does not list, a mandate line, a reduction, an entry above the ceiling — a form that asks what that row can answer and sends one sealed record over a write-only lane. A drain on this site turns each record into a pull request against <code>data/</code>, with your reasoning as the body and nobody named; the row then shows <em>proposals on this row: n open</em>.</p>
+  <div class="sgv-app sgv-breakout" data-vault="mxhepww5" data-readkey="3e1009cc489f07e9b1ffa9ff08087a5ff23f60367451708860ecde9439128816" data-label="The map — view, browse, propose — running out of its vault"></div>
+  <div class="disclose">The map vault sends <b>nothing</b> unless you press <em>Send</em> on a proposal — then one sealed record goes over a write-only lane, with no name and no identity attached. <a href="../../map/contribute/index.html">How a proposal becomes a pull request</a>.</div>
+  <p><a href="https://dev.vault.sgraph.ai/#3e1009cc489f07e9b1ffa9ff08087a5ff23f60367451708860ecde9439128816%3Amxhepww5">Open the map vault read-only in a new tab</a>. Its read key is published on purpose; it cannot write. What it holds is the app and its build, not a copy of the pack.</p>
   <h2 id="what-is-worth-contributing-most-valuable-first">What is worth contributing, most valuable first</h2>
   <ol><li><b>A measurement that replaces a claim.</b> Most rows are <em>derived</em>. Run the probes on a real instance, attach the evidence file, change the row's tier. This is the single most useful thing anyone can do to this map.</li><li><b>A profile that is missing.</b> A product you use, or a setup of one — a container, a corporate-managed desktop, confirmations off. One file under <code>data/profiles/</code>, named <code>&lt;vendor&gt;/&lt;product&gt;/&lt;variant&gt;.json</code>, listed in <code>index.json</code>. Label every row's tier honestly; a derived profile is welcome and says it is derived.</li><li><b>A mandate you disagree with.</b> Every one under <code>data/mandates/</code> is a first draft. Change a row from <em>want</em> to <em>do not want</em>, add a note saying why, and that is an argument the site can show.</li><li><b>A capability the set is missing.</b> Only if it is a new verb, object class or reach — a specific path or host is an instance of an existing one. New primitives need a probe.</li></ol>
   <h2 id="the-files">The files</h2>
@@ -98,7 +103,7 @@
     <p>A game about the gap between what your AI agent <em>can</em> do and what you <em>wanted</em> it to do. Free, no sign-up, nothing stored. <a href="../../about/index.html" style="display:inline;padding:0">Who made it, and how to check what it says</a>.</p>
     <p class="netline"><a href="https://riskmandate.ai"><b>↗ RiskMandate.ai</b></a> — where the delta this game hands you becomes a named owner and a time-bound decision · <a href="https://games.sgit.ai">↗ games.sgit.ai</a> — why we build games · <a href="https://sgit.ai">↗ sgit.ai</a> — the encrypted vault the game is published in · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — where the capability data comes from</p>
     <p class="partnote">This game counts usage anonymously — no cookies, no analytics script, nothing that identifies you, and a pause switch on every screen. <a href="../../what-we-learn/index.html" style="display:inline;padding:0">Exactly what is sent</a>.</p>
-    <p class="verline">site <a href="../../admin/versions.html">v0.6.0</a> · <a href="../../admin/index.html">engineering</a> · <a href="../../llms.txt">llms.txt</a> · CC BY 4.0 · <a href="../../map/contribute/index.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../../admin/versions.html">v0.7.0</a> · <a href="../../admin/index.html">engineering</a> · <a href="../../llms.txt">llms.txt</a> · CC BY 4.0 · <a href="../../map/contribute/index.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The game</h4>
@@ -129,5 +134,6 @@
     <a href="../../llms.txt">llms.txt</a>
   </div>
 </div></footer>
+<script src="../../assets/vault-app-embed.js" defer></script>
 </body>
 </html>

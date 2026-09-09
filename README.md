@@ -29,6 +29,7 @@ mounts the game without one.
   the deltas, the ceiling, the questions, how to contribute
 - `data/` — the pack the map is generated from, and the manifest the game reads
 - `briefs/` — plans, open for review: `00__PLAN__vaults-and-packs.md` is the vault split, question packs, and the Mavs PoC
+- `admin/proposals/drain.py` — turns sealed proposals from the map vault (`mxhepww5`) into pull requests against `data/`, and writes `data/proposals.json`
 
 ## The map, and the data pack
 

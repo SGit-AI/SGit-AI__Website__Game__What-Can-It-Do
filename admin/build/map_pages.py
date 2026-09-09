@@ -42,6 +42,8 @@ GH = "https://github.com/SGit-AI/SGit-AI__Website__Game__What-Can-It-Do"
 GH_EDIT = f"{GH}/edit/dev/data/"
 GH_BLOB = f"{GH}/blob/dev/data/"
 PKI_PROBES = "https://github.com/SGit-AI/SGit-AI__Website__PKI/tree/dev/probes"
+# files beside the pack that the build or the drain writes: never part of the content hash
+GENERATED = ("pack.json", "packs.json", "proposals.json")
 
 # ---------------------------------------------------------------------------
 # vocabularies
@@ -796,7 +798,20 @@ def pages(root, ctx):
         ("h1", "Change the map"),
         ("lead", "Everything on the map is generated from JSON in one folder of one repository. "
                  "Change the JSON, open a pull request, and the pages change on the next build. "
-                 "There is no other way to edit them, on purpose."),
+                 "There is no other way to edit them, on purpose — but there is a way to open that "
+                 "pull request without a GitHub account, below."),
+        ("h2", "Without a GitHub account: the map vault"),
+        ("p", "The same map, drawn live from this pack inside an encrypted vault, and on every row — a "
+              "grant row, a cell the profile does not list, a mandate line, a reduction, an entry above "
+              "the ceiling — a form that asks what that row can answer and sends one sealed record over "
+              "a write-only lane. A drain on this site turns each record into a pull request against "
+              "`data/`, with your reasoning as the body and nobody named; the row then shows *proposals "
+              "on this row: n open*."),
+        ("embed", {"vault": ctx["map_vault"], "readkey": ctx["map_readkey"], "open_url": ctx["map_ui"],
+                   "breakout": True, "label": "The map — view, browse, propose — running out of its vault"}),
+        ("disclose", ctx["map_disclose"]),
+        ("p", f"[Open the map vault read-only in a new tab]({ctx['map_ui']}). Its read key is published on "
+              "purpose; it cannot write. What it holds is the app and its build, not a copy of the pack."),
         ("h2", "What is worth contributing, most valuable first"),
         ("ol", [
           "**A measurement that replaces a claim.** Most rows are *derived*. Run the probes on a "
@@ -909,8 +924,9 @@ def write_pack(root, version, pack):
     """data/pack.json — the manifest the game fetches. Generated: counts and a content hash over
     every file in the pack, so a change anywhere is a new pack version."""
     d = Path(root) / "data"
-    # pack.json is the manifest and packs.json the registry: both generated, neither hashed
-    files = sorted(p for p in d.rglob("*.json") if p.name not in ("pack.json", "packs.json"))
+    # pack.json is the manifest, packs.json the registry, proposals.json the drain's summary: all
+    # generated, none hashed
+    files = sorted(p for p in d.rglob("*.json") if p.name not in GENERATED)
     h = hashlib.sha256()
     for p in files:
         h.update(p.relative_to(d).as_posix().encode())
@@ -962,7 +978,7 @@ def write_pack(root, version, pack):
 def pack_hash(folder):
     """The content hash of a pack folder, by the rule write_pack uses — for a registry entry
     that lives on this site, so its stated hash is recomputed rather than copied."""
-    files = sorted(p for p in Path(folder).rglob("*.json") if p.name not in ("pack.json", "packs.json"))
+    files = sorted(p for p in Path(folder).rglob("*.json") if p.name not in GENERATED)
     h = hashlib.sha256()
     for p in files:
         h.update(p.relative_to(folder).as_posix().encode())

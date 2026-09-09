@@ -23,7 +23,7 @@
   <a class="brand" href="../index.html">what-can-it-do<span>.games.sgit.ai</span></a>
   <a class="parent" href="https://games.sgit.ai" title="games.sgit.ai — why this family builds games, and the others it has">↗ part of <b>games.sgit.ai</b></a>
   <span class="stage-pill">about 5 minutes</span>
-  <a class="ver" href="../admin/versions.html" title="Site release history">v0.6.0</a>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.7.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni"><a class="nl" href="../index.html">Play</a></div>
@@ -81,6 +81,9 @@ node admin/build/validate.js          # the gate CI will run</pre>
   <p>It is the sgit.ai component with the vault-browser surface suppressed, so a player gets a game rather than a file manager. Using the real host rather than the smaller read-only one is what keeps the game's chat panel and its telemetry lane working — the smaller host serves file reads only.</p>
   <h2 id="the-gate">The gate</h2>
   <p>The house checks — version agreement, internal links, canonical host, and a key-leak tripwire — plus one that matters more here than anywhere: <b>a page that mounts the game must carry the telemetry disclosure.</b> Mechanical, and deliberately so. The vault this game lives in once shipped two pages saying <em>nothing sent</em> on the same screen as events being sent; the notice is not something to rely on remembering.</p>
+  <p>Two checks were added on 9 September 2026, each for something that had already gone wrong once: the packs registry must resolve (every entry in <code>data/packs.json</code> carries a block the build read from the pack's own manifest, and a pack on this site hashes to what it says), and the site must say what the vault does (<code>/what-we-learn/</code> states the same <code>signals</code> value the game's vault carries, read from a clone into <code>admin/build/vault-facts.json</code> and dated).</p>
+  <h2 id="the-drain">The drain</h2>
+  <p><code>admin/proposals/drain.py</code> closes the loop from the map vault: it opens each sealed proposal with the lane's key, applies it to <code>data/</code> as a patch, runs this gate, commits on a branch, opens the pull request with the reasoning as its body and nobody named, and writes <code>data/proposals.json</code> — what is open and merged per row — which the vault reads. A proposal the gate refuses is reported, not skipped; a counter-example above the ceiling is put to a maintainer rather than patched.</p>
   <p>Full engineering notes are on the sibling site: <a href="https://games.sgit.ai/admin/index.html">games.sgit.ai/admin</a>.</p>
 </main>
 
@@ -90,7 +93,7 @@ node admin/build/validate.js          # the gate CI will run</pre>
     <p>A game about the gap between what your AI agent <em>can</em> do and what you <em>wanted</em> it to do. Free, no sign-up, nothing stored. <a href="../about/index.html" style="display:inline;padding:0">Who made it, and how to check what it says</a>.</p>
     <p class="netline"><a href="https://riskmandate.ai"><b>↗ RiskMandate.ai</b></a> — where the delta this game hands you becomes a named owner and a time-bound decision · <a href="https://games.sgit.ai">↗ games.sgit.ai</a> — why we build games · <a href="https://sgit.ai">↗ sgit.ai</a> — the encrypted vault the game is published in · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — where the capability data comes from</p>
     <p class="partnote">This game counts usage anonymously — no cookies, no analytics script, nothing that identifies you, and a pause switch on every screen. <a href="../what-we-learn/index.html" style="display:inline;padding:0">Exactly what is sent</a>.</p>
-    <p class="verline">site <a href="../admin/versions.html">v0.6.0</a> · <a href="../admin/index.html">engineering</a> · <a href="../llms.txt">llms.txt</a> · CC BY 4.0 · <a href="../admin/index.md">this page as markdown</a></p>
+    <p class="verline">site <a href="../admin/versions.html">v0.7.0</a> · <a href="../admin/index.html">engineering</a> · <a href="../llms.txt">llms.txt</a> · CC BY 4.0 · <a href="../admin/index.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The game</h4>

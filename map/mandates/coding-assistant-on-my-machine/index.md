@@ -2,7 +2,7 @@
 
 > A starting mandate for cli: I want it to read and change the project I pointed it at, run the build and the tests, commit to that repository, and fetch the packages and…
 
-*Source: <https://what-can-it-do.games.sgit.ai/map/mandates/coding-assistant-on-my-machine/index.html> · site v0.6.0 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/map/mandates/coding-assistant-on-my-machine/index.html> · site v0.7.0 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 

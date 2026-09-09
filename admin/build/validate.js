@@ -132,6 +132,9 @@ const PUBLISHED = [
   // the game's own vault since 9 September 2026 (v1.0.0) — the read key, published on purpose
   'sgit_rk1_cf04d8a9bac6185dcb71e9c6f19ae13238b6434780324b1873504f2d6f7b505f:pg87npy3',
   'cf04d8a9bac6185dcb71e9c6f19ae13238b6434780324b1873504f2d6f7b505f:pg87npy3',
+  // the map vault (view, browse, propose), 9 September 2026 — the read key, published on purpose
+  'sgit_rk1_3e1009cc489f07e9b1ffa9ff08087a5ff23f60367451708860ecde9439128816:mxhepww5',
+  '3e1009cc489f07e9b1ffa9ff08087a5ff23f60367451708860ecde9439128816:mxhepww5',
   // Licence to Operate (posrhzp3), read-only. Published on
   // sgit.ai/demos/vaults/licence-to-operate/ — the worked example of the delta the game
   // hands a player, embedded on /what-next/.
@@ -271,7 +274,7 @@ for (const f of htmlFiles) {
   const origin = pack.base.split('/data/')[0] + '/';
   const hashOf = dir => {
     const byParts = (a, b) => { const pa = a.split('/'), pb = b.split('/'); for (let i = 0; i < Math.min(pa.length, pb.length); i++) if (pa[i] !== pb[i]) return pa[i] < pb[i] ? -1 : 1; return pa.length - pb.length; };
-    const list = walk(dir).filter(x => x.endsWith('.json') && !['pack.json', 'packs.json'].includes(path.basename(x)))
+    const list = walk(dir).filter(x => x.endsWith('.json') && !['pack.json', 'packs.json', 'proposals.json'].includes(path.basename(x)))
       .map(x => path.relative(dir, x).split(path.sep).join('/')).sort(byParts);
     const h = require('crypto').createHash('sha256');
     for (const p of list) { h.update(p); h.update(fs.readFileSync(path.join(dir, p))); }

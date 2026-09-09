@@ -2,7 +2,7 @@
 
 > How to change the map: a row, a profile, a mandate or a correction, as a pull request against the data pack.
 
-*Source: <https://what-can-it-do.games.sgit.ai/map/contribute/index.html> · site v0.6.0 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/map/contribute/index.html> · site v0.7.0 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 
@@ -12,7 +12,17 @@ below point at them.*
 
 # Change the map
 
-Everything on the map is generated from JSON in one folder of one repository. Change the JSON, open a pull request, and the pages change on the next build. There is no other way to edit them, on purpose.
+Everything on the map is generated from JSON in one folder of one repository. Change the JSON, open a pull request, and the pages change on the next build. There is no other way to edit them, on purpose — but there is a way to open that pull request without a GitHub account, below.
+
+## Without a GitHub account: the map vault
+
+The same map, drawn live from this pack inside an encrypted vault, and on every row — a grant row, a cell the profile does not list, a mandate line, a reduction, an entry above the ceiling — a form that asks what that row can answer and sends one sealed record over a write-only lane. A drain on this site turns each record into a pull request against `data/`, with your reasoning as the body and nobody named; the row then shows *proposals on this row: n open*.
+
+*[A live vault surface here in the HTML page — the game running out of vault `mxhepww5`. In this markdown twin, [open it in the vault UI](https://dev.vault.sgraph.ai/#3e1009cc489f07e9b1ffa9ff08087a5ff23f60367451708860ecde9439128816%3Amxhepww5).]*
+
+> The map vault sends **nothing** unless you press *Send* on a proposal — then one sealed record goes over a write-only lane, with no name and no identity attached. [How a proposal becomes a pull request](../../map/contribute/index.md).
+
+[Open the map vault read-only in a new tab](https://dev.vault.sgraph.ai/#3e1009cc489f07e9b1ffa9ff08087a5ff23f60367451708860ecde9439128816%3Amxhepww5). Its read key is published on purpose; it cannot write. What it holds is the app and its build, not a copy of the pack.
 
 ## What is worth contributing, most valuable first
 

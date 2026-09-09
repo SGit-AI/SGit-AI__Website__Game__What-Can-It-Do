@@ -2,7 +2,7 @@
 
 > 25 questions the games ask, with what each is for: the seed of a question pack.
 
-*Source: <https://what-can-it-do.games.sgit.ai/map/questions/index.html> · site v0.6.0 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/map/questions/index.html> · site v0.7.0 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 

@@ -11,7 +11,7 @@
       "about": "https://what-can-it-do.games.sgit.ai/data/index.html",
       "resolved": {
         "_generated": "by the site build, from the pack's manifest — not edited by hand",
-        "version": "v0.6.0",
+        "version": "v0.7.0",
         "content_hash": "sha256:d6d4ba40f1fb1f93f660687e4787ac10c2e1835efeb3929a4c8ad62cee8897ef",
         "files": 27,
         "counts": {

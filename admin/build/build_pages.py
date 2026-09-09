@@ -34,6 +34,15 @@ VERSION = (ROOT / "admin/build/version.txt").read_text().strip()
 VAULT = "pg87npy3"
 READKEY = "cf04d8a9bac6185dcb71e9c6f19ae13238b6434780324b1873504f2d6f7b505f"
 VAULT_UI = f"https://dev.vault.sgraph.ai/#{READKEY}%3A{VAULT}"
+# The map vault (9 September 2026): view and browse this pack, and propose a change to any row
+# without a GitHub account — one sealed record over a write-only lane, which admin/proposals/drain.py
+# turns into a pull request. Read key, published on purpose.
+MAP_VAULT = "mxhepww5"
+MAP_READKEY = "3e1009cc489f07e9b1ffa9ff08087a5ff23f60367451708860ecde9439128816"
+MAP_UI = f"https://dev.vault.sgraph.ai/#{MAP_READKEY}%3A{MAP_VAULT}"
+MAP_DISCLOSE = ("The map vault sends **nothing** unless you press *Send* on a proposal — then one sealed "
+                "record goes over a write-only lane, with no name and no identity attached. "
+                "[How a proposal becomes a pull request](map/contribute/index.html).")
 CONCEPT_SITE = "https://games.sgit.ai"
 # Where a player goes after the game. The game surfaces a delta and can do nothing about
 # it; RiskMandate is the layer that turns one into a named owner and a time-bound
@@ -142,6 +151,16 @@ FOOTER = [
 ]
 
 VERSION_LOG = [
+    ("v0.7.0", "2026-09-09",
+     "A way to argue with any row without a GitHub account. The map vault (mxhepww5, v1.0.0) draws "
+     "this pack's two matrices live and, on every row, offers a form that writes one sealed proposal "
+     "over a write-only lane; it is embedded on the contribute page. admin/proposals/drain.py closes the "
+     "loop: it opens each record with the lane's key, applies it to data/ as a patch, runs the same gate "
+     "every pull request runs, commits it on a branch, opens the pull request with the reasoning as the "
+     "body and nobody named, and publishes data/proposals.json so the vault can say 'proposals on this "
+     "row'. Tested end to end on a copy of this checkout with a record the vault's own lane gate sealed. "
+     "The plan's status is brought up to date: §4 and §5 done, §6 in progress, and a new item from "
+     "9 Sep — region and city are to be sent to the analytics log — recorded with what it implies."),
     ("v0.6.0", "2026-09-09",
      "Packs, on the page packs already live. data/packs.json is the registry — id, name, where "
      "a pack is served — and the build resolves every entry from the pack's own manifest before "
@@ -700,6 +719,18 @@ PAGES = {
           "mounts the game must carry the telemetry disclosure.** Mechanical, and deliberately "
           "so. The vault this game lives in once shipped two pages saying *nothing sent* on the "
           "same screen as events being sent; the notice is not something to rely on remembering."),
+    ("p", "Two checks were added on 9 September 2026, each for something that had already gone wrong "
+          "once: the packs registry must resolve (every entry in `data/packs.json` carries a block the "
+          "build read from the pack's own manifest, and a pack on this site hashes to what it says), and "
+          "the site must say what the vault does (`/what-we-learn/` states the same `signals` value the "
+          "game's vault carries, read from a clone into `admin/build/vault-facts.json` and dated)."),
+    ("h2", "The drain"),
+    ("p", "`admin/proposals/drain.py` closes the loop from the map vault: it opens each sealed "
+          "proposal with the lane's key, applies it to `data/` as a patch, runs this gate, commits on a "
+          "branch, opens the pull request with the reasoning as its body and nobody named, and writes "
+          "`data/proposals.json` — what is open and merged per row — which the vault reads. A proposal "
+          "the gate refuses is reported, not skipped; a counter-example above the ceiling is put to a "
+          "maintainer rather than patched."),
     ("p", "Full engineering notes are on the sibling site: "
           f"[games.sgit.ai/admin]({CONCEPT_SITE}/admin/index.html)."),
   ]},
@@ -722,7 +753,9 @@ def main():
     # The map's pages are computed from data/, not written here. Merging them in at build
     # time is what lets a merged pull request change the site with no hand in between.
     generated, pack = map_pages.pages(ROOT, {"site": SITE, "vault": VAULT, "readkey": READKEY,
-                                            "disclose": DISCLOSE_SHORT})
+                                            "disclose": DISCLOSE_SHORT, "map_vault": MAP_VAULT,
+                                            "map_readkey": MAP_READKEY, "map_ui": MAP_UI,
+                                            "map_disclose": MAP_DISCLOSE})
     clash = set(generated) & set(PAGES)
     if clash:
         raise SystemExit(f"generated pages collide with authored ones: {sorted(clash)}")
