@@ -30,6 +30,7 @@ mounts the game without one.
 - `data/` — the pack the map is generated from, and the manifest the game reads
 - `briefs/` — plans, open for review: `00__PLAN__vaults-and-packs.md` is the vault split, question packs, and the Mavs PoC
 - `admin/proposals/drain.py` — turns sealed proposals from the map vault (`mxhepww5`) into pull requests against `data/`, and writes `data/proposals.json`
+- `packs/mavs/` — the Mavs PoC pack, a draft written by `generate.py`; `?pack=mavs` on the game, and the vault `0833bu5a`
 
 ## The map, and the data pack
 

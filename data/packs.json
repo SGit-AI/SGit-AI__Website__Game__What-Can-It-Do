@@ -11,7 +11,7 @@
       "about": "https://what-can-it-do.games.sgit.ai/data/index.html",
       "resolved": {
         "_generated": "by the site build, from the pack's manifest — not edited by hand",
-        "version": "v0.7.0",
+        "version": "v0.8.0",
         "content_hash": "sha256:d6d4ba40f1fb1f93f660687e4787ac10c2e1835efeb3929a4c8ad62cee8897ef",
         "files": 27,
         "counts": {
@@ -25,6 +25,32 @@
         },
         "resolved_at": "2026-09-09",
         "from": "this build"
+      }
+    },
+    {
+      "id": "mavs",
+      "name": "The Mavs PoC — a draft pack",
+      "base": "https://what-can-it-do.games.sgit.ai/packs/mavs/",
+      "maintainer": "this site, as a draft for Mavs AI to correct (packs/mavs/generate.py)",
+      "licence": "CC BY 4.0",
+      "about": "https://what-can-it-do.games.sgit.ai/packs/mavs/index.html",
+      "status": "draft — pending the Mavs input session",
+      "resolved": {
+        "_generated": "by the site build, from the pack's manifest — not edited by hand",
+        "version": "v0.1.0-draft",
+        "content_hash": "sha256:085e8d5909e27fefb7bbed73db4a320d6b066d42bf5a33f9d69d9652dda7f80e",
+        "files": 21,
+        "counts": {
+          "profiles": 8,
+          "capabilities": 6,
+          "capabilities_proposed": 4,
+          "ceiling": 5,
+          "questions": 6,
+          "mandates": 2,
+          "scenarios": 4
+        },
+        "resolved_at": "2026-09-09",
+        "from": "packs/mavs/pack.json on this site"
       }
     }
   ]

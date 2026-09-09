@@ -2,7 +2,7 @@
 
 > Actions runner (a hosted CI job): what it can reach, tool by tool, with the control on the path and the evidence behind each row.
 
-*Source: <https://what-can-it-do.games.sgit.ai/map/grants/github/actions-runner/ci/index.html> · site v0.7.0 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/map/grants/github/actions-runner/ci/index.html> · site v0.8.0 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 

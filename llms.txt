@@ -2,7 +2,7 @@
 
 > A five-minute game about what your AI agent can actually do — and whether you wanted it to.
 
-Site version: v0.7.0
+Site version: v0.8.0
 
 Every page below has a markdown twin generated from the same content as the
 HTML page. Fetch the `.md` and you have the page, without the chrome.
@@ -67,9 +67,11 @@ HTML page. Fetch the `.md` and you have the page, without the chrome.
 - [The questions](https://what-can-it-do.games.sgit.ai/map/questions/index.md): 25 questions the games ask, with what each is for: the seed of a question pack.
 - [Contribute](https://what-can-it-do.games.sgit.ai/map/contribute/index.md): How to change the map: a row, a profile, a mandate or a correction, as a pull request against the data pack.
 - [The data pack](https://what-can-it-do.games.sgit.ai/data/index.md): The map as JSON at a stable URL with CORS: primitives, profiles, reductions, ceiling, mesh, questions and mandates, versioned together. This is what the game reads.
+- [The Mavs PoC — a draft pack](https://what-can-it-do.games.sgit.ai/packs/mavs/index.md): The same game on a different pack: how Mavs AI works in the map's own terms. Eight profiles, four surfaces with and without Mavs in the path. A draft, pending the Mavs input session.
 
 ## Release history
 
+- v0.8.0 (2026-09-09) — The Mavs PoC, as a draft. packs/mavs/ is a question pack written by a generator from mavsai.ai's own llms.txt: four surfaces with Mavs in the path and direct, four proposed primitives for what leaves toward a model, five entries above the ceiling, two mandates, four scenarios, and the eight questions Mavs has to answer before it is more than a draft. Registered as ?pack=mavs; the page at /packs/mavs/ computes its tables from the pack and embeds the Mavs vault (0833bu5a), which sends nothing. The plan's status is complete for §1 to §6.
 - v0.7.0 (2026-09-09) — A way to argue with any row without a GitHub account. The map vault (mxhepww5, v1.0.0) draws this pack's two matrices live and, on every row, offers a form that writes one sealed proposal over a write-only lane; it is embedded on the contribute page. admin/proposals/drain.py closes the loop: it opens each record with the lane's key, applies it to data/ as a patch, runs the same gate every pull request runs, commits it on a branch, opens the pull request with the reasoning as the body and nobody named, and publishes data/proposals.json so the vault can say 'proposals on this row'. Tested end to end on a copy of this checkout with a record the vault's own lane gate sealed. The plan's status is brought up to date: §4 and §5 done, §6 in progress, and a new item from 9 Sep — region and city are to be sent to the analytics log — recorded with what it implies.
 - v0.6.0 (2026-09-09) — Packs, on the page packs already live. data/packs.json is the registry — id, name, where a pack is served — and the build resolves every entry from the pack's own manifest before it can ship; pack.json names it. /data/ gets one control, Load a pack: pick from the registry or paste a manifest URL, and the game opens on it, here. Two new gate checks: every registry entry resolves (a pack on this site has its hash recomputed), and /what-we-learn/ must state the same signals value the game's vault carries, read from a clone of the vault into admin/build/vault-facts.json and dated. The game's vault v1.2.0 resolves ?pack=<id> through the registry, drops the other game from its bar, and folds the what-we-know page in as a screen.
 - v0.5.0 (2026-09-09) — The game reads this pack, live. The embed now opens the game's own vault (pg87npy3, v1.0.0), which fetches data/pack.json on every load and falls back to a verified snapshot only when this site cannot be reached; the games vault 4evnlwrj keeps the 9 September version locked on branch release-2026-09-09 and sends nothing from v0.26.0. data/pack.json now lists every file it hashes, in hashing order, so a consumer can verify the pack it fetched against content_hash; the game's build does. what-we-learn dates the no-fingerprinting promise to the switch that keeps it.

@@ -1,0 +1,101 @@
+{
+  "type": "profile/v1",
+  "id": "mavs/secure-chat/without",
+  "vendor": "generic",
+  "product": "A public chat in a browser tab",
+  "variant": "without",
+  "surface": "chat",
+  "version": "2026-09-09",
+  "status": "draft — derived from https://mavsai.ai/llms.txt, read 2026-09-09; not confirmed by Mavs; not measured",
+  "description": "The model's own site, nothing in the path. The same surface with nothing between the prompt and the model: what is pasted goes as it is. DERIVED; the baseline half of the pair.",
+  "refine": {
+    "read.file.project": "fs:pasted",
+    "send.endpoint.world": "net:world",
+    "disclose.business-sensitive.model": "model:frontier",
+    "disclose.phi.model": "model:frontier",
+    "disclose.pii.model": "model:frontier",
+    "inject.instruction.model": "model:frontier"
+  },
+  "reach_names": {
+    "model": "the model provider, directly",
+    "world": "the internet"
+  },
+  "not_reachable": [],
+  "tools": [
+    {
+      "tool": "A public chat in a browser tab",
+      "evidence": null,
+      "grant": [
+        {
+          "capability": "read.file.project",
+          "tier": "derived",
+          "control": null,
+          "control_tier": "none",
+          "note": "what you paste or attach is the prompt"
+        },
+        {
+          "capability": "send.endpoint.world",
+          "tier": "derived",
+          "control": null,
+          "control_tier": "none",
+          "note": "the prompt leaves for the model provider with or without Mavs; a gateway changes what is in it, not whether it goes"
+        },
+        {
+          "capability": "disclose.pii.model",
+          "tier": "derived",
+          "control": null,
+          "control_tier": "none",
+          "note": "pasted or attached, it goes as it is"
+        },
+        {
+          "capability": "disclose.phi.model",
+          "tier": "derived",
+          "control": null,
+          "control_tier": "none",
+          "note": "pasted or attached, it goes as it is"
+        },
+        {
+          "capability": "disclose.business-sensitive.model",
+          "tier": "derived",
+          "control": null,
+          "control_tier": "none",
+          "note": "the category PII tools do not see, and a plain surface does not look for"
+        },
+        {
+          "capability": "inject.instruction.model",
+          "tier": "derived",
+          "control": null,
+          "control_tier": "none",
+          "note": "nothing on the path reads the document as language before the model does"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "https://mavsai.ai/llms.txt, read 2026-09-09",
+    "https://mavsai.ai/surfaces/mavs-secure-chat"
+  ],
+  "prior": 0.125,
+  "union": [
+    "disclose.business-sensitive.model",
+    "disclose.phi.model",
+    "disclose.pii.model",
+    "inject.instruction.model",
+    "read.file.project",
+    "send.endpoint.world"
+  ],
+  "intersection": [
+    "disclose.business-sensitive.model",
+    "disclose.phi.model",
+    "disclose.pii.model",
+    "inject.instruction.model",
+    "read.file.project",
+    "send.endpoint.world"
+  ],
+  "irreversible_in_union": [
+    "disclose.business-sensitive.model",
+    "disclose.phi.model",
+    "disclose.pii.model",
+    "send.endpoint.world"
+  ]
+}

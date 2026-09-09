@@ -1,0 +1,37 @@
+{
+  "type": "mandate/v1",
+  "status": "starting-point",
+  "authored": "2026-09-09",
+  "authored_by": "packs/mavs/generate.py, as a starting point for Mavs to argue with",
+  "licence": "CC BY 4.0",
+  "id": "employee-in-secure-chat",
+  "label": "An employee, working on a deal in chat",
+  "surface": [
+    "chat",
+    "desktop",
+    "browser"
+  ],
+  "applies_to": [
+    "mavs/secure-chat/with",
+    "mavs/secure-chat/without",
+    "mavs/claude-desktop-gateway/with",
+    "mavs/claude-desktop-gateway/without",
+    "mavs/browser-extension/with",
+    "mavs/browser-extension/without"
+  ],
+  "description": "I want help with this deal: read what I paste, and go to the model to answer. I do not want the codename, the price, or anyone's personal details to reach the model, and I do not want a document I paste to be able to tell the model what to do.",
+  "want": [
+    "read.file.project",
+    "send.endpoint.world"
+  ],
+  "do_not_want": [
+    "disclose.pii.model",
+    "disclose.phi.model",
+    "disclose.business-sensitive.model",
+    "inject.instruction.model"
+  ],
+  "notes": {
+    "send.endpoint.world": "wanted: an answer needs a model, and the model is on the internet",
+    "disclose.business-sensitive.model": "the row the whole mandate turns on"
+  }
+}

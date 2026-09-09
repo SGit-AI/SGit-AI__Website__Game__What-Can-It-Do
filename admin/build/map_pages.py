@@ -917,6 +917,7 @@ def pages(root, ctx):
         ("disclose", ctx.get("disclose", "")),
         ("p", f"[The folder on GitHub]({GH_BLOB}) · [how to contribute](map/contribute/index.html)"),
       ]}
+    P.update(mavs_pages(root, ctx, pack))
     return P, pack
 
 
@@ -1040,3 +1041,68 @@ def load_pack_html(ctx):
         '<script src="../assets/vault-app-embed.js" defer></script>'
         '<script src="../assets/load-pack.js" defer></script>'
     ).format(vault=ctx["vault"], readkey=ctx["readkey"])
+
+
+def mavs_pages(root, ctx, public):
+    """packs/mavs/index.html — the Mavs PoC: what the draft pack says, computed from the pack; the
+    questions for Mavs; the vault that plays it. Every number and glyph here is read from packs/mavs/,
+    never typed, so the page follows the generator."""
+    d = Path(root) / "packs" / "mavs"
+    J = lambda p: json.loads((d / p).read_text())
+    man, sc, prim, idx = J("pack.json"), J("scenarios.json"), J("primitives.json"), J("profiles/index.json")
+    profiles = [J(f"profiles/{p['id']}.json") for p in idx["profiles"]]
+    for p in profiles:
+        p["_cells"] = grant_cells(p)
+    cols = [(p["id"].split("/")[1].replace("-", " "), p["variant"]) for p in profiles]
+    head = ["Capability"] + [f"{a} · {b}" for a, b in cols]
+    rows = []
+    for c in prim["capabilities"]:
+        cells = []
+        for p in profiles:
+            cell = p["_cells"].get(c["id"])
+            cells.append(GLYPH[cell["control"]] if cell else GLYPH["absent"])
+        rows.append([f"{c['label']} `{c['id']}`" + (" *(proposed)*" if c["family"] == "data" else "")] + cells)
+    ceiling = J("ceiling.json")["capabilities"]
+    surf = ("table", ["Scenario", "Surface", "The story", "It turns on"],
+            [[s_["title"], s_["surface"], s_["story"], f"`{s_['turns_on']}`"] for s_ in sc["scenarios"]])
+    return {"packs/mavs/index.html": {
+      "title": "The Mavs PoC — a draft pack",
+      "description": "The same game on a different pack: how Mavs AI works in the map's own terms. Eight "
+                     "profiles, four surfaces with and without Mavs in the path. A draft, pending the Mavs input session.",
+      "blocks": [
+        ("crumb", "[Play](index.html) / [The data pack](data/index.html) / The Mavs PoC"),
+        ("h1", "The Mavs PoC — a draft pack"),
+        ("lead", f"**{sc['status']}.** The same game, on a different pack: {man['counts']['profiles']} profiles "
+                 f"— four surfaces, each with Mavs in the path and direct — over {man['counts']['capabilities']} "
+                 f"capabilities, {man['counts']['capabilities_proposed']} of them proposed here, with "
+                 f"{man['counts']['ceiling']} entries above the ceiling and {man['counts']['mandates']} mandates. "
+                 f"Pack `{man['version']}` · `{man['content_hash'][:19]}…`."),
+        ("embed", {"vault": ctx["mavs_vault"], "readkey": ctx["mavs_readkey"], "open_url": ctx["mavs_ui"],
+                   "breakout": True, "label": "The Mavs PoC — four scenarios, then the game — running out of its vault"}),
+        ("disclose", ctx["mavs_disclose"]),
+        ("h2", "What Mavs is, in this map's terms"),
+        ("p", "Mavs sits between a person, an app or an agent and any model; sensitive values in a prompt "
+              "are replaced with granularly similar synthetic stand-ins before the model sees them, so the "
+              "model keeps the context and the real data never leaves; injection and jailbreaks are detected "
+              "at runtime; every interaction is logged. Its decisive category is business-sensitive data — "
+              "codenames, unannounced pricing, M&A terms — which PII tools do not see. *(mavsai.ai/llms.txt, "
+              "read 9 September 2026.)*"),
+        ("p", "In the map's encoding that is a change on the rows where data leaves toward a model. Without "
+              "Mavs the three disclosures are ● open: what is pasted goes as it is. With Mavs they are absent "
+              "from the grant — the model receives a stand-in, so the honest answer to *can it send the real "
+              "value?* is *no* — and injection is held with a ○ boundary: detected and policed above the "
+              "prompt, which is a control on the path and not the absence of the capability. The prompt "
+              "leaves either way. Four primitives are proposed for this, in a new family, `data`; by the "
+              "map's own rules a new object class needs a probe before it is more than a proposal."),
+        ("h2", "The pair"),
+        ("table", head, rows),
+        ("p", "● none · ◉ expectation · ◐ setting · ○ boundary · · not in this grant. Computed from the pack."),
+        ("h2", "Four scenarios"),
+        surf,
+        ("h2", "Above the ceiling"),
+        ("ul", [f"**{c['label']}** — bounded by {c['bounded_by']}" for c in ceiling]),
+        ("h2", "Questions for Mavs, before this is more than a draft"),
+        ("ol", sc["questions_for_mavs"]),
+        ("p", "[The pack's folder](packs/mavs/) · [the generator that writes it](packs/mavs/generate.py) · "
+              "[`?pack=mavs` on the public game](data/index.html) · the plan's §6, D3 and D4."),
+      ]}}

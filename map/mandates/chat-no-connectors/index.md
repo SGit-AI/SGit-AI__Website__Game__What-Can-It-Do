@@ -2,7 +2,7 @@
 
 > A starting mandate for web: I paste things in and read what comes back. That is the whole mandate, and the honest baseline: a chat window with nothing connected should …
 
-*Source: <https://what-can-it-do.games.sgit.ai/map/mandates/chat-no-connectors/index.html> · site v0.7.0 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/map/mandates/chat-no-connectors/index.html> · site v0.8.0 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 

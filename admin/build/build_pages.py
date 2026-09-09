@@ -40,6 +40,13 @@ VAULT_UI = f"https://dev.vault.sgraph.ai/#{READKEY}%3A{VAULT}"
 MAP_VAULT = "mxhepww5"
 MAP_READKEY = "3e1009cc489f07e9b1ffa9ff08087a5ff23f60367451708860ecde9439128816"
 MAP_UI = f"https://dev.vault.sgraph.ai/#{MAP_READKEY}%3A{MAP_VAULT}"
+# The Mavs PoC vault (9 September 2026): the same game built against the draft pack under packs/mavs/,
+# with a wrapper of four scenarios and the with/without matrix pair. It sends nothing. Read key, published.
+MAVS_VAULT = "0833bu5a"
+MAVS_READKEY = "d7f6ae52196e96c532210b7d8a9743a2ed544749fe0677d337c4ef704430e155"
+MAVS_UI = f"https://dev.vault.sgraph.ai/#{MAVS_READKEY}%3A{MAVS_VAULT}"
+MAVS_DISCLOSE = ("The Mavs vault sends **nothing**: no lane, no append grant, no events. It reads its pack from "
+                 "this site and plays in the tab. [The draft pack, and the questions for Mavs](packs/mavs/index.html).")
 MAP_DISCLOSE = ("The map vault sends **nothing** unless you press *Send* on a proposal — then one sealed "
                 "record goes over a write-only lane, with no name and no identity attached. "
                 "[How a proposal becomes a pull request](map/contribute/index.html).")
@@ -151,6 +158,13 @@ FOOTER = [
 ]
 
 VERSION_LOG = [
+    ("v0.8.0", "2026-09-09",
+     "The Mavs PoC, as a draft. packs/mavs/ is a question pack written by a generator from mavsai.ai's "
+     "own llms.txt: four surfaces with Mavs in the path and direct, four proposed primitives for what "
+     "leaves toward a model, five entries above the ceiling, two mandates, four scenarios, and the eight "
+     "questions Mavs has to answer before it is more than a draft. Registered as ?pack=mavs; the page at "
+     "/packs/mavs/ computes its tables from the pack and embeds the Mavs vault (0833bu5a), which sends "
+     "nothing. The plan's status is complete for §1 to §6."),
     ("v0.7.0", "2026-09-09",
      "A way to argue with any row without a GitHub account. The map vault (mxhepww5, v1.0.0) draws "
      "this pack's two matrices live and, on every row, offers a form that writes one sealed proposal "
@@ -755,7 +769,9 @@ def main():
     generated, pack = map_pages.pages(ROOT, {"site": SITE, "vault": VAULT, "readkey": READKEY,
                                             "disclose": DISCLOSE_SHORT, "map_vault": MAP_VAULT,
                                             "map_readkey": MAP_READKEY, "map_ui": MAP_UI,
-                                            "map_disclose": MAP_DISCLOSE})
+                                            "map_disclose": MAP_DISCLOSE, "mavs_vault": MAVS_VAULT,
+                                            "mavs_readkey": MAVS_READKEY, "mavs_ui": MAVS_UI,
+                                            "mavs_disclose": MAVS_DISCLOSE})
     clash = set(generated) & set(PAGES)
     if clash:
         raise SystemExit(f"generated pages collide with authored ones: {sorted(clash)}")

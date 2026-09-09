@@ -135,6 +135,9 @@ const PUBLISHED = [
   // the map vault (view, browse, propose), 9 September 2026 — the read key, published on purpose
   'sgit_rk1_3e1009cc489f07e9b1ffa9ff08087a5ff23f60367451708860ecde9439128816:mxhepww5',
   '3e1009cc489f07e9b1ffa9ff08087a5ff23f60367451708860ecde9439128816:mxhepww5',
+  // the Mavs PoC vault, 9 September 2026 — the read key, published on purpose
+  'sgit_rk1_d7f6ae52196e96c532210b7d8a9743a2ed544749fe0677d337c4ef704430e155:0833bu5a',
+  'd7f6ae52196e96c532210b7d8a9743a2ed544749fe0677d337c4ef704430e155:0833bu5a',
   // Licence to Operate (posrhzp3), read-only. Published on
   // sgit.ai/demos/vaults/licence-to-operate/ — the worked example of the delta the game
   // hands a player, embedded on /what-next/.

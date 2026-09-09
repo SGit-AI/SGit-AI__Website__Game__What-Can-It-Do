@@ -1,0 +1,74 @@
+{
+  "type": "profile/v1",
+  "id": "mavs/browser-extension/with",
+  "vendor": "Mavs AI",
+  "product": "The Mavs browser extension",
+  "variant": "with",
+  "surface": "browser",
+  "version": "2026-09-09",
+  "status": "draft — derived from https://mavsai.ai/llms.txt, read 2026-09-09; not confirmed by Mavs; not measured",
+  "description": "A browser extension for any SaaS app (named on the surfaces page; no detail page on 2026-09-09). DERIVED from Mavs' own site on 9 September 2026, not measured on any instance and not yet confirmed by Mavs: the with-Mavs half of the pair, where the three disclosures are absent because the model receives a stand-in.",
+  "refine": {
+    "read.file.project": "fs:pasted",
+    "send.endpoint.world": "net:world",
+    "inject.instruction.model": "model:via-mavs"
+  },
+  "reach_names": {
+    "model": "the model provider, behind Mavs",
+    "world": "the internet"
+  },
+  "not_reachable": [
+    {
+      "what": "the real value of a sensitive field",
+      "why": "Mavs replaces the real value with a granularly similar synthetic stand-in before the prompt reaches the model; the model keeps the context, the real data never leaves (https://mavsai.ai/llms.txt, read 2026-09-09)",
+      "source": "https://mavsai.ai/llms.txt, read 2026-09-09"
+    }
+  ],
+  "tools": [
+    {
+      "tool": "Mavs runtime layer, in the path",
+      "evidence": null,
+      "grant": [
+        {
+          "capability": "read.file.project",
+          "tier": "derived",
+          "control": null,
+          "control_tier": "none",
+          "note": "what you paste or attach is the prompt"
+        },
+        {
+          "capability": "send.endpoint.world",
+          "tier": "derived",
+          "control": null,
+          "control_tier": "none",
+          "note": "the prompt leaves for the model provider with or without Mavs; a gateway changes what is in it, not whether it goes"
+        },
+        {
+          "capability": "inject.instruction.model",
+          "tier": "derived",
+          "control": "Mavs detects prompt injection attempts, jailbreaks and policy violations at runtime and enforces the customer's policy",
+          "control_tier": "boundary",
+          "note": "detected and policed above the prompt; whether an undetected instruction still reaches the model is a question for Mavs (https://mavsai.ai/llms.txt, read 2026-09-09)"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "https://mavsai.ai/llms.txt, read 2026-09-09",
+    "https://mavsai.ai/surfaces"
+  ],
+  "prior": 0.125,
+  "union": [
+    "inject.instruction.model",
+    "read.file.project",
+    "send.endpoint.world"
+  ],
+  "intersection": [
+    "inject.instruction.model",
+    "read.file.project",
+    "send.endpoint.world"
+  ],
+  "irreversible_in_union": [
+    "send.endpoint.world"
+  ]
+}

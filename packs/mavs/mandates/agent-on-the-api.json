@@ -1,0 +1,30 @@
+{
+  "type": "mandate/v1",
+  "status": "starting-point",
+  "authored": "2026-09-09",
+  "authored_by": "packs/mavs/generate.py, as a starting point for Mavs to argue with",
+  "licence": "CC BY 4.0",
+  "id": "agent-on-the-api",
+  "label": "An agent on the API, drafting replies from customer records",
+  "surface": [
+    "api"
+  ],
+  "applies_to": [
+    "mavs/agent-api/with",
+    "mavs/agent-api/without"
+  ],
+  "description": "Read the record, draft the reply, never send the customer's data to the model as it is — and never let a record it reads instruct it.",
+  "want": [
+    "read.file.project",
+    "send.endpoint.world"
+  ],
+  "do_not_want": [
+    "disclose.pii.model",
+    "disclose.phi.model",
+    "disclose.business-sensitive.model",
+    "inject.instruction.model"
+  ],
+  "notes": {
+    "inject.instruction.model": "an agent reads many documents it did not write; this is the row that makes it an agent problem"
+  }
+}
