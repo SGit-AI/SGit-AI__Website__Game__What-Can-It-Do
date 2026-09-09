@@ -2,7 +2,7 @@
 
 > create.schedule.host: which products grant it, what stands in the way, what narrows it, and who wants it.
 
-*Source: <https://what-can-it-do.games.sgit.ai/map/capabilities/create.schedule.host/index.html> · site v0.5.0 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/map/capabilities/create.schedule.host/index.html> · site v0.6.0 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 

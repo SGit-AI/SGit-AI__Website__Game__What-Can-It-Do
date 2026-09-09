@@ -2,7 +2,7 @@
 
 > A starting mandate for desktop: I want it to read and write the files I point it at, and to reach the sites it needs to answer me. I did not turn it on so that it could run…
 
-*Source: <https://what-can-it-do.games.sgit.ai/map/mandates/desktop-app-with-local-tools/index.html> · site v0.5.0 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/map/mandates/desktop-app-with-local-tools/index.html> · site v0.6.0 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 

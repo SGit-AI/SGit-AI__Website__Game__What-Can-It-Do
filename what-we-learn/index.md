@@ -2,7 +2,7 @@
 
 > Exactly what the game sends while you play, what it deliberately does not send, what it can and cannot prove, and how to switch it off.
 
-*Source: <https://what-can-it-do.games.sgit.ai/what-we-learn/index.html> · site v0.5.0 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/what-we-learn/index.html> · site v0.6.0 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 

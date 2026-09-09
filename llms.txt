@@ -2,7 +2,7 @@
 
 > A five-minute game about what your AI agent can actually do — and whether you wanted it to.
 
-Site version: v0.5.0
+Site version: v0.6.0
 
 Every page below has a markdown twin generated from the same content as the
 HTML page. Fetch the `.md` and you have the page, without the chrome.

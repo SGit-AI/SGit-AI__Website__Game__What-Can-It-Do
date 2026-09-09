@@ -2,7 +2,7 @@
 
 > One page per product and setup — 9 of them — with every tool, what it reaches, the control on the path and the evidence behind the row.
 
-*Source: <https://what-can-it-do.games.sgit.ai/map/grants/index.html> · site v0.5.0 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/map/grants/index.html> · site v0.6.0 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 

@@ -2,7 +2,7 @@
 
 > You finished the game and you have a list of things your agent can do that you did not want. You cannot un-decide them. Here is what the decision actually looks like, and where it gets made.
 
-*Source: <https://what-can-it-do.games.sgit.ai/what-next/index.html> · site v0.5.0 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/what-next/index.html> · site v0.6.0 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 

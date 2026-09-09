@@ -2,7 +2,7 @@
 
 > Every mandate against every profile it applies to: how much excess authority, how much shortfall, and how much of the excess cannot be undone.
 
-*Source: <https://what-can-it-do.games.sgit.ai/map/deltas/index.html> · site v0.5.0 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/map/deltas/index.html> · site v0.6.0 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 
