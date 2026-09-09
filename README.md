@@ -25,6 +25,32 @@ mounts the game without one.
 - `the-ceiling/` — why roughly two in five questions are impossible on purpose
 - `what-we-learn/` — exactly what is sent, what is not, and how to switch it off
 - `about/` — who made it, what it cannot tell you, and how to open the whole thing
+- `map/` — **generated**: the grants matrix, a page per product, per capability, per mandate,
+  the deltas, the ceiling, the questions, how to contribute
+- `data/` — the pack the map is generated from, and the manifest the game reads
+
+## The map, and the data pack
+
+`data/` is the **contribution surface**: the capability primitives, the nine profiles (what each
+product can reach, tool by tool, with an evidence tier and a control tier on every row), the
+reductions, the ceiling, the mesh, the questions and eight starting mandates — as JSON, under
+CC BY 4.0. Everything under `/map/` is generated from it by `admin/build/map_pages.py`, and
+nothing on those pages is typed in: **change the JSON, open a pull request, and the map
+changes on the next build.**
+
+The pack is served with CORS open at `https://what-can-it-do.games.sgit.ai/data/pack.json`,
+which is how the game — whose scoring and levels stay in the vault — reads it. A team that runs
+different products, or has decided what its agents may do, forks `data/`, edits it, hosts it
+anywhere with CORS and points the game at its manifest: that is a *pack*, and this is the
+public one.
+
+The release gate refuses a pull request whose data does not hold together: every capability id
+in every profile, reduction, mandate and ceiling row must exist; every indexed file must exist;
+a profile's stated union must equal what its rows imply; a mandate cannot both want and refuse
+the same capability; every tier must be in `data/vocabulary.json`. See
+[`data/PROVENANCE.md`](data/PROVENANCE.md) for where it came from and
+[/map/contribute/](https://what-can-it-do.games.sgit.ai/map/contribute/) for what is worth
+contributing.
 
 ## The game is embedded, not copied
 

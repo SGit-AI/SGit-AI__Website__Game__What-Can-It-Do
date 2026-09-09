@@ -1,0 +1,32 @@
+{
+  "type": "mandate/v1",
+  "status": "starting-point",
+  "authored": "2026-09-09",
+  "authored_by": "the site, as a starting point — not measured, not surveyed; the first thing to argue with",
+  "licence": "CC BY 4.0",
+  "id": "desktop-app-with-local-tools",
+  "label": "The desktop app, with local tools switched on",
+  "surface": [
+    "desktop"
+  ],
+  "applies_to": [
+    "anthropic/claude-desktop/default"
+  ],
+  "description": "I want it to read and write the files I point it at, and to reach the sites it needs to answer me. I did not turn it on so that it could run programs on my machine, read credentials, act in my accounts, read my past sessions, or change its own settings.",
+  "want": [
+    "read.file.project",
+    "write.file.project",
+    "send.endpoint.allowed"
+  ],
+  "do_not_want": [
+    "execute.process.host",
+    "read.credential.host",
+    "authenticate-as.credential.tenant",
+    "grant.credential.self",
+    "read.record.history",
+    "write.file.host"
+  ],
+  "notes": {
+    "read.file.host": "unstated: ‘the files I point it at’ and ‘any file my account can read’ are different things, and which one the local-tools grant actually is depends on the setup"
+  }
+}

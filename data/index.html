@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The data pack — what-can-it-do.games.sgit.ai</title>
+<meta name="description" content="The map as JSON at a stable URL with CORS: primitives, profiles, reductions, ceiling, mesh, questions and mandates, versioned together. This is what the game reads.">
+<link rel="canonical" href="https://what-can-it-do.games.sgit.ai/data/index.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="what-can-it-do.games.sgit.ai">
+<meta property="og:url" content="https://what-can-it-do.games.sgit.ai/data/index.html">
+<meta property="og:title" content="The data pack — what-can-it-do.games.sgit.ai">
+<meta property="og:description" content="The map as JSON at a stable URL with CORS: primitives, profiles, reductions, ceiling, mesh, questions and mandates, versioned together. This is what the game reads.">
+<meta name="twitter:card" content="summary">
+<link rel="alternate" type="text/markdown" href="index.md" title="This page as markdown">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="mask-icon" href="../assets/favicon.svg" color="#0f766e">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">what-can-it-do<span>.games.sgit.ai</span></a>
+  <a class="parent" href="https://games.sgit.ai" title="games.sgit.ai — why this family builds games, and the others it has">↗ part of <b>games.sgit.ai</b></a>
+  <span class="stage-pill">about 5 minutes</span>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni"><a class="nl" href="../index.html">Play</a></div>
+    <div class="ni ni-has">
+      <a class="nl here" href="../map/index.html">The map<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../map/index.html">What each agent can reach</a>
+      <a class="sl" href="../map/grants/index.html">The products</a>
+      <a class="sl" href="../map/capabilities/index.html">The capabilities</a>
+      <a class="sl" href="../map/mandates/index.html">The mandates</a>
+      <a class="sl" href="../map/deltas/index.html">The deltas</a>
+      <a class="sl" href="../map/ceiling/index.html">Above the ceiling</a>
+      <a class="sl" href="../map/questions/index.html">The questions</a>
+      <a class="sl" href="../map/contribute/index.html">Contribute</a>
+      <a class="sl here" href="../data/index.html">The data pack</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../how-it-is-scored/index.html">How it works<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../how-it-is-scored/index.html">How it's scored</a>
+      <a class="sl" href="../the-ceiling/index.html">Some questions are impossible</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../what-next/index.html">What next<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../what-next/index.html">What to do next</a>
+      <a class="sl" href="../licence-to-operate/index.html">Licence to Operate — the delta, priced</a>
+      <a class="sl" href="https://riskmandate.ai">RiskMandate.ai &#8599;</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/index.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/index.html">About the game</a>
+      <a class="sl" href="../what-we-learn/index.html">What we learn from you</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Game__What-Can-It-Do">&#9733; GitHub</a>
+  <script src="../assets/nav.js" defer></script>
+</div></nav>
+
+<main class="doc">
+  <p class="crumb"><a href="../index.html">Play</a> / <a href="../map/index.html">The map</a> / The data pack</p>
+  <h1>The data pack</h1>
+  <p class="lead">Everything the map is drawn from, as JSON, served from this site with CORS open — so the game inside the vault reads it from here, and so can you.</p>
+  <pre class="shell">https://what-can-it-do.games.sgit.ai/data/pack.json</pre>
+  <p><code>pack.json</code> is the manifest: the version, a content hash, and the path of every file. The game fetches the manifest and follows it. Change a file, merge, and the next build stamps a new hash — a pack is versioned as a whole, never a file at a time.</p>
+  <h2 id="what-is-in-it">What is in it</h2>
+  <div class="tablewrap"><table><thead><tr><th>Path</th><th>Type</th><th>What</th></tr></thead><tbody><tr><td><code>primitives.json</code></td><td>capability-primitives/v1</td><td>the capability vocabulary — verbs, objects, reaches, families, reversibility</td></tr><tr><td><code>profiles/index.json</code> → <code>profiles/…</code></td><td>profiles-index/v1, profile/v1</td><td>one product in one setup, tool by tool</td></tr><tr><td><code>reductions.json</code></td><td>reductions/v1</td><td>what narrows each capability, what it costs, the tier after</td></tr><tr><td><code>ceiling.json</code></td><td>ceiling-capabilities/v1</td><td>what nothing can do, and why</td></tr><tr><td><code>mesh/ontology.json</code>, <code>mesh/graph.json</code></td><td>ontology/v1, mesh/v1</td><td>the typed graph the levels are derived from</td></tr><tr><td><code>tree.json</code></td><td>question tree</td><td>the questions <em>Which Agent Is It?</em> asks, with reliability</td></tr><tr><td><code>picker.json</code></td><td>picker</td><td>the what → where → which → how entry flow</td></tr><tr><td><code>mandates/index.json</code> → <code>mandates/…</code></td><td>mandates-index/v1, mandate/v1</td><td>what a reasonable person wanted, per setup — starting drafts</td></tr></tbody></table></div>
+  <h2 id="packs">Packs</h2>
+  <p>This is the <b>public pack</b>. The idea it starts is that a pack is a unit: the products, the capabilities, the questions and the mandates, together, at one URL. A team that runs different products, or has decided what its agents may do, forks this folder, edits it, hosts it anywhere with CORS, and points the game at its manifest. The game's logic does not change; the world it asks about does.</p>
+  <p>What a customised pack changes: which profiles the picker offers, what each row claims, which questions are asked, and which mandate the delta is drawn against. What it cannot change: the scoring rule, the level derivation, the ceiling's share of the set — those are the engine's, and they are what make one pack's scores comparable with another's.</p>
+  <h2 id="for-the-game">For the game</h2>
+  <p>The game currently vendors this data at build time with a dated snapshot, and takes <code>?live=1</code> to fetch instead. Pointing the live path at this pack's base URL is the handover — and the manifest's hash is what tells a running game whether its snapshot is behind.</p>
+  <p><a href="https://github.com/SGit-AI/SGit-AI__Website__Game__What-Can-It-Do/blob/dev/data/">The folder on GitHub</a> · <a href="../map/contribute/index.html">how to contribute</a></p>
+</main>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">what-can-it-do<span>.games.sgit.ai</span></div>
+    <p>A game about the gap between what your AI agent <em>can</em> do and what you <em>wanted</em> it to do. Free, no sign-up, nothing stored. <a href="../about/index.html" style="display:inline;padding:0">Who made it, and how to check what it says</a>.</p>
+    <p class="netline"><a href="https://riskmandate.ai"><b>↗ RiskMandate.ai</b></a> — where the delta this game hands you becomes a named owner and a time-bound decision · <a href="https://games.sgit.ai">↗ games.sgit.ai</a> — why we build games · <a href="https://sgit.ai">↗ sgit.ai</a> — the encrypted vault the game is published in · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — where the capability data comes from</p>
+    <p class="partnote">This game counts usage anonymously — no cookies, no analytics script, nothing that identifies you, and a pause switch on every screen. <a href="../what-we-learn/index.html" style="display:inline;padding:0">Exactly what is sent</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.4.0</a> · <a href="../admin/index.html">engineering</a> · <a href="../llms.txt">llms.txt</a> · CC BY 4.0 · <a href="../data/index.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The game</h4>
+    <a href="../index.html">&#8594; Play</a>
+    <a href="../how-it-is-scored/index.html">How it's scored</a>
+    <a href="../the-ceiling/index.html">Why some are impossible</a>
+    <a href="../what-next/index.html">What to do next</a>
+    <a href="../licence-to-operate/index.html">Licence to Operate</a>
+  </div>
+  <div>
+    <h4>The map</h4>
+    <a href="../map/index.html">What each agent can reach</a>
+    <a href="../map/deltas/index.html">The mandates and deltas</a>
+    <a href="../map/contribute/index.html">Contribute a row</a>
+    <a href="../data/index.html">The data pack</a>
+  </div>
+  <div>
+    <h4>Straight answers</h4>
+    <a href="../what-we-learn/index.html">What we learn from you</a>
+    <a href="../about/index.html">Who made it</a>
+    <a href="https://dev.vault.sgraph.ai/#f94c8b1d42352d95703ac3d39032735d9b4e388d16ab5b87c948928d8e111118%3A4evnlwrj">Open the game's source</a>
+  </div>
+  <div>
+    <h4>More</h4>
+    <a href="https://riskmandate.ai">&#8594; RiskMandate.ai</a>
+    <a href="https://games.sgit.ai">games.sgit.ai</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+</body>
+</html>

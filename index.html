@@ -23,12 +23,31 @@
   <a class="brand" href="index.html">what-can-it-do<span>.games.sgit.ai</span></a>
   <a class="parent" href="https://games.sgit.ai" title="games.sgit.ai — why this family builds games, and the others it has">↗ part of <b>games.sgit.ai</b></a>
   <span class="stage-pill">about 5 minutes</span>
-  <a class="ver" href="admin/versions.html" title="Site release history">v0.3.0</a>
+  <a class="ver" href="admin/versions.html" title="Site release history">v0.4.0</a>
   <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
   <div class="nav-items">
     <div class="ni"><a class="nl here" href="index.html">Play</a></div>
-    <div class="ni"><a class="nl" href="how-it-is-scored/index.html">How it's scored</a></div>
-    <div class="ni"><a class="nl" href="the-ceiling/index.html">Some are impossible</a></div>
+    <div class="ni ni-has">
+      <a class="nl" href="map/index.html">The map<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="map/index.html">What each agent can reach</a>
+      <a class="sl" href="map/grants/index.html">The products</a>
+      <a class="sl" href="map/capabilities/index.html">The capabilities</a>
+      <a class="sl" href="map/mandates/index.html">The mandates</a>
+      <a class="sl" href="map/deltas/index.html">The deltas</a>
+      <a class="sl" href="map/ceiling/index.html">Above the ceiling</a>
+      <a class="sl" href="map/questions/index.html">The questions</a>
+      <a class="sl" href="map/contribute/index.html">Contribute</a>
+      <a class="sl" href="data/index.html">The data pack</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="how-it-is-scored/index.html">How it works<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="how-it-is-scored/index.html">How it's scored</a>
+      <a class="sl" href="the-ceiling/index.html">Some questions are impossible</a>
+      </div>
+    </div>
     <div class="ni ni-has">
       <a class="nl" href="what-next/index.html">What next<span class="caret">&#9662;</span></a>
       <div class="sub">
@@ -59,6 +78,7 @@
   <ol><li><b>You say what you use.</b> Claude, ChatGPT, Copilot, Cursor, GitHub Actions, something else — then where you run it and roughly how it is set up. Up to four taps, or press <em>Just play</em> and start immediately.</li><li><b>The board asks about one capability at a time.</b> <em>Can it do this?</em> — yes, no, or don't know. Then: <em>do you want it to?</em></li><li><b>You get told straight away</b>, with the reason, and you can ask why.</li><li><b>At the end</b>: your score, how well-calibrated you were, and — the interesting bit — the list of things it can do that you did not want it to.</li></ol>
   <h2 id="three-things-worth-knowing-before-you-play">Three things worth knowing before you play</h2>
   <div class="gamegrid"><div class="gamecard"><h3>“Don't know” is free</h3><p class="sub">It scores zero, always. A wrong answer costs more than a right one earns (−50 against +30), so guessing confidently is the losing strategy. Saying you are not sure costs you nothing at all.</p><div class="foot"><a href="how-it-is-scored/index.html">The scoring rule, in full</a></div></div><div class="gamecard"><h3>Some questions are impossible</h3><p class="sub">Roughly two in five are things <b>no</b> AI agent can do, anywhere, however it is configured. They are in there on purpose. If they were not, the game could only catch you underestimating.</p><div class="foot"><a href="the-ceiling/index.html">Why</a></div></div><div class="gamecard"><h3>It is not an audit of your setup</h3><p class="sub">The board answers from what the vendor publishes about the product, not from your machine. It never looks at your computer, your account or your files — it cannot, it is a web page.</p><div class="foot"><a href="about/index.html">What it can and can't tell you</a></div></div></div>
+  <p>Every question the game asks is one cell in <a href="map/index.html"><b>the map</b></a> — 23 capabilities against 9 products, with what stands in the way and how sure anyone is. It is generated from data you can change with a pull request.</p>
   <h2 id="what-you-walk-away-with">What you walk away with</h2>
   <p>A calibration figure — how often you were right when you said you were sure — and <b>a draft of what you actually wanted your agent to be allowed to do</b>, assembled from your answers to the second question. Most people have never written that down. You will not have set out to write it either.</p>
   <p>Then the gap between the two: the things it can do that you did not want, split by whether you saw them coming. And one thing to change.</p>
@@ -75,7 +95,7 @@
     <p>A game about the gap between what your AI agent <em>can</em> do and what you <em>wanted</em> it to do. Free, no sign-up, nothing stored. <a href="about/index.html" style="display:inline;padding:0">Who made it, and how to check what it says</a>.</p>
     <p class="netline"><a href="https://riskmandate.ai"><b>↗ RiskMandate.ai</b></a> — where the delta this game hands you becomes a named owner and a time-bound decision · <a href="https://games.sgit.ai">↗ games.sgit.ai</a> — why we build games · <a href="https://sgit.ai">↗ sgit.ai</a> — the encrypted vault the game is published in · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — where the capability data comes from</p>
     <p class="partnote">This game counts usage anonymously — no cookies, no analytics script, nothing that identifies you, and a pause switch on every screen. <a href="what-we-learn/index.html" style="display:inline;padding:0">Exactly what is sent</a>.</p>
-    <p class="verline">site <a href="admin/versions.html">v0.3.0</a> · <a href="admin/index.html">engineering</a> · <a href="llms.txt">llms.txt</a> · CC BY 4.0 · <a href="index.md">this page as markdown</a></p>
+    <p class="verline">site <a href="admin/versions.html">v0.4.0</a> · <a href="admin/index.html">engineering</a> · <a href="llms.txt">llms.txt</a> · CC BY 4.0 · <a href="index.md">this page as markdown</a></p>
   </div>
   <div>
     <h4>The game</h4>
@@ -84,6 +104,13 @@
     <a href="the-ceiling/index.html">Why some are impossible</a>
     <a href="what-next/index.html">What to do next</a>
     <a href="licence-to-operate/index.html">Licence to Operate</a>
+  </div>
+  <div>
+    <h4>The map</h4>
+    <a href="map/index.html">What each agent can reach</a>
+    <a href="map/deltas/index.html">The mandates and deltas</a>
+    <a href="map/contribute/index.html">Contribute a row</a>
+    <a href="data/index.html">The data pack</a>
   </div>
   <div>
     <h4>Straight answers</h4>

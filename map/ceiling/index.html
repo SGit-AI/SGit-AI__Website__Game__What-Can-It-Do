@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Above the ceiling — what-can-it-do.games.sgit.ai</title>
+<meta name="description" content="The 17 things no agent in this set can do, and the control outside the agent that stops each one.">
+<link rel="canonical" href="https://what-can-it-do.games.sgit.ai/map/ceiling/index.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="what-can-it-do.games.sgit.ai">
+<meta property="og:url" content="https://what-can-it-do.games.sgit.ai/map/ceiling/index.html">
+<meta property="og:title" content="Above the ceiling — what-can-it-do.games.sgit.ai">
+<meta property="og:description" content="The 17 things no agent in this set can do, and the control outside the agent that stops each one.">
+<meta name="twitter:card" content="summary">
+<link rel="alternate" type="text/markdown" href="index.md" title="This page as markdown">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="mask-icon" href="../../assets/favicon.svg" color="#0f766e">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../../index.html">what-can-it-do<span>.games.sgit.ai</span></a>
+  <a class="parent" href="https://games.sgit.ai" title="games.sgit.ai — why this family builds games, and the others it has">↗ part of <b>games.sgit.ai</b></a>
+  <span class="stage-pill">about 5 minutes</span>
+  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.4.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni"><a class="nl" href="../../index.html">Play</a></div>
+    <div class="ni ni-has">
+      <a class="nl here" href="../../map/index.html">The map<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../map/index.html">What each agent can reach</a>
+      <a class="sl" href="../../map/grants/index.html">The products</a>
+      <a class="sl" href="../../map/capabilities/index.html">The capabilities</a>
+      <a class="sl" href="../../map/mandates/index.html">The mandates</a>
+      <a class="sl" href="../../map/deltas/index.html">The deltas</a>
+      <a class="sl here" href="../../map/ceiling/index.html">Above the ceiling</a>
+      <a class="sl" href="../../map/questions/index.html">The questions</a>
+      <a class="sl" href="../../map/contribute/index.html">Contribute</a>
+      <a class="sl" href="../../data/index.html">The data pack</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../how-it-is-scored/index.html">How it works<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../how-it-is-scored/index.html">How it's scored</a>
+      <a class="sl" href="../../the-ceiling/index.html">Some questions are impossible</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../what-next/index.html">What next<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../what-next/index.html">What to do next</a>
+      <a class="sl" href="../../licence-to-operate/index.html">Licence to Operate — the delta, priced</a>
+      <a class="sl" href="https://riskmandate.ai">RiskMandate.ai &#8599;</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../about/index.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../about/index.html">About the game</a>
+      <a class="sl" href="../../what-we-learn/index.html">What we learn from you</a>
+      <a class="sl" href="../../admin/versions.html">Release history</a>
+      <a class="sl" href="../../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Game__What-Can-It-Do">&#9733; GitHub</a>
+  <script src="../../assets/nav.js" defer></script>
+</div></nav>
+
+<main class="doc">
+  <p class="crumb"><a href="../../index.html">Play</a> / <a href="../../map/index.html">The map</a> / Above the ceiling</p>
+  <h1>Above the ceiling</h1>
+  <p class="lead">17 capabilities no agent in any environment in the set can reach — bounded by a control outside the whole environment rather than by the agent's restraint. They are in the game so it can measure over-crediting; <a href="../../the-ceiling/index.html">why</a>. Here is the list, with what stops each one.</p>
+  <div class="tablewrap"><table><thead><tr><th>Capability</th><th>Family</th><th>Level</th><th>Attemptable</th><th>Bounded by</th></tr></thead><tbody><tr><td>Read another customer's conversations with the same provider</td><td>communication</td><td>1</td><td>yes</td><td>the provider's tenant boundary, enforced above every agent: a request for another tenant's data is refused, and the refusal is logged</td></tr><tr><td>Edit or delete the provider's audit log of what it did</td><td>identity</td><td>1</td><td>yes</td><td>the log is append-only and written by the provider, not by the agent; nothing running as you or as the agent holds a write path to it</td></tr><tr><td>Decrypt data it holds only the ciphertext of, without the key</td><td>identity</td><td>1</td><td>no</td><td>cryptography rather than policy: AES-256-GCM with a key derived from a passphrase the provider never sees is not a permission that can be granted</td></tr><tr><td>Read your account password in plaintext from the provider</td><td>identity</td><td>1</td><td>yes</td><td>the provider stores a salted hash, not the password; there is nothing to read</td></tr><tr><td>Act as a different user of the same provider, without that user's credentials</td><td>identity</td><td>1</td><td>yes</td><td>authentication at the provider: every call carries a credential, and the credential names who it is</td></tr><tr><td>Read the provider's model weights</td><td>filesystem</td><td>1</td><td>yes</td><td>the model runs in the provider's environment behind an API; the agent gets tokens back, never the files that produced them</td></tr><tr><td>Read a zero-knowledge vault it has no key for</td><td>filesystem</td><td>1</td><td>no</td><td>the server holds only ciphertext and the key never leaves the holder's device; there is nothing on the server for any agent to read</td></tr><tr><td>Unsend a message it already sent, from the recipient's inbox</td><td>communication</td><td>1</td><td>yes</td><td>the recipient's server holds the copy; a message sent is sent, which is what one-way means</td></tr><tr><td>Turn off your second factor at a provider, without the second factor</td><td>identity</td><td>2</td><td>yes</td><td>the second factor is the control on changing the second factor; the provider asks for it before it will remove it</td></tr><tr><td>Change the provider-side settings or system prompt that apply to it</td><td>process</td><td>2</td><td>yes</td><td>those are set by the provider and by the account owner from outside the session; the session has no write path to its own configuration at the provider</td></tr><tr><td>Reach a cloud account it holds no credential for</td><td>identity</td><td>2</td><td>yes</td><td>the cloud's identity and access management: no credential, no call</td></tr><tr><td>Sign a statement as the provider</td><td>identity</td><td>2</td><td>no</td><td>the provider's private key, which no agent holds; a signature that does not verify is not a signature</td></tr><tr><td>Raise its own token, rate or spend limit</td><td>money</td><td>3</td><td>yes</td><td>quotas and billing are set by the account owner at the provider, from outside the session</td></tr><tr><td>Reset an account that is behind a second factor</td><td>identity</td><td>3</td><td>yes</td><td>the reset flow demands the second factor or a recovery code the agent does not hold</td></tr><tr><td>Guess a password past a lockout</td><td>identity</td><td>3</td><td>yes</td><td>the lockout is enforced by the service, not by the agent's patience; after the threshold, right guesses are refused too</td></tr><tr><td>Move the bill for its own usage to someone else's account</td><td>money</td><td>3</td><td>yes</td><td>billing ownership is a relationship between the provider and the account owner; the session is a consumer of it, not a party to it</td></tr><tr><td>Create a workload that runs with the provider's own production credentials</td><td>process</td><td>4</td><td>yes</td><td>the provider's isolation between customer workloads and its own control plane; the metadata a customer workload can reach yields the customer's scope, never the provider's</td></tr></tbody></table></div>
+  <h2 id="if-attempted">If attempted</h2>
+  <ul><li><b>Read another customer's conversations with the same provider</b> — it can ask; the API refuses, and the attempt is in the provider's log</li><li><b>Edit or delete the provider's audit log of what it did</b> — there is no API for it; a request is refused and itself logged</li><li><b>Decrypt data it holds only the ciphertext of, without the key</b> — it can try; the attempt does not finish in the lifetime of the universe</li><li><b>Read your account password in plaintext from the provider</b> — any request for it is refused and logged</li><li><b>Act as a different user of the same provider, without that user's credentials</b> — a call with a made-up identity is refused, and the refusal is visible</li><li><b>Read the provider's model weights</b> — there is no path; a request is refused</li><li><b>Read a zero-knowledge vault it has no key for</b> — it can download the blob; it cannot read it</li><li><b>Unsend a message it already sent, from the recipient's inbox</b> — it can send a retraction; the original stays where it landed</li><li><b>Turn off your second factor at a provider, without the second factor</b> — it can start the flow; the flow stops at the challenge, and the attempt is notified to you</li><li><b>Change the provider-side settings or system prompt that apply to it</b> — it can write a file that looks like a setting; nothing above the session reads it</li><li><b>Reach a cloud account it holds no credential for</b> — every call returns unauthenticated, and the cloud logs the source</li><li><b>Sign a statement as the provider</b> — it can produce a string that says signed; verification fails</li><li><b>Raise its own token, rate or spend limit</b> — it can ask; the request is refused, and a limit reached stays reached</li><li><b>Reset an account that is behind a second factor</b> — it can start the reset; it fails at the challenge, visibly, and the account owner is told</li><li><b>Guess a password past a lockout</b> — it can keep guessing; the attempts are logged and the account is locked harder</li><li><b>Move the bill for its own usage to someone else's account</b> — there is no call for it; a request is refused</li><li><b>Create a workload that runs with the provider's own production credentials</b> — it can create a workload; the workload reaches the same scope the session already had</li></ul>
+  <p><a href="https://github.com/SGit-AI/SGit-AI__Website__Game__What-Can-It-Do/edit/dev/data/ceiling.json">Edit the ceiling</a>. A counter-example — an agent stepping over one of these — is a correction, not a quibble, and the row names the control so the claim is checkable.</p>
+</main>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">what-can-it-do<span>.games.sgit.ai</span></div>
+    <p>A game about the gap between what your AI agent <em>can</em> do and what you <em>wanted</em> it to do. Free, no sign-up, nothing stored. <a href="../../about/index.html" style="display:inline;padding:0">Who made it, and how to check what it says</a>.</p>
+    <p class="netline"><a href="https://riskmandate.ai"><b>↗ RiskMandate.ai</b></a> — where the delta this game hands you becomes a named owner and a time-bound decision · <a href="https://games.sgit.ai">↗ games.sgit.ai</a> — why we build games · <a href="https://sgit.ai">↗ sgit.ai</a> — the encrypted vault the game is published in · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — where the capability data comes from</p>
+    <p class="partnote">This game counts usage anonymously — no cookies, no analytics script, nothing that identifies you, and a pause switch on every screen. <a href="../../what-we-learn/index.html" style="display:inline;padding:0">Exactly what is sent</a>.</p>
+    <p class="verline">site <a href="../../admin/versions.html">v0.4.0</a> · <a href="../../admin/index.html">engineering</a> · <a href="../../llms.txt">llms.txt</a> · CC BY 4.0 · <a href="../../map/ceiling/index.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The game</h4>
+    <a href="../../index.html">&#8594; Play</a>
+    <a href="../../how-it-is-scored/index.html">How it's scored</a>
+    <a href="../../the-ceiling/index.html">Why some are impossible</a>
+    <a href="../../what-next/index.html">What to do next</a>
+    <a href="../../licence-to-operate/index.html">Licence to Operate</a>
+  </div>
+  <div>
+    <h4>The map</h4>
+    <a href="../../map/index.html">What each agent can reach</a>
+    <a href="../../map/deltas/index.html">The mandates and deltas</a>
+    <a href="../../map/contribute/index.html">Contribute a row</a>
+    <a href="../../data/index.html">The data pack</a>
+  </div>
+  <div>
+    <h4>Straight answers</h4>
+    <a href="../../what-we-learn/index.html">What we learn from you</a>
+    <a href="../../about/index.html">Who made it</a>
+    <a href="https://dev.vault.sgraph.ai/#f94c8b1d42352d95703ac3d39032735d9b4e388d16ab5b87c948928d8e111118%3A4evnlwrj">Open the game's source</a>
+  </div>
+  <div>
+    <h4>More</h4>
+    <a href="https://riskmandate.ai">&#8594; RiskMandate.ai</a>
+    <a href="https://games.sgit.ai">games.sgit.ai</a>
+    <a href="../../admin/versions.html">Release history</a>
+    <a href="../../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+</body>
+</html>

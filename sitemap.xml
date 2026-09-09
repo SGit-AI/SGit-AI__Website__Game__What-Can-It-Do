@@ -9,4 +9,53 @@
   <url><loc>https://what-can-it-do.games.sgit.ai/about/index.html</loc><priority>0.7</priority></url>
   <url><loc>https://what-can-it-do.games.sgit.ai/admin/index.html</loc><priority>0.7</priority></url>
   <url><loc>https://what-can-it-do.games.sgit.ai/admin/versions.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/grants/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/grants/anthropic/claude-code-remote/ccr-container/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/grants/anthropic/claude-code/local-confirmations-off/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/grants/anthropic/claude-code/local-default/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/grants/anthropic/claude-desktop/default/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/grants/anthropic/claude-web/connectors-on/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/grants/generic/browser-extension/broad-host-permissions/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/grants/generic/scheduled-job/service-account/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/grants/github/actions-runner/ci/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/grants/openai/chatgpt-web/default/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/capabilities/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/capabilities/read.file.project/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/capabilities/write.file.project/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/capabilities/read.file.host/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/capabilities/write.file.host/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/capabilities/delete.file.host/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/capabilities/execute.process.host/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/capabilities/execute.process.self/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/capabilities/send.endpoint.allowed/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/capabilities/send.endpoint.world/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/capabilities/read.credential.host/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/capabilities/authenticate-as.credential.tenant/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/capabilities/grant.credential.self/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/capabilities/send.message.world/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/capabilities/read.message.tenant/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/capabilities/write.repository.project/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/capabilities/write.repository.tenant/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/capabilities/authenticate-as.credential.signing/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/capabilities/create.record.world/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/capabilities/write.budget.tenant/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/capabilities/create.schedule.host/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/capabilities/read.record.history/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/capabilities/create.schedule.tenant/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/capabilities/read.record.browsing/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/mandates/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/mandates/coding-assistant-on-my-machine/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/mandates/coding-assistant-in-a-container/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/mandates/desktop-app-with-local-tools/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/mandates/chat-with-connectors/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/mandates/chat-no-connectors/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/mandates/ci-job/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/mandates/browser-extension-i-installed/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/mandates/scheduled-job-under-a-service-account/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/deltas/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/ceiling/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/questions/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/map/contribute/index.html</loc><priority>0.7</priority></url>
+  <url><loc>https://what-can-it-do.games.sgit.ai/data/index.html</loc><priority>0.7</priority></url>
 </urlset>

@@ -1,0 +1,30 @@
+{
+  "type": "mandate/v1",
+  "status": "starting-point",
+  "authored": "2026-09-09",
+  "authored_by": "the site, as a starting point — not measured, not surveyed; the first thing to argue with",
+  "licence": "CC BY 4.0",
+  "id": "ci-job",
+  "label": "A CI job on a hosted runner",
+  "surface": [
+    "ci"
+  ],
+  "applies_to": [
+    "github/actions-runner/ci"
+  ],
+  "description": "Check out the code, build it, run the tests, fetch what it needs, and — when a release is cut — push the tag. I did not want it reading credentials beyond its own token.",
+  "want": [
+    "read.file.project",
+    "write.file.project",
+    "execute.process.host",
+    "send.endpoint.world",
+    "write.repository.tenant"
+  ],
+  "do_not_want": [
+    "read.credential.host"
+  ],
+  "notes": {
+    "write.repository.tenant": "deliberately in the mandate: most release workflows push a tag, and this profile's token is contents:read — so this row is a shortfall, and the kind the game calls ‘a gap you were counting on’",
+    "delete.file.host": "unstated: the runner is destroyed after the job"
+  }
+}

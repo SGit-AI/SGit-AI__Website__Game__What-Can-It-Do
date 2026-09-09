@@ -129,6 +129,11 @@ def render_html(blocks, up):
             out.append(embed_html(args[0]))
         elif kind == "raw":
             out.append(args[0])
+        elif kind == "both":
+            # A block with its own rendering for each surface: (html, markdown). For the one
+            # kind of content — a matrix — where the HTML wants classes and glyphs and the twin
+            # wants a real markdown table, and neither can be derived from the other.
+            out.append(args[0])
         else:
             raise SystemExit(f"unknown block kind: {kind}")
     return "\n  ".join(out)
@@ -170,6 +175,8 @@ def render_md(blocks, up):
                        f'[open it in the vault UI]({cfg.get("open_url", "")}).]*')
         elif kind == "raw":
             continue  # a raw HTML block has no markdown equivalent, by definition
+        elif kind == "both":
+            out.append(args[1])
     return "\n\n".join(out)
 
 

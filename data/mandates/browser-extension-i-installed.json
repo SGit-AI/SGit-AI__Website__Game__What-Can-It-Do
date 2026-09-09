@@ -1,0 +1,26 @@
+{
+  "type": "mandate/v1",
+  "status": "starting-point",
+  "authored": "2026-09-09",
+  "authored_by": "the site, as a starting point — not measured, not surveyed; the first thing to argue with",
+  "licence": "CC BY 4.0",
+  "id": "browser-extension-i-installed",
+  "label": "A browser extension I installed",
+  "surface": [
+    "extension"
+  ],
+  "applies_to": [
+    "generic/browser-extension/broad-host-permissions"
+  ],
+  "description": "I want it to work on the sites I use it on. I did not install it so that it could see every page I visit, act inside the accounts I am logged into, or send what it sees anywhere.",
+  "want": [
+    "read.record.browsing"
+  ],
+  "do_not_want": [
+    "authenticate-as.credential.tenant",
+    "send.endpoint.world"
+  ],
+  "notes": {
+    "read.record.browsing": "the want is ‘the sites I chose’; the grant is every page — the same capability at two different reaches, which is what the reduction (‘on click, or on a list of sites’) narrows"
+  }
+}

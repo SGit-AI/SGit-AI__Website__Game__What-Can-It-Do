@@ -2,7 +2,7 @@
 
 > A five-minute game. Name the AI assistant you use, and answer forty questions about what it can do — and whether you wanted it to. You score for how well you know what you know. Free, no sign-up.
 
-*Source: <https://what-can-it-do.games.sgit.ai/index.html> · site v0.3.0 · this file is generated from the same content
+*Source: <https://what-can-it-do.games.sgit.ai/index.html> · site v0.4.0 · this file is generated from the same content
 as the page, so the two cannot drift. Every page on this site has a `.md` twin; internal links
 below point at them.*
 
@@ -31,6 +31,8 @@ You have given an AI assistant access to something — your laptop, a repository
 
 **It is not an audit of your setup** — The board answers from what the vendor publishes about the product, not from your machine. It never looks at your computer, your account or your files — it cannot, it is a web page.
 [What it can and can't tell you](about/index.md)
+
+Every question the game asks is one cell in [**the map**](map/index.md) — 23 capabilities against 9 products, with what stands in the way and how sure anyone is. It is generated from data you can change with a pull request.
 
 ## What you walk away with
 

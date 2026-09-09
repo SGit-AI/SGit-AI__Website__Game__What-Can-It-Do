@@ -1,0 +1,26 @@
+{
+  "type": "vocabulary/v1",
+  "_what_this_is": "The controlled vocabularies every profile row is written in, ordered. Both the site build (map_pages.py) and the release gate (validate.js) read this file, so a new tier is one pull request here rather than two source edits — and a row using a word that is not here fails the gate rather than shipping as a silent hole in the matrix.",
+  "evidence_tiers": {
+    "_order": "weakest first — how the row is known",
+    "derived": "from what the thing architecturally is; a claim until somebody runs the probes",
+    "inferred": "from another row or another profile, by reasoning rather than by observation",
+    "self-reported": "reported by the operator, the harness or the tool itself, without an independent probe",
+    "documented": "the vendor, or a published tool, says so",
+    "measured": "a probe run on an instance, dated, with an evidence file",
+    "observed": "seen directly, on the thing itself, by the thing itself"
+  },
+  "control_tiers": {
+    "_order": "weakest first — what stands on the path",
+    "none": "nothing in the way",
+    "expectation": "a rule in prose, enforced by nobody",
+    "setting": "a switch the agent's own account can flip",
+    "boundary": "enforced above the grant, out of the agent's reach"
+  },
+  "reversible": {
+    "yes": "undone by the same actor with no loss",
+    "with-effort": "recoverable from a backup, a history or a revert, at a cost",
+    "no": "cannot be undone"
+  },
+  "licence": "CC BY 4.0"
+}

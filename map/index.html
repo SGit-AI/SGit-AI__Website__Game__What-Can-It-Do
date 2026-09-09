@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The map — what each agent can reach — what-can-it-do.games.sgit.ai</title>
+<meta name="description" content="23 capabilities across 9 products and setups: what each one can reach, what stands in the way, and how sure anyone is. Generated from the data pack; change it with a pull request.">
+<link rel="canonical" href="https://what-can-it-do.games.sgit.ai/map/index.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="what-can-it-do.games.sgit.ai">
+<meta property="og:url" content="https://what-can-it-do.games.sgit.ai/map/index.html">
+<meta property="og:title" content="The map — what each agent can reach — what-can-it-do.games.sgit.ai">
+<meta property="og:description" content="23 capabilities across 9 products and setups: what each one can reach, what stands in the way, and how sure anyone is. Generated from the data pack; change it with a pull request.">
+<meta name="twitter:card" content="summary">
+<link rel="alternate" type="text/markdown" href="index.md" title="This page as markdown">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="mask-icon" href="../assets/favicon.svg" color="#0f766e">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../index.html">what-can-it-do<span>.games.sgit.ai</span></a>
+  <a class="parent" href="https://games.sgit.ai" title="games.sgit.ai — why this family builds games, and the others it has">↗ part of <b>games.sgit.ai</b></a>
+  <span class="stage-pill">about 5 minutes</span>
+  <a class="ver" href="../admin/versions.html" title="Site release history">v0.4.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni"><a class="nl" href="../index.html">Play</a></div>
+    <div class="ni ni-has">
+      <a class="nl here" href="../map/index.html">The map<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl here" href="../map/index.html">What each agent can reach</a>
+      <a class="sl" href="../map/grants/index.html">The products</a>
+      <a class="sl" href="../map/capabilities/index.html">The capabilities</a>
+      <a class="sl" href="../map/mandates/index.html">The mandates</a>
+      <a class="sl" href="../map/deltas/index.html">The deltas</a>
+      <a class="sl" href="../map/ceiling/index.html">Above the ceiling</a>
+      <a class="sl" href="../map/questions/index.html">The questions</a>
+      <a class="sl" href="../map/contribute/index.html">Contribute</a>
+      <a class="sl" href="../data/index.html">The data pack</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../how-it-is-scored/index.html">How it works<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../how-it-is-scored/index.html">How it's scored</a>
+      <a class="sl" href="../the-ceiling/index.html">Some questions are impossible</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../what-next/index.html">What next<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../what-next/index.html">What to do next</a>
+      <a class="sl" href="../licence-to-operate/index.html">Licence to Operate — the delta, priced</a>
+      <a class="sl" href="https://riskmandate.ai">RiskMandate.ai &#8599;</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../about/index.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../about/index.html">About the game</a>
+      <a class="sl" href="../what-we-learn/index.html">What we learn from you</a>
+      <a class="sl" href="../admin/versions.html">Release history</a>
+      <a class="sl" href="../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Game__What-Can-It-Do">&#9733; GitHub</a>
+  <script src="../assets/nav.js" defer></script>
+</div></nav>
+
+<main class="doc">
+  <p class="crumb"><a href="../index.html">Play</a> / The map</p>
+  <h1>What each agent can reach</h1>
+  <p class="lead">Every question the game asks is a cell in this table. 23 capabilities — a verb, an object and how far it reaches — against 9 products in the setups people actually run them in. The fill says how open the door is; the glyph says the same thing without the colour.</p>
+  <div class="tiles"><div class="tile"><b>9</b><span>products × setups</span></div><div class="tile"><b>23</b><span>capabilities</span></div><div class="tile"><b>13</b><span>of them cannot be undone</span></div><div class="tile"><b>21/99</b><span>rows measured, not derived</span></div></div>
+  <div class="legend"><span class="lg"><b class="m m-none">●</b> none — nothing in the way</span><span class="lg"><b class="m m-expectation">◉</b> expectation — a rule in prose, enforced by nobody</span><span class="lg"><b class="m m-setting">◐</b> setting — a switch the agent&#x27;s own account can flip</span><span class="lg"><b class="m m-boundary">○</b> boundary — enforced above the grant, out of the agent&#x27;s reach</span><span class="lg"><b class="m m-absent">·</b> not in this grant</span></div>
+  <div class="matrixwrap wide"><table class="matrix grants">
+<thead><tr>
+<th class="cap">Capability</th><th class="rev" title="Whether the effect can be undone">Undo</th>
+<th class="p"><a href="../map/grants/anthropic/claude-code-remote/ccr-container/index.html" title="Claude Code on the web (a remote session container) — ccr-container">Claude Code<span>web container</span></a></th>
+<th class="p"><a href="../map/grants/anthropic/claude-code/local-confirmations-off/index.html" title="Claude Code (the CLI, on your own machine) — local-confirmations-off">Claude Code<span>local · confirm off</span></a></th>
+<th class="p"><a href="../map/grants/anthropic/claude-code/local-default/index.html" title="Claude Code (the CLI, on your own machine) — local-default">Claude Code<span>local · confirm on</span></a></th>
+<th class="p"><a href="../map/grants/anthropic/claude-desktop/default/index.html" title="Claude Desktop (a desktop app with local tools) — default">Claude Desktop<span>local tools</span></a></th>
+<th class="p"><a href="../map/grants/anthropic/claude-web/connectors-on/index.html" title="Claude (in the browser, with connectors switched on) — connectors-on">Claude.ai<span>connectors on</span></a></th>
+<th class="p"><a href="../map/grants/generic/browser-extension/broad-host-permissions/index.html" title="A browser extension with broad host permissions — broad-host-permissions">Browser extension<span>all sites</span></a></th>
+<th class="p"><a href="../map/grants/generic/scheduled-job/service-account/index.html" title="A scheduled job running as a service account — service-account">Scheduled job<span>service account</span></a></th>
+<th class="p"><a href="../map/grants/github/actions-runner/ci/index.html" title="Actions runner (a hosted CI job) — ci">GitHub Actions<span>hosted runner</span></a></th>
+<th class="p"><a href="../map/grants/openai/chatgpt-web/default/index.html" title="ChatGPT (in the browser, no connectors) — default">ChatGPT<span>no connectors</span></a></th>
+</tr></thead><tbody>
+<tr class="fam"><th colspan="11">filesystem <span>— files and directories</span></th></tr>
+<tr><th class="cap"><a href="../map/capabilities/read.file.project/index.html">Read the project it is working on</a><span class="id">read.file.project</span></th><td class="rev rev-yes" title="undone by the same actor with no loss">yes</td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: observed · via shell (Bash), harness (MCP and built-in tools)"><a href="../map/grants/anthropic/claude-code-remote/ccr-container/index.html#read.file.project">●</a></td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: derived · via shell (Bash), files (Read, Edit, Write)"><a href="../map/grants/anthropic/claude-code/local-confirmations-off/index.html#read.file.project">●</a></td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: derived · via shell (Bash), files (Read, Edit, Write)"><a href="../map/grants/anthropic/claude-code/local-default/index.html#read.file.project">●</a></td>
+<td class="m m-none" title="Claude Desktop · none — nothing in the way · evidence: derived · via conversation, local files and commands (when enabled)"><a href="../map/grants/anthropic/claude-desktop/default/index.html#read.file.project">●</a></td>
+<td class="m m-none" title="Claude.ai · none — nothing in the way · evidence: derived · via conversation and uploads"><a href="../map/grants/anthropic/claude-web/connectors-on/index.html#read.file.project">●</a></td>
+<td class="m m-absent" title="Browser extension: not in this grant">·</td>
+<td class="m m-absent" title="Scheduled job: not in this grant">·</td>
+<td class="m m-none" title="GitHub Actions · none — nothing in the way · evidence: observed · via the job&#x27;s shell"><a href="../map/grants/github/actions-runner/ci/index.html#read.file.project">●</a></td>
+<td class="m m-none" title="ChatGPT · none — nothing in the way · evidence: derived · via conversation and uploads"><a href="../map/grants/openai/chatgpt-web/default/index.html#read.file.project">●</a></td>
+</tr>
+<tr><th class="cap"><a href="../map/capabilities/write.file.project/index.html">Change the project it is working on</a><span class="id">write.file.project</span></th><td class="rev rev-with-effort" title="recoverable from a backup, a history or a revert, at a cost">with-effort</td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: observed · via shell (Bash)"><a href="../map/grants/anthropic/claude-code-remote/ccr-container/index.html#write.file.project">●</a></td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: derived · via shell (Bash), files (Read, Edit, Write)"><a href="../map/grants/anthropic/claude-code/local-confirmations-off/index.html#write.file.project">●</a></td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: derived · via shell (Bash), files (Read, Edit, Write)"><a href="../map/grants/anthropic/claude-code/local-default/index.html#write.file.project">●</a></td>
+<td class="m m-none" title="Claude Desktop · none — nothing in the way · evidence: derived · via local files and commands (when enabled)"><a href="../map/grants/anthropic/claude-desktop/default/index.html#write.file.project">●</a></td>
+<td class="m m-absent" title="Claude.ai: not in this grant">·</td>
+<td class="m m-absent" title="Browser extension: not in this grant">·</td>
+<td class="m m-absent" title="Scheduled job: not in this grant">·</td>
+<td class="m m-none" title="GitHub Actions · none — nothing in the way · evidence: observed · via the job&#x27;s shell"><a href="../map/grants/github/actions-runner/ci/index.html#write.file.project">●</a></td>
+<td class="m m-absent" title="ChatGPT: not in this grant">·</td>
+</tr>
+<tr><th class="cap"><a href="../map/capabilities/read.file.host/index.html">Read any file the account can reach</a><span class="id">read.file.host</span></th><td class="rev rev-no" title="cannot be undone">no</td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: observed · via shell (Bash)"><a href="../map/grants/anthropic/claude-code-remote/ccr-container/index.html#read.file.host">●</a></td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: derived · via shell (Bash), files (Read, Edit, Write)"><a href="../map/grants/anthropic/claude-code/local-confirmations-off/index.html#read.file.host">●</a></td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: derived · via shell (Bash), files (Read, Edit, Write)"><a href="../map/grants/anthropic/claude-code/local-default/index.html#read.file.host">●</a></td>
+<td class="m m-setting" title="Claude Desktop · setting — a switch the agent&#x27;s own account can flip · evidence: derived · via local files and commands (when enabled)"><a href="../map/grants/anthropic/claude-desktop/default/index.html#read.file.host">◐</a></td>
+<td class="m m-boundary" title="Claude.ai · boundary — enforced above the grant, out of the agent&#x27;s reach · evidence: derived · via connectors"><a href="../map/grants/anthropic/claude-web/connectors-on/index.html#read.file.host">○</a></td>
+<td class="m m-absent" title="Browser extension: not in this grant">·</td>
+<td class="m m-none" title="Scheduled job · none — nothing in the way · evidence: derived · via the job"><a href="../map/grants/generic/scheduled-job/service-account/index.html#read.file.host">●</a></td>
+<td class="m m-none" title="GitHub Actions · none — nothing in the way · evidence: observed · via the job&#x27;s shell"><a href="../map/grants/github/actions-runner/ci/index.html#read.file.host">●</a></td>
+<td class="m m-absent" title="ChatGPT: not in this grant">·</td>
+</tr>
+<tr><th class="cap"><a href="../map/capabilities/write.file.host/index.html">Change any file the account can reach</a><span class="id">write.file.host</span></th><td class="rev rev-with-effort" title="recoverable from a backup, a history or a revert, at a cost">with-effort</td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: observed · via shell (Bash)"><a href="../map/grants/anthropic/claude-code-remote/ccr-container/index.html#write.file.host">●</a></td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: derived · via shell (Bash), files (Read, Edit, Write)"><a href="../map/grants/anthropic/claude-code/local-confirmations-off/index.html#write.file.host">●</a></td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: derived · via shell (Bash), files (Read, Edit, Write)"><a href="../map/grants/anthropic/claude-code/local-default/index.html#write.file.host">●</a></td>
+<td class="m m-setting" title="Claude Desktop · setting — a switch the agent&#x27;s own account can flip · evidence: derived · via local files and commands (when enabled)"><a href="../map/grants/anthropic/claude-desktop/default/index.html#write.file.host">◐</a></td>
+<td class="m m-absent" title="Claude.ai: not in this grant">·</td>
+<td class="m m-absent" title="Browser extension: not in this grant">·</td>
+<td class="m m-none" title="Scheduled job · none — nothing in the way · evidence: derived · via the job"><a href="../map/grants/generic/scheduled-job/service-account/index.html#write.file.host">●</a></td>
+<td class="m m-none" title="GitHub Actions · none — nothing in the way · evidence: observed · via the job&#x27;s shell"><a href="../map/grants/github/actions-runner/ci/index.html#write.file.host">●</a></td>
+<td class="m m-absent" title="ChatGPT: not in this grant">·</td>
+</tr>
+<tr><th class="cap"><a href="../map/capabilities/delete.file.host/index.html">Delete files anywhere the account can reach</a><span class="id">delete.file.host</span></th><td class="rev rev-no" title="cannot be undone">no</td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: observed · via shell (Bash)"><a href="../map/grants/anthropic/claude-code-remote/ccr-container/index.html#delete.file.host">●</a></td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: derived · via shell (Bash), files (Read, Edit, Write)"><a href="../map/grants/anthropic/claude-code/local-confirmations-off/index.html#delete.file.host">●</a></td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: derived · via shell (Bash), files (Read, Edit, Write)"><a href="../map/grants/anthropic/claude-code/local-default/index.html#delete.file.host">●</a></td>
+<td class="m m-absent" title="Claude Desktop: not in this grant">·</td>
+<td class="m m-absent" title="Claude.ai: not in this grant">·</td>
+<td class="m m-absent" title="Browser extension: not in this grant">·</td>
+<td class="m m-absent" title="Scheduled job: not in this grant">·</td>
+<td class="m m-none" title="GitHub Actions · none — nothing in the way · evidence: observed · via the job&#x27;s shell"><a href="../map/grants/github/actions-runner/ci/index.html#delete.file.host">●</a></td>
+<td class="m m-absent" title="ChatGPT: not in this grant">·</td>
+</tr>
+<tr><th class="cap"><a href="../map/capabilities/read.record.history/index.html">Read a retained record: shell history, past sessions</a><span class="id">read.record.history</span></th><td class="rev rev-no" title="cannot be undone">no</td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: observed · via shell (Bash)"><a href="../map/grants/anthropic/claude-code-remote/ccr-container/index.html#read.record.history">●</a></td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: documented · via shell (Bash)"><a href="../map/grants/anthropic/claude-code/local-confirmations-off/index.html#read.record.history">●</a></td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: documented · via shell (Bash)"><a href="../map/grants/anthropic/claude-code/local-default/index.html#read.record.history">●</a></td>
+<td class="m m-none" title="Claude Desktop · none — nothing in the way · evidence: documented · via local files and commands (when enabled)"><a href="../map/grants/anthropic/claude-desktop/default/index.html#read.record.history">●</a></td>
+<td class="m m-absent" title="Claude.ai: not in this grant">·</td>
+<td class="m m-absent" title="Browser extension: not in this grant">·</td>
+<td class="m m-absent" title="Scheduled job: not in this grant">·</td>
+<td class="m m-absent" title="GitHub Actions: not in this grant">·</td>
+<td class="m m-absent" title="ChatGPT: not in this grant">·</td>
+</tr>
+<tr class="fam"><th colspan="11">process <span>— programs and their execution</span></th></tr>
+<tr><th class="cap"><a href="../map/capabilities/execute.process.host/index.html">Run programs as the account</a><span class="id">execute.process.host</span></th><td class="rev rev-with-effort" title="recoverable from a backup, a history or a revert, at a cost">with-effort</td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: observed · via shell (Bash)"><a href="../map/grants/anthropic/claude-code-remote/ccr-container/index.html#execute.process.host">●</a></td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: derived · via shell (Bash)"><a href="../map/grants/anthropic/claude-code/local-confirmations-off/index.html#execute.process.host">●</a></td>
+<td class="m m-setting" title="Claude Code · setting — a switch the agent&#x27;s own account can flip · evidence: derived · via shell (Bash)"><a href="../map/grants/anthropic/claude-code/local-default/index.html#execute.process.host">◐</a></td>
+<td class="m m-setting" title="Claude Desktop · setting — a switch the agent&#x27;s own account can flip · evidence: derived · via local files and commands (when enabled)"><a href="../map/grants/anthropic/claude-desktop/default/index.html#execute.process.host">◐</a></td>
+<td class="m m-absent" title="Claude.ai: not in this grant">·</td>
+<td class="m m-absent" title="Browser extension: not in this grant">·</td>
+<td class="m m-none" title="Scheduled job · none — nothing in the way · evidence: derived · via the job"><a href="../map/grants/generic/scheduled-job/service-account/index.html#execute.process.host">●</a></td>
+<td class="m m-none" title="GitHub Actions · none — nothing in the way · evidence: observed · via the job&#x27;s shell"><a href="../map/grants/github/actions-runner/ci/index.html#execute.process.host">●</a></td>
+<td class="m m-absent" title="ChatGPT: not in this grant">·</td>
+</tr>
+<tr><th class="cap"><a href="../map/capabilities/execute.process.self/index.html">Run programs inside its own sandbox only</a><span class="id">execute.process.self</span></th><td class="rev rev-yes" title="undone by the same actor with no loss">yes</td>
+<td class="m m-absent" title="Claude Code: not in this grant">·</td>
+<td class="m m-absent" title="Claude Code: not in this grant">·</td>
+<td class="m m-absent" title="Claude Code: not in this grant">·</td>
+<td class="m m-absent" title="Claude Desktop: not in this grant">·</td>
+<td class="m m-absent" title="Claude.ai: not in this grant">·</td>
+<td class="m m-absent" title="Browser extension: not in this grant">·</td>
+<td class="m m-absent" title="Scheduled job: not in this grant">·</td>
+<td class="m m-absent" title="GitHub Actions: not in this grant">·</td>
+<td class="m m-absent" title="ChatGPT: not in this grant">·</td>
+</tr>
+<tr class="fam"><th colspan="11">network <span>— endpoints and hosts</span></th></tr>
+<tr><th class="cap"><a href="../map/capabilities/send.endpoint.allowed/index.html">Reach a permitted list of hosts</a><span class="id">send.endpoint.allowed</span></th><td class="rev rev-no" title="cannot be undone">no</td>
+<td class="m m-boundary" title="Claude Code · boundary — enforced above the grant, out of the agent&#x27;s reach · evidence: observed · via shell (Bash), fetch (WebFetch), harness (MCP and built-in tools)"><a href="../map/grants/anthropic/claude-code-remote/ccr-container/index.html#send.endpoint.allowed">○</a></td>
+<td class="m m-absent" title="Claude Code: not in this grant">·</td>
+<td class="m m-absent" title="Claude Code: not in this grant">·</td>
+<td class="m m-absent" title="Claude Desktop: not in this grant">·</td>
+<td class="m m-absent" title="Claude.ai: not in this grant">·</td>
+<td class="m m-absent" title="Browser extension: not in this grant">·</td>
+<td class="m m-absent" title="Scheduled job: not in this grant">·</td>
+<td class="m m-absent" title="GitHub Actions: not in this grant">·</td>
+<td class="m m-absent" title="ChatGPT: not in this grant">·</td>
+</tr>
+<tr><th class="cap"><a href="../map/capabilities/send.endpoint.world/index.html">Reach any host on the internet</a><span class="id">send.endpoint.world</span></th><td class="rev rev-no" title="cannot be undone">no</td>
+<td class="m m-absent" title="Claude Code: not in this grant">·</td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: derived · via shell (Bash), fetch (WebFetch)"><a href="../map/grants/anthropic/claude-code/local-confirmations-off/index.html#send.endpoint.world">●</a></td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: derived · via shell (Bash), fetch (WebFetch)"><a href="../map/grants/anthropic/claude-code/local-default/index.html#send.endpoint.world">●</a></td>
+<td class="m m-none" title="Claude Desktop · none — nothing in the way · evidence: derived · via local files and commands (when enabled)"><a href="../map/grants/anthropic/claude-desktop/default/index.html#send.endpoint.world">●</a></td>
+<td class="m m-absent" title="Claude.ai: not in this grant">·</td>
+<td class="m m-none" title="Browser extension · none — nothing in the way · evidence: documented · via the extension"><a href="../map/grants/generic/browser-extension/broad-host-permissions/index.html#send.endpoint.world">●</a></td>
+<td class="m m-none" title="Scheduled job · none — nothing in the way · evidence: derived · via the job"><a href="../map/grants/generic/scheduled-job/service-account/index.html#send.endpoint.world">●</a></td>
+<td class="m m-none" title="GitHub Actions · none — nothing in the way · evidence: observed · via the job&#x27;s shell"><a href="../map/grants/github/actions-runner/ci/index.html#send.endpoint.world">●</a></td>
+<td class="m m-absent" title="ChatGPT: not in this grant">·</td>
+</tr>
+<tr class="fam"><th colspan="11">identity <span>— credentials and who the agent can act as</span></th></tr>
+<tr><th class="cap"><a href="../map/capabilities/read.credential.host/index.html">Read credentials stored where it runs</a><span class="id">read.credential.host</span></th><td class="rev rev-no" title="cannot be undone">no</td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: observed · via shell (Bash)"><a href="../map/grants/anthropic/claude-code-remote/ccr-container/index.html#read.credential.host">●</a></td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: documented · via shell (Bash)"><a href="../map/grants/anthropic/claude-code/local-confirmations-off/index.html#read.credential.host">●</a></td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: documented · via shell (Bash)"><a href="../map/grants/anthropic/claude-code/local-default/index.html#read.credential.host">●</a></td>
+<td class="m m-none" title="Claude Desktop · none — nothing in the way · evidence: documented · via local files and commands (when enabled)"><a href="../map/grants/anthropic/claude-desktop/default/index.html#read.credential.host">●</a></td>
+<td class="m m-absent" title="Claude.ai: not in this grant">·</td>
+<td class="m m-absent" title="Browser extension: not in this grant">·</td>
+<td class="m m-absent" title="Scheduled job: not in this grant">·</td>
+<td class="m m-absent" title="GitHub Actions: not in this grant">·</td>
+<td class="m m-absent" title="ChatGPT: not in this grant">·</td>
+</tr>
+<tr><th class="cap"><a href="../map/capabilities/authenticate-as.credential.tenant/index.html">Act in accounts with the credentials it holds</a><span class="id">authenticate-as.credential.tenant</span></th><td class="rev rev-no" title="cannot be undone">no</td>
+<td class="m m-boundary" title="Claude Code · boundary — enforced above the grant, out of the agent&#x27;s reach · evidence: self-reported · via shell (Bash), harness (MCP and built-in tools)"><a href="../map/grants/anthropic/claude-code-remote/ccr-container/index.html#authenticate-as.credential.tenant">○</a></td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: derived · via shell (Bash)"><a href="../map/grants/anthropic/claude-code/local-confirmations-off/index.html#authenticate-as.credential.tenant">●</a></td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: derived · via shell (Bash)"><a href="../map/grants/anthropic/claude-code/local-default/index.html#authenticate-as.credential.tenant">●</a></td>
+<td class="m m-none" title="Claude Desktop · none — nothing in the way · evidence: derived · via local files and commands (when enabled)"><a href="../map/grants/anthropic/claude-desktop/default/index.html#authenticate-as.credential.tenant">●</a></td>
+<td class="m m-boundary" title="Claude.ai · boundary — enforced above the grant, out of the agent&#x27;s reach · evidence: derived · via connectors"><a href="../map/grants/anthropic/claude-web/connectors-on/index.html#authenticate-as.credential.tenant">○</a></td>
+<td class="m m-setting" title="Browser extension · setting — a switch the agent&#x27;s own account can flip · evidence: documented · via the extension"><a href="../map/grants/generic/browser-extension/broad-host-permissions/index.html#authenticate-as.credential.tenant">◐</a></td>
+<td class="m m-none" title="Scheduled job · none — nothing in the way · evidence: derived · via the job"><a href="../map/grants/generic/scheduled-job/service-account/index.html#authenticate-as.credential.tenant">●</a></td>
+<td class="m m-absent" title="GitHub Actions: not in this grant">·</td>
+<td class="m m-absent" title="ChatGPT: not in this grant">·</td>
+</tr>
+<tr><th class="cap"><a href="../map/capabilities/grant.credential.self/index.html">Change its own permission settings</a><span class="id">grant.credential.self</span></th><td class="rev rev-yes" title="undone by the same actor with no loss">yes</td>
+<td class="m m-absent" title="Claude Code: not in this grant">·</td>
+<td class="m m-setting" title="Claude Code · setting — a switch the agent&#x27;s own account can flip · evidence: derived · via shell (Bash)"><a href="../map/grants/anthropic/claude-code/local-confirmations-off/index.html#grant.credential.self">◐</a></td>
+<td class="m m-setting" title="Claude Code · setting — a switch the agent&#x27;s own account can flip · evidence: derived · via shell (Bash)"><a href="../map/grants/anthropic/claude-code/local-default/index.html#grant.credential.self">◐</a></td>
+<td class="m m-setting" title="Claude Desktop · setting — a switch the agent&#x27;s own account can flip · evidence: derived · via local files and commands (when enabled)"><a href="../map/grants/anthropic/claude-desktop/default/index.html#grant.credential.self">◐</a></td>
+<td class="m m-absent" title="Claude.ai: not in this grant">·</td>
+<td class="m m-absent" title="Browser extension: not in this grant">·</td>
+<td class="m m-absent" title="Scheduled job: not in this grant">·</td>
+<td class="m m-absent" title="GitHub Actions: not in this grant">·</td>
+<td class="m m-absent" title="ChatGPT: not in this grant">·</td>
+</tr>
+<tr class="fam"><th colspan="11">communication <span>— messages to people</span></th></tr>
+<tr><th class="cap"><a href="../map/capabilities/send.message.world/index.html">Send a message to anyone</a><span class="id">send.message.world</span></th><td class="rev rev-no" title="cannot be undone">no</td>
+<td class="m m-absent" title="Claude Code: not in this grant">·</td>
+<td class="m m-absent" title="Claude Code: not in this grant">·</td>
+<td class="m m-absent" title="Claude Code: not in this grant">·</td>
+<td class="m m-absent" title="Claude Desktop: not in this grant">·</td>
+<td class="m m-absent" title="Claude.ai: not in this grant">·</td>
+<td class="m m-absent" title="Browser extension: not in this grant">·</td>
+<td class="m m-absent" title="Scheduled job: not in this grant">·</td>
+<td class="m m-absent" title="GitHub Actions: not in this grant">·</td>
+<td class="m m-absent" title="ChatGPT: not in this grant">·</td>
+</tr>
+<tr><th class="cap"><a href="../map/capabilities/read.message.tenant/index.html">Read mail or chat it is connected to</a><span class="id">read.message.tenant</span></th><td class="rev rev-no" title="cannot be undone">no</td>
+<td class="m m-absent" title="Claude Code: not in this grant">·</td>
+<td class="m m-absent" title="Claude Code: not in this grant">·</td>
+<td class="m m-absent" title="Claude Code: not in this grant">·</td>
+<td class="m m-absent" title="Claude Desktop: not in this grant">·</td>
+<td class="m m-boundary" title="Claude.ai · boundary — enforced above the grant, out of the agent&#x27;s reach · evidence: derived · via connectors"><a href="../map/grants/anthropic/claude-web/connectors-on/index.html#read.message.tenant">○</a></td>
+<td class="m m-absent" title="Browser extension: not in this grant">·</td>
+<td class="m m-absent" title="Scheduled job: not in this grant">·</td>
+<td class="m m-absent" title="GitHub Actions: not in this grant">·</td>
+<td class="m m-absent" title="ChatGPT: not in this grant">·</td>
+</tr>
+<tr class="fam"><th colspan="11">code <span>— repositories and what lands in them</span></th></tr>
+<tr><th class="cap"><a href="../map/capabilities/write.repository.project/index.html">Commit to the repository it was pointed at</a><span class="id">write.repository.project</span></th><td class="rev rev-with-effort" title="recoverable from a backup, a history or a revert, at a cost">with-effort</td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: observed · via shell (Bash)"><a href="../map/grants/anthropic/claude-code-remote/ccr-container/index.html#write.repository.project">●</a></td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: derived · via shell (Bash)"><a href="../map/grants/anthropic/claude-code/local-confirmations-off/index.html#write.repository.project">●</a></td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: derived · via shell (Bash)"><a href="../map/grants/anthropic/claude-code/local-default/index.html#write.repository.project">●</a></td>
+<td class="m m-absent" title="Claude Desktop: not in this grant">·</td>
+<td class="m m-absent" title="Claude.ai: not in this grant">·</td>
+<td class="m m-absent" title="Browser extension: not in this grant">·</td>
+<td class="m m-absent" title="Scheduled job: not in this grant">·</td>
+<td class="m m-boundary" title="GitHub Actions · boundary — enforced above the grant, out of the agent&#x27;s reach · evidence: observed · via the job&#x27;s shell"><a href="../map/grants/github/actions-runner/ci/index.html#write.repository.project">○</a></td>
+<td class="m m-absent" title="ChatGPT: not in this grant">·</td>
+</tr>
+<tr><th class="cap"><a href="../map/capabilities/write.repository.tenant/index.html">Push to a code host (any branch it can reach)</a><span class="id">write.repository.tenant</span></th><td class="rev rev-with-effort" title="recoverable from a backup, a history or a revert, at a cost">with-effort</td>
+<td class="m m-setting" title="Claude Code · setting — a switch the agent&#x27;s own account can flip · evidence: observed · via shell (Bash), harness (MCP and built-in tools)"><a href="../map/grants/anthropic/claude-code-remote/ccr-container/index.html#write.repository.tenant">◐</a></td>
+<td class="m m-expectation" title="Claude Code · expectation — a rule in prose, enforced by nobody · evidence: derived · via shell (Bash)"><a href="../map/grants/anthropic/claude-code/local-confirmations-off/index.html#write.repository.tenant">◉</a></td>
+<td class="m m-expectation" title="Claude Code · expectation — a rule in prose, enforced by nobody · evidence: derived · via shell (Bash)"><a href="../map/grants/anthropic/claude-code/local-default/index.html#write.repository.tenant">◉</a></td>
+<td class="m m-absent" title="Claude Desktop: not in this grant">·</td>
+<td class="m m-boundary" title="Claude.ai · boundary — enforced above the grant, out of the agent&#x27;s reach · evidence: derived · via connectors"><a href="../map/grants/anthropic/claude-web/connectors-on/index.html#write.repository.tenant">○</a></td>
+<td class="m m-absent" title="Browser extension: not in this grant">·</td>
+<td class="m m-absent" title="Scheduled job: not in this grant">·</td>
+<td class="m m-absent" title="GitHub Actions: not in this grant">·</td>
+<td class="m m-absent" title="ChatGPT: not in this grant">·</td>
+</tr>
+<tr><th class="cap"><a href="../map/capabilities/authenticate-as.credential.signing/index.html">Sign commits with the key it holds</a><span class="id">authenticate-as.credential.signing</span></th><td class="rev rev-no" title="cannot be undone">no</td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: observed · via shell (Bash)"><a href="../map/grants/anthropic/claude-code-remote/ccr-container/index.html#authenticate-as.credential.signing">●</a></td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: documented · via shell (Bash)"><a href="../map/grants/anthropic/claude-code/local-confirmations-off/index.html#authenticate-as.credential.signing">●</a></td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: documented · via shell (Bash)"><a href="../map/grants/anthropic/claude-code/local-default/index.html#authenticate-as.credential.signing">●</a></td>
+<td class="m m-absent" title="Claude Desktop: not in this grant">·</td>
+<td class="m m-absent" title="Claude.ai: not in this grant">·</td>
+<td class="m m-absent" title="Browser extension: not in this grant">·</td>
+<td class="m m-absent" title="Scheduled job: not in this grant">·</td>
+<td class="m m-absent" title="GitHub Actions: not in this grant">·</td>
+<td class="m m-absent" title="ChatGPT: not in this grant">·</td>
+</tr>
+<tr><th class="cap"><a href="../map/capabilities/create.record.world/index.html">Publish packages, images or pages under the name it holds</a><span class="id">create.record.world</span></th><td class="rev rev-no" title="cannot be undone">no</td>
+<td class="m m-absent" title="Claude Code: not in this grant">·</td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: documented · via shell (Bash)"><a href="../map/grants/anthropic/claude-code/local-confirmations-off/index.html#create.record.world">●</a></td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: documented · via shell (Bash)"><a href="../map/grants/anthropic/claude-code/local-default/index.html#create.record.world">●</a></td>
+<td class="m m-absent" title="Claude Desktop: not in this grant">·</td>
+<td class="m m-absent" title="Claude.ai: not in this grant">·</td>
+<td class="m m-absent" title="Browser extension: not in this grant">·</td>
+<td class="m m-absent" title="Scheduled job: not in this grant">·</td>
+<td class="m m-absent" title="GitHub Actions: not in this grant">·</td>
+<td class="m m-absent" title="ChatGPT: not in this grant">·</td>
+</tr>
+<tr class="fam"><th colspan="11">money <span>— budgets and spend</span></th></tr>
+<tr><th class="cap"><a href="../map/capabilities/write.budget.tenant/index.html">Spend money or tokens against an account it holds</a><span class="id">write.budget.tenant</span></th><td class="rev rev-no" title="cannot be undone">no</td>
+<td class="m m-absent" title="Claude Code: not in this grant">·</td>
+<td class="m m-absent" title="Claude Code: not in this grant">·</td>
+<td class="m m-absent" title="Claude Code: not in this grant">·</td>
+<td class="m m-absent" title="Claude Desktop: not in this grant">·</td>
+<td class="m m-absent" title="Claude.ai: not in this grant">·</td>
+<td class="m m-absent" title="Browser extension: not in this grant">·</td>
+<td class="m m-none" title="Scheduled job · none — nothing in the way · evidence: derived · via the job"><a href="../map/grants/generic/scheduled-job/service-account/index.html#write.budget.tenant">●</a></td>
+<td class="m m-absent" title="GitHub Actions: not in this grant">·</td>
+<td class="m m-absent" title="ChatGPT: not in this grant">·</td>
+</tr>
+<tr class="fam"><th colspan="11">schedule <span>— things that outlive the turn</span></th></tr>
+<tr><th class="cap"><a href="../map/capabilities/create.schedule.host/index.html">Create something that outlives the turn where it runs (a cron, a service)</a><span class="id">create.schedule.host</span></th><td class="rev rev-yes" title="undone by the same actor with no loss">yes</td>
+<td class="m m-boundary" title="Claude Code · boundary — enforced above the grant, out of the agent&#x27;s reach · evidence: observed · via shell (Bash)"><a href="../map/grants/anthropic/claude-code-remote/ccr-container/index.html#create.schedule.host">○</a></td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: derived · via shell (Bash)"><a href="../map/grants/anthropic/claude-code/local-confirmations-off/index.html#create.schedule.host">●</a></td>
+<td class="m m-none" title="Claude Code · none — nothing in the way · evidence: derived · via shell (Bash)"><a href="../map/grants/anthropic/claude-code/local-default/index.html#create.schedule.host">●</a></td>
+<td class="m m-absent" title="Claude Desktop: not in this grant">·</td>
+<td class="m m-absent" title="Claude.ai: not in this grant">·</td>
+<td class="m m-absent" title="Browser extension: not in this grant">·</td>
+<td class="m m-none" title="Scheduled job · none — nothing in the way · evidence: derived · via the job"><a href="../map/grants/generic/scheduled-job/service-account/index.html#create.schedule.host">●</a></td>
+<td class="m m-absent" title="GitHub Actions: not in this grant">·</td>
+<td class="m m-absent" title="ChatGPT: not in this grant">·</td>
+</tr>
+<tr><th class="cap"><a href="../map/capabilities/create.schedule.tenant/index.html">Create something that outlives the session, on the platform (a routine, a scheduled trigger, a new session)</a><span class="id">create.schedule.tenant</span></th><td class="rev rev-yes" title="undone by the same actor with no loss">yes</td>
+<td class="m m-setting" title="Claude Code · setting — a switch the agent&#x27;s own account can flip · evidence: self-reported · via harness (MCP and built-in tools)"><a href="../map/grants/anthropic/claude-code-remote/ccr-container/index.html#create.schedule.tenant">◐</a></td>
+<td class="m m-absent" title="Claude Code: not in this grant">·</td>
+<td class="m m-absent" title="Claude Code: not in this grant">·</td>
+<td class="m m-absent" title="Claude Desktop: not in this grant">·</td>
+<td class="m m-absent" title="Claude.ai: not in this grant">·</td>
+<td class="m m-absent" title="Browser extension: not in this grant">·</td>
+<td class="m m-absent" title="Scheduled job: not in this grant">·</td>
+<td class="m m-absent" title="GitHub Actions: not in this grant">·</td>
+<td class="m m-absent" title="ChatGPT: not in this grant">·</td>
+</tr>
+<tr class="fam"><th colspan="11">browser <span>— what a browser extension or automation can see and do in your browser</span></th></tr>
+<tr><th class="cap"><a href="../map/capabilities/read.record.browsing/index.html">Read every page you visit</a><span class="id">read.record.browsing</span></th><td class="rev rev-no" title="cannot be undone">no</td>
+<td class="m m-absent" title="Claude Code: not in this grant">·</td>
+<td class="m m-absent" title="Claude Code: not in this grant">·</td>
+<td class="m m-absent" title="Claude Code: not in this grant">·</td>
+<td class="m m-absent" title="Claude Desktop: not in this grant">·</td>
+<td class="m m-absent" title="Claude.ai: not in this grant">·</td>
+<td class="m m-none" title="Browser extension · none — nothing in the way · evidence: documented · via the extension"><a href="../map/grants/generic/browser-extension/broad-host-permissions/index.html#read.record.browsing">●</a></td>
+<td class="m m-absent" title="Scheduled job: not in this grant">·</td>
+<td class="m m-absent" title="GitHub Actions: not in this grant">·</td>
+<td class="m m-absent" title="ChatGPT: not in this grant">·</td>
+</tr>
+</tbody></table></div>
+  <h2 id="how-to-read-it">How to read it</h2>
+  <ul><li><b>A filled cell means the agent can.</b> What the fill <em>shade</em> adds is what stands between it and the capability: nothing (●), a rule somebody wrote down (◉), a setting the agent's own account could change (◐), or a boundary enforced above it that it cannot reach (○). Darker is more open.</li><li><b>Hover a cell</b> for the control, the evidence tier and the tool that reaches it. Click it for the row on that product's page.</li><li><b>The Undo column is the row's weight.</b> A capability that cannot be undone — read a credential, send a message, delete at host reach — is a different kind of thing from one that can, however many cells it fills. The game's levels are built on that.</li><li><b>Host, tenant and world mean what the profile says they mean.</b> For an agent in a vendor's container, <em>host</em> is the container and <em>tenant</em> is a scoped token — not your machine and not your accounts. Each product's page names its reaches.</li></ul>
+  <h2 id="how-sure-is-any-of-this">How sure is any of this</h2>
+  <p>Not very, in most places, and every row says so. Of 99 tool-capability rows across the set, <b>21 were measured</b> — a probe run on an instance, dated — and the rest are <em>derived</em> from what a thing architecturally is, or <em>documented</em> by the vendor. A derived row is a claim until somebody runs the probes and contributes the file, and the honest reading of this table is <b>mostly claims, structured so that each one can be replaced by a measurement</b>.</p>
+  <p>That is what the pull request is for. <a href="../map/contribute/index.html">How to contribute</a> — a row, a whole profile, a mandate, or a correction.</p>
+  <h2 id="the-rest-of-the-map">The rest of the map</h2>
+  <div class="gamegrid"><div class="gamecard"><h3>Every product, one page each</h3><p class="sub">Tool by tool: what it reaches, the control on the path, the evidence, what the profile says is out of reach and why, and the reductions that narrow it.</p><div class="foot"><a href="../map/grants/index.html">The products</a></div></div><div class="gamecard"><h3>The capabilities</h3><p class="sub">The 23 primitives the questions are built from — which products grant each, what narrows it, which questions ask about it, and which mandates want it.</p><div class="foot"><a href="../map/capabilities/index.html">The capabilities</a></div></div><div class="gamecard"><h3>Mandates, and the deltas</h3><p class="sub">What a reasonable person wanted, per setup — and the gap against what was actually granted, as a matrix: excess in one colour, shortfall in the other.</p><div class="foot"><a href="../map/mandates/index.html">The mandates</a> · <a href="../map/deltas/index.html">The deltas</a></div></div><div class="gamecard"><h3>Above the ceiling</h3><p class="sub">The 17 things no agent in this set can do, each naming the control outside the agent that stops it.</p><div class="foot"><a href="../map/ceiling/index.html">The ceiling</a></div></div><div class="gamecard"><h3>The questions</h3><p class="sub">25 questions the games ask, with what each one is for — the seed of a question pack that could be customised.</p><div class="foot"><a href="../map/questions/index.html">The questions</a></div></div><div class="gamecard"><h3>The data pack</h3><p class="sub">All of it as JSON, at a stable URL with CORS, which is how the game reads it. Fork it, change it, point the game at yours.</p><div class="foot"><a href="../data/index.html">The pack</a> · <a href="../map/contribute/index.html">Contribute</a></div></div></div>
+</main>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">what-can-it-do<span>.games.sgit.ai</span></div>
+    <p>A game about the gap between what your AI agent <em>can</em> do and what you <em>wanted</em> it to do. Free, no sign-up, nothing stored. <a href="../about/index.html" style="display:inline;padding:0">Who made it, and how to check what it says</a>.</p>
+    <p class="netline"><a href="https://riskmandate.ai"><b>↗ RiskMandate.ai</b></a> — where the delta this game hands you becomes a named owner and a time-bound decision · <a href="https://games.sgit.ai">↗ games.sgit.ai</a> — why we build games · <a href="https://sgit.ai">↗ sgit.ai</a> — the encrypted vault the game is published in · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — where the capability data comes from</p>
+    <p class="partnote">This game counts usage anonymously — no cookies, no analytics script, nothing that identifies you, and a pause switch on every screen. <a href="../what-we-learn/index.html" style="display:inline;padding:0">Exactly what is sent</a>.</p>
+    <p class="verline">site <a href="../admin/versions.html">v0.4.0</a> · <a href="../admin/index.html">engineering</a> · <a href="../llms.txt">llms.txt</a> · CC BY 4.0 · <a href="../map/index.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The game</h4>
+    <a href="../index.html">&#8594; Play</a>
+    <a href="../how-it-is-scored/index.html">How it's scored</a>
+    <a href="../the-ceiling/index.html">Why some are impossible</a>
+    <a href="../what-next/index.html">What to do next</a>
+    <a href="../licence-to-operate/index.html">Licence to Operate</a>
+  </div>
+  <div>
+    <h4>The map</h4>
+    <a href="../map/index.html">What each agent can reach</a>
+    <a href="../map/deltas/index.html">The mandates and deltas</a>
+    <a href="../map/contribute/index.html">Contribute a row</a>
+    <a href="../data/index.html">The data pack</a>
+  </div>
+  <div>
+    <h4>Straight answers</h4>
+    <a href="../what-we-learn/index.html">What we learn from you</a>
+    <a href="../about/index.html">Who made it</a>
+    <a href="https://dev.vault.sgraph.ai/#f94c8b1d42352d95703ac3d39032735d9b4e388d16ab5b87c948928d8e111118%3A4evnlwrj">Open the game's source</a>
+  </div>
+  <div>
+    <h4>More</h4>
+    <a href="https://riskmandate.ai">&#8594; RiskMandate.ai</a>
+    <a href="https://games.sgit.ai">games.sgit.ai</a>
+    <a href="../admin/versions.html">Release history</a>
+    <a href="../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+</body>
+</html>

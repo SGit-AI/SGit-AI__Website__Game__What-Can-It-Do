@@ -1,0 +1,489 @@
+{
+  "_what_this_is": "The entry picker. `guide` is the four-question flow (what → where → which → how), each answer narrowing the next; every path ends on one of the public profiles, either exactly (`profile`) or as a stand-in (`standin`: the nearest measured profile, named as such in the game and in the telemetry — the set has not met that product yet). `vendors`/`products`/`variants` label the profiles for the agent row and the 'see all' list.",
+  "vendors": [
+    {
+      "id": "anthropic",
+      "label": "Claude",
+      "sub": "by Anthropic",
+      "icon": "spark"
+    },
+    {
+      "id": "openai",
+      "label": "ChatGPT",
+      "sub": "by OpenAI",
+      "icon": "chat"
+    },
+    {
+      "id": "github",
+      "label": "GitHub Actions",
+      "sub": "a CI runner",
+      "icon": "cog"
+    },
+    {
+      "id": "generic",
+      "label": "Something else",
+      "sub": "an extension, a scheduled job…",
+      "icon": "dots"
+    }
+  ],
+  "products": {
+    "anthropic/claude-code": {
+      "label": "Claude Code",
+      "sub": "the coding agent",
+      "icon": "terminal"
+    },
+    "anthropic/claude-code-remote": {
+      "label": "Claude Code",
+      "sub": "the coding agent",
+      "icon": "terminal",
+      "merge_into": "anthropic/claude-code"
+    },
+    "anthropic/claude-desktop": {
+      "label": "Claude Desktop",
+      "sub": "the app on your computer",
+      "icon": "window"
+    },
+    "anthropic/claude-web": {
+      "label": "Claude in the browser",
+      "sub": "claude.ai in a tab",
+      "icon": "globe"
+    },
+    "openai/chatgpt-web": {
+      "label": "ChatGPT in the browser",
+      "sub": "chatgpt.com in a tab",
+      "icon": "globe"
+    },
+    "github/actions-runner": {
+      "label": "Actions runner",
+      "sub": "a hosted CI job",
+      "icon": "cog"
+    },
+    "generic/browser-extension": {
+      "label": "A browser extension",
+      "sub": "with broad host permissions",
+      "icon": "puzzle"
+    },
+    "generic/scheduled-job": {
+      "label": "A scheduled job",
+      "sub": "cron, a service account",
+      "icon": "clock"
+    }
+  },
+  "variants": {
+    "anthropic/claude-code/local-default": {
+      "label": "On my machine, in a terminal",
+      "sub": "confirmations on",
+      "icon": "terminal"
+    },
+    "anthropic/claude-code/local-confirmations-off": {
+      "label": "On my machine, confirmations off",
+      "sub": "auto mode, always allow, a skip-permissions flag",
+      "icon": "bolt"
+    },
+    "anthropic/claude-code-remote/ccr-container": {
+      "label": "On the web",
+      "sub": "a remote session container, a repo attached",
+      "icon": "cloud"
+    },
+    "anthropic/claude-desktop/default": {
+      "label": "The desktop app",
+      "sub": "with local tools and connectors",
+      "icon": "window"
+    },
+    "anthropic/claude-web/connectors-on": {
+      "label": "With connectors switched on",
+      "sub": "a drive, mail, a code host…",
+      "icon": "plug"
+    },
+    "openai/chatgpt-web/default": {
+      "label": "In the browser, no connectors",
+      "sub": "paste in, read what comes back",
+      "icon": "globe"
+    },
+    "github/actions-runner/ci": {
+      "label": "A hosted CI job",
+      "sub": "the workflow's token, ephemeral",
+      "icon": "cog"
+    },
+    "generic/browser-extension/broad-host-permissions": {
+      "label": "Broad host permissions",
+      "sub": "read and change data on all sites",
+      "icon": "puzzle"
+    },
+    "generic/scheduled-job/service-account": {
+      "label": "Under a service account",
+      "sub": "runs when nobody is watching",
+      "icon": "clock"
+    }
+  },
+  "guide": {
+    "questions": [
+      {
+        "id": "what",
+        "label": "what",
+        "q": "Which one do you use?"
+      },
+      {
+        "id": "where",
+        "label": "where",
+        "q": "Where does it run?"
+      },
+      {
+        "id": "which",
+        "label": "which",
+        "q": "Which product, exactly?"
+      },
+      {
+        "id": "how",
+        "label": "how",
+        "q": "How is it set up?"
+      }
+    ],
+    "what": [
+      {
+        "id": "claude",
+        "label": "Claude",
+        "sub": "by Anthropic",
+        "icon": "spark"
+      },
+      {
+        "id": "chatgpt",
+        "label": "ChatGPT / Codex",
+        "sub": "by OpenAI",
+        "icon": "chat"
+      },
+      {
+        "id": "copilot",
+        "label": "GitHub Copilot",
+        "sub": "by GitHub",
+        "icon": "cog"
+      },
+      {
+        "id": "cursor",
+        "label": "Cursor",
+        "sub": "the editor",
+        "icon": "window"
+      },
+      {
+        "id": "lovable",
+        "label": "Lovable",
+        "sub": "builds and hosts apps",
+        "icon": "cloud"
+      },
+      {
+        "id": "actions",
+        "label": "GitHub Actions",
+        "sub": "a CI runner",
+        "icon": "cog"
+      },
+      {
+        "id": "other",
+        "label": "Something else",
+        "sub": "an extension, a scheduled job…",
+        "icon": "dots"
+      }
+    ],
+    "where": [
+      {
+        "id": "browser",
+        "label": "In a browser tab",
+        "sub": "a website, nothing installed",
+        "icon": "globe"
+      },
+      {
+        "id": "computer",
+        "label": "On my computer",
+        "sub": "an app, an editor, a terminal",
+        "icon": "terminal"
+      },
+      {
+        "id": "cloud",
+        "label": "In the vendor's cloud",
+        "sub": "a remote session, a hosted agent",
+        "icon": "cloud"
+      },
+      {
+        "id": "ci",
+        "label": "In CI",
+        "sub": "a pipeline, a hosted runner",
+        "icon": "cog"
+      }
+    ],
+    "paths": {
+      "claude": {
+        "browser": [
+          {
+            "id": "claude-web",
+            "label": "Claude.ai chat",
+            "sub": "the chat, with connectors",
+            "icon": "chat",
+            "profile": "anthropic/claude-web/connectors-on"
+          },
+          {
+            "id": "ccr",
+            "label": "Claude Code on the web",
+            "sub": "a remote session with a repo attached",
+            "icon": "terminal",
+            "profile": "anthropic/claude-code-remote/ccr-container"
+          },
+          {
+            "id": "cowork-web",
+            "label": "Cowork on the web",
+            "sub": "a cloud sandbox, maybe linked to your computer",
+            "icon": "cloud",
+            "standin": "anthropic/claude-code-remote/ccr-container",
+            "note": "no measured profile of Cowork yet; the remote session container is the nearest — when Cowork is linked to your computer it reaches more than this stand-in says"
+          }
+        ],
+        "computer": [
+          {
+            "id": "claude-code",
+            "label": "Claude Code",
+            "sub": "the CLI, in a terminal or an editor",
+            "icon": "terminal",
+            "how": "cli"
+          },
+          {
+            "id": "claude-desktop",
+            "label": "Claude Desktop",
+            "sub": "the app, with local tools and connectors",
+            "icon": "window",
+            "profile": "anthropic/claude-desktop/default"
+          },
+          {
+            "id": "cowork-desktop",
+            "label": "Cowork in the desktop app",
+            "sub": "works on folders you hand it",
+            "icon": "window",
+            "standin": "anthropic/claude-desktop/default",
+            "note": "no measured profile of Cowork yet; Claude Desktop is the nearest"
+          }
+        ],
+        "cloud": [
+          {
+            "id": "ccr",
+            "label": "Claude Code on the web",
+            "sub": "a remote session container",
+            "icon": "terminal",
+            "profile": "anthropic/claude-code-remote/ccr-container"
+          },
+          {
+            "id": "cowork-web",
+            "label": "Cowork",
+            "sub": "a cloud sandbox",
+            "icon": "cloud",
+            "standin": "anthropic/claude-code-remote/ccr-container",
+            "note": "no measured profile of Cowork yet; the remote session container is the nearest"
+          }
+        ]
+      },
+      "chatgpt": {
+        "browser": [
+          {
+            "id": "chatgpt-web",
+            "label": "ChatGPT",
+            "sub": "chatgpt.com in a tab",
+            "icon": "globe",
+            "profile": "openai/chatgpt-web/default"
+          }
+        ],
+        "computer": [
+          {
+            "id": "chatgpt-desktop",
+            "label": "ChatGPT desktop app",
+            "sub": "can read app windows you allow",
+            "icon": "window",
+            "standin": "openai/chatgpt-web/default",
+            "note": "no measured profile of the desktop app yet; the browser version is the nearest — the desktop app can read from apps you pair it with, which this stand-in does not include"
+          },
+          {
+            "id": "codex-cli",
+            "label": "Codex CLI",
+            "sub": "the coding agent in a terminal",
+            "icon": "terminal",
+            "how": "cli",
+            "standin_family": "anthropic/claude-code",
+            "note": "no measured profile of Codex CLI yet; Claude Code on a machine is the nearest shape — a shell on your computer"
+          }
+        ],
+        "cloud": [
+          {
+            "id": "codex-cloud",
+            "label": "Codex (cloud)",
+            "sub": "a hosted container with a repo attached",
+            "icon": "cloud",
+            "standin": "anthropic/claude-code-remote/ccr-container",
+            "note": "no measured profile of cloud Codex yet; the Claude remote session container is the nearest shape"
+          }
+        ]
+      },
+      "copilot": {
+        "browser": [
+          {
+            "id": "copilot-chat",
+            "label": "Copilot chat on github.com",
+            "sub": "answers about repos you can see",
+            "icon": "globe",
+            "standin": "openai/chatgpt-web/default",
+            "note": "no measured profile yet; a chat in a tab is the nearest shape"
+          }
+        ],
+        "computer": [
+          {
+            "id": "copilot-editor",
+            "label": "Copilot in the editor",
+            "sub": "agent mode in VS Code, JetBrains…",
+            "icon": "window",
+            "how": "cli",
+            "standin_family": "anthropic/claude-code",
+            "note": "no measured profile yet; a coding agent on your machine is the nearest shape"
+          },
+          {
+            "id": "copilot-cli",
+            "label": "Copilot CLI",
+            "sub": "in a terminal",
+            "icon": "terminal",
+            "how": "cli",
+            "standin_family": "anthropic/claude-code",
+            "note": "no measured profile yet; Claude Code on a machine is the nearest shape"
+          }
+        ],
+        "cloud": [
+          {
+            "id": "copilot-agent",
+            "label": "Copilot coding agent",
+            "sub": "assigned an issue, opens a PR from Actions",
+            "icon": "cog",
+            "standin": "github/actions-runner/ci",
+            "note": "no measured profile yet; it runs inside a GitHub Actions job, so the Actions runner is the nearest"
+          }
+        ],
+        "ci": [
+          {
+            "id": "copilot-agent",
+            "label": "Copilot coding agent",
+            "sub": "runs in an Actions job",
+            "icon": "cog",
+            "standin": "github/actions-runner/ci",
+            "note": "no measured profile yet; the Actions runner is the nearest"
+          }
+        ]
+      },
+      "cursor": {
+        "computer": [
+          {
+            "id": "cursor-agent",
+            "label": "Cursor agent",
+            "sub": "in the editor, on your files",
+            "icon": "window",
+            "how": "cli",
+            "standin_family": "anthropic/claude-code",
+            "note": "no measured profile of Cursor yet; a coding agent on your machine is the nearest shape — its YOLO mode is the confirmations-off variant"
+          }
+        ],
+        "cloud": [
+          {
+            "id": "cursor-bg",
+            "label": "Cursor background agent",
+            "sub": "a hosted VM with a repo",
+            "icon": "cloud",
+            "standin": "anthropic/claude-code-remote/ccr-container",
+            "note": "no measured profile yet; a remote container with a repo is the nearest shape"
+          }
+        ]
+      },
+      "lovable": {
+        "browser": [
+          {
+            "id": "lovable",
+            "label": "Lovable",
+            "sub": "builds, deploys and hosts the app",
+            "icon": "cloud",
+            "standin": "anthropic/claude-code-remote/ccr-container",
+            "note": "no measured profile of Lovable yet; a hosted container with a repo is the nearest shape — but Lovable also deploys and holds your app's backend keys, which the stand-in does not include"
+          }
+        ]
+      },
+      "actions": {
+        "ci": [
+          {
+            "id": "actions",
+            "label": "A hosted runner",
+            "sub": "the workflow's token, ephemeral",
+            "icon": "cog",
+            "profile": "github/actions-runner/ci"
+          }
+        ]
+      },
+      "other": {
+        "browser": [
+          {
+            "id": "extension",
+            "label": "A browser extension",
+            "sub": "broad host permissions",
+            "icon": "puzzle",
+            "profile": "generic/browser-extension/broad-host-permissions"
+          }
+        ],
+        "computer": [
+          {
+            "id": "job",
+            "label": "A scheduled job",
+            "sub": "cron, a service account",
+            "icon": "clock",
+            "profile": "generic/scheduled-job/service-account"
+          }
+        ],
+        "cloud": [
+          {
+            "id": "job",
+            "label": "A scheduled job",
+            "sub": "under a service account, nobody watching",
+            "icon": "clock",
+            "profile": "generic/scheduled-job/service-account"
+          }
+        ],
+        "ci": [
+          {
+            "id": "actions",
+            "label": "A hosted runner",
+            "sub": "the workflow's token",
+            "icon": "cog",
+            "profile": "github/actions-runner/ci"
+          }
+        ]
+      }
+    },
+    "how": {
+      "cli": [
+        {
+          "id": "confirm-on",
+          "label": "Directly on my machine, confirmations on",
+          "sub": "it asks before it acts",
+          "icon": "terminal",
+          "variant": "local-default"
+        },
+        {
+          "id": "confirm-off",
+          "label": "Directly on my machine, confirmations off",
+          "sub": "auto mode, always allow, YOLO, a skip-permissions flag",
+          "icon": "bolt",
+          "variant": "local-confirmations-off"
+        },
+        {
+          "id": "container",
+          "label": "In a container or sandbox",
+          "sub": "Docker, a devcontainer, Kubernetes — with my files mounted or not",
+          "icon": "cloud",
+          "standin": "anthropic/claude-code-remote/ccr-container",
+          "note": "a container on your machine has no measured profile yet; the remote session container is the nearest — host means the container, and anything you mount into it is reachable too"
+        }
+      ]
+    },
+    "just_play": {
+      "profile": "anthropic/claude-code/local-default",
+      "label": "Just play",
+      "sub": "Claude Code on a machine, confirmations on — change it any time"
+    }
+  }
+}

@@ -21,6 +21,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import shell  # noqa: E402
+import map_pages  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
 VERSION = (ROOT / "admin/build/version.txt").read_text().strip()
@@ -78,8 +79,21 @@ SITE = {
 
 NAV = [
     ("Play", "index.html", [], ()),
-    ("How it's scored", "how-it-is-scored/index.html", [], ("how-it-is-scored/",)),
-    ("Some are impossible", "the-ceiling/index.html", [], ("the-ceiling/",)),
+    ("The map", "map/index.html", [
+        ("What each agent can reach", "map/index.html"),
+        ("The products", "map/grants/index.html"),
+        ("The capabilities", "map/capabilities/index.html"),
+        ("The mandates", "map/mandates/index.html"),
+        ("The deltas", "map/deltas/index.html"),
+        ("Above the ceiling", "map/ceiling/index.html"),
+        ("The questions", "map/questions/index.html"),
+        ("Contribute", "map/contribute/index.html"),
+        ("The data pack", "data/index.html"),
+    ], ("map/", "data/")),
+    ("How it works", "how-it-is-scored/index.html", [
+        ("How it's scored", "how-it-is-scored/index.html"),
+        ("Some questions are impossible", "the-ceiling/index.html"),
+    ], ("how-it-is-scored/", "the-ceiling/")),
     ("What next", "what-next/index.html", [
         ("What to do next", "what-next/index.html"),
         ("Licence to Operate — the delta, priced", "licence-to-operate/index.html"),
@@ -101,6 +115,12 @@ FOOTER = [
         ("What to do next", "what-next/index.html"),
         ("Licence to Operate", "licence-to-operate/index.html"),
     ]),
+    ("The map", [
+        ("What each agent can reach", "map/index.html"),
+        ("The mandates and deltas", "map/deltas/index.html"),
+        ("Contribute a row", "map/contribute/index.html"),
+        ("The data pack", "data/index.html"),
+    ]),
     ("Straight answers", [
         ("What we learn from you", "what-we-learn/index.html"),
         ("Who made it", "about/index.html"),
@@ -115,6 +135,21 @@ FOOTER = [
 ]
 
 VERSION_LOG = [
+    ("v0.4.0", "2026-09-09",
+     "The map. The claims about what each product can reach — nine profiles, tool by tool, "
+     "with an evidence tier and a control tier on every row — move out of the vault and into "
+     "this repository as a data pack under data/, because they are the part of the game people "
+     "will argue with and a pull request is the right unit of argument. The game's scoring and "
+     "levels stay in the vault; it reads the pack from here, over CORS, via data/pack.json. "
+     "Forty-nine pages are generated from it and nothing on them is typed in: the grants "
+     "matrix (23 capabilities × 9 products, one hue stepped by how much stands in the way, a "
+     "glyph on every cell so colour is never the only channel), a page per product, a page "
+     "per capability, the ceiling, the questions, and — new data, authored here because none "
+     "existed anywhere — eight starting mandates, one per surface, each drawn against its "
+     "profiles as a diverging delta matrix: red where it can and you did not want it to, "
+     "violet where it cannot and you did. The release gate now refuses a pull request whose "
+     "data does not hold together; it caught two evidence tiers in real data the first time it "
+     "ran, which is why the vocabularies are a file in the pack rather than a list in code."),
     ("v0.3.0", "2026-09-09",
      "RiskMandate and Licence to Operate move into the top menu, and the notice moves off the "
      "top of the front page. This is the site that needs those references — it is the one a "
@@ -222,6 +257,9 @@ PAGES = {
               "cannot, it is a web page.",
        "foot": "[What it can and can't tell you](about/index.html)"},
     ]),
+    ("p", "Every question the game asks is one cell in [**the map**](map/index.html) — "
+          "23 capabilities against 9 products, with what stands in the way and how sure anyone "
+          "is. It is generated from data you can change with a pull request."),
     ("h2", "What you walk away with"),
     ("p", "A calibration figure — how often you were right when you said you were sure — and "
           "**a draft of what you actually wanted your agent to be allowed to do**, assembled "
@@ -639,8 +677,18 @@ PAGES = {
 
 
 def main():
-    summary = shell.write_site(ROOT, SITE, NAV, FOOTER, PAGES, VERSION, VERSION_LOG)
-    print(f"build_pages: {VERSION} — {summary}")
+    # The map's pages are computed from data/, not written here. Merging them in at build
+    # time is what lets a merged pull request change the site with no hand in between.
+    generated, pack = map_pages.pages(ROOT, {"site": SITE})
+    clash = set(generated) & set(PAGES)
+    if clash:
+        raise SystemExit(f"generated pages collide with authored ones: {sorted(clash)}")
+    manifest = map_pages.write_pack(ROOT, VERSION, pack)
+    summary = shell.write_site(ROOT, SITE, NAV, FOOTER, {**PAGES, **generated}, VERSION, VERSION_LOG)
+    print(f"build_pages: {VERSION} — {summary}; map: {len(generated)} pages from the pack "
+          f"({manifest['counts']['profiles']} profiles, {manifest['counts']['capabilities']} "
+          f"capabilities, {manifest['counts']['mandates']} mandates, "
+          f"{manifest['content_hash'][:19]}…)")
 
 
 if __name__ == "__main__":

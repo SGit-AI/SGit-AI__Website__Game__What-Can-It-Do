@@ -1,0 +1,29 @@
+{
+  "type": "mandate/v1",
+  "status": "starting-point",
+  "authored": "2026-09-09",
+  "authored_by": "the site, as a starting point — not measured, not surveyed; the first thing to argue with",
+  "licence": "CC BY 4.0",
+  "id": "chat-with-connectors",
+  "label": "Chat, with connectors switched on",
+  "surface": [
+    "web"
+  ],
+  "applies_to": [
+    "anthropic/claude-web/connectors-on"
+  ],
+  "description": "I connected my drive and my mail so it could answer questions about them. Reading is what I wanted. I did not want it sending mail, and I did not want it pushing code anywhere — it is a chat window.",
+  "want": [
+    "read.file.project",
+    "read.file.host",
+    "read.message.tenant"
+  ],
+  "do_not_want": [
+    "send.message.world",
+    "write.repository.tenant"
+  ],
+  "notes": {
+    "read.file.host": "here host means the connected drive, per the profile's own reach names — this is the want",
+    "authenticate-as.credential.tenant": "unstated: it is how a connector works; the question is what it is used for, which is the two rows below it"
+  }
+}

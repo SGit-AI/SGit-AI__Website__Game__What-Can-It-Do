@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A scheduled job under a service account — what-can-it-do.games.sgit.ai</title>
+<meta name="description" content="A starting mandate for service: Run on schedule, read its own data, talk to the APIs it was built for with the account it was given, and stop. I did not want it spending mo…">
+<link rel="canonical" href="https://what-can-it-do.games.sgit.ai/map/mandates/scheduled-job-under-a-service-account/index.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="what-can-it-do.games.sgit.ai">
+<meta property="og:url" content="https://what-can-it-do.games.sgit.ai/map/mandates/scheduled-job-under-a-service-account/index.html">
+<meta property="og:title" content="A scheduled job under a service account — what-can-it-do.games.sgit.ai">
+<meta property="og:description" content="A starting mandate for service: Run on schedule, read its own data, talk to the APIs it was built for with the account it was given, and stop. I did not want it spending mo…">
+<meta name="twitter:card" content="summary">
+<link rel="alternate" type="text/markdown" href="index.md" title="This page as markdown">
+<link rel="icon" href="../../../assets/favicon.svg" type="image/svg+xml">
+<link rel="mask-icon" href="../../../assets/favicon.svg" color="#0f766e">
+<link rel="stylesheet" href="../../../assets/site.css">
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../../../index.html">what-can-it-do<span>.games.sgit.ai</span></a>
+  <a class="parent" href="https://games.sgit.ai" title="games.sgit.ai — why this family builds games, and the others it has">↗ part of <b>games.sgit.ai</b></a>
+  <span class="stage-pill">about 5 minutes</span>
+  <a class="ver" href="../../../admin/versions.html" title="Site release history">v0.4.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni"><a class="nl" href="../../../index.html">Play</a></div>
+    <div class="ni ni-has">
+      <a class="nl here" href="../../../map/index.html">The map<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../map/index.html">What each agent can reach</a>
+      <a class="sl" href="../../../map/grants/index.html">The products</a>
+      <a class="sl" href="../../../map/capabilities/index.html">The capabilities</a>
+      <a class="sl" href="../../../map/mandates/index.html">The mandates</a>
+      <a class="sl" href="../../../map/deltas/index.html">The deltas</a>
+      <a class="sl" href="../../../map/ceiling/index.html">Above the ceiling</a>
+      <a class="sl" href="../../../map/questions/index.html">The questions</a>
+      <a class="sl" href="../../../map/contribute/index.html">Contribute</a>
+      <a class="sl" href="../../../data/index.html">The data pack</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../how-it-is-scored/index.html">How it works<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../how-it-is-scored/index.html">How it's scored</a>
+      <a class="sl" href="../../../the-ceiling/index.html">Some questions are impossible</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../what-next/index.html">What next<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../what-next/index.html">What to do next</a>
+      <a class="sl" href="../../../licence-to-operate/index.html">Licence to Operate — the delta, priced</a>
+      <a class="sl" href="https://riskmandate.ai">RiskMandate.ai &#8599;</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../../about/index.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../../about/index.html">About the game</a>
+      <a class="sl" href="../../../what-we-learn/index.html">What we learn from you</a>
+      <a class="sl" href="../../../admin/versions.html">Release history</a>
+      <a class="sl" href="../../../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Game__What-Can-It-Do">&#9733; GitHub</a>
+  <script src="../../../assets/nav.js" defer></script>
+</div></nav>
+
+<main class="doc">
+  <p class="crumb"><a href="../../../index.html">Play</a> / <a href="../../../map/index.html">The map</a> / <a href="../../../map/mandates/index.html">The mandates</a> / A scheduled job under a service account</p>
+  <h1>A scheduled job under a service account</h1>
+  <p class="lead">Run on schedule, read its own data, talk to the APIs it was built for with the account it was given, and stop. I did not want it spending money unattended or reaching arbitrary hosts.</p>
+  <p>Status: <b>starting-point</b> · authored 2026-09-09 · the site, as a starting point — not measured, not surveyed; the first thing to argue with · <a href="https://github.com/SGit-AI/SGit-AI__Website__Game__What-Can-It-Do/edit/dev/data/mandates/scheduled-job-under-a-service-account.json">edit this mandate</a></p>
+  <h2 id="the-delta">The delta</h2>
+  <p>Against every profile this mandate applies to. ▲ is authority you did not ask for; ▼ is something you were counting on that is not there. The tally is at the bottom.</p>
+  <div class="legend"><span class="lg"><b class="d d-excess">▲</b> excess — it can, and you did not want it to</span><span class="lg"><b class="d d-shortfall">▼</b> shortfall — it cannot, and you wanted it to</span><span class="lg"><b class="d d-aligned-can">✓</b> aligned — it can, and you wanted it to</span><span class="lg"><b class="d d-aligned-cannot">–</b> aligned — it cannot, and you did not want it to</span><span class="lg"><b class="d d-unstated-can">?</b> it can, and the mandate does not say</span><span class="lg"><b class="d d-unstated-cannot">·</b> it cannot, and the mandate does not say</span></div>
+  <div class="matrixwrap narrow"><table class="matrix deltas">
+<thead><tr>
+<th class="cap">Capability</th>
+<th class="p"><a href="../../../map/grants/generic/scheduled-job/service-account/index.html">Scheduled job<span>service account</span></a></th>
+</tr></thead><tbody>
+<tr class="fam"><th colspan="2">filesystem</th></tr>
+<tr><th class="cap"><a href="../../../map/capabilities/read.file.project/index.html">Read the project it is working on</a></th>
+<td class="d d-unstated-cannot" title="it cannot, and the mandate does not say">·</td>
+</tr>
+<tr><th class="cap"><a href="../../../map/capabilities/write.file.project/index.html">Change the project it is working on</a></th>
+<td class="d d-unstated-cannot" title="it cannot, and the mandate does not say">·</td>
+</tr>
+<tr><th class="cap"><a href="../../../map/capabilities/read.file.host/index.html">Read any file the account can reach</a></th>
+<td class="d d-aligned-can" title="aligned — it can, and you wanted it to">✓</td>
+</tr>
+<tr><th class="cap"><a href="../../../map/capabilities/write.file.host/index.html">Change any file the account can reach</a></th>
+<td class="d d-unstated-can" title="it can, and the mandate does not say">?</td>
+</tr>
+<tr><th class="cap"><a href="../../../map/capabilities/delete.file.host/index.html">Delete files anywhere the account can reach</a></th>
+<td class="d d-unstated-cannot" title="it cannot, and the mandate does not say">·</td>
+</tr>
+<tr><th class="cap"><a href="../../../map/capabilities/read.record.history/index.html">Read a retained record: shell history, past sessions</a></th>
+<td class="d d-unstated-cannot" title="it cannot, and the mandate does not say">·</td>
+</tr>
+<tr class="fam"><th colspan="2">process</th></tr>
+<tr><th class="cap"><a href="../../../map/capabilities/execute.process.host/index.html">Run programs as the account</a></th>
+<td class="d d-aligned-can" title="aligned — it can, and you wanted it to">✓</td>
+</tr>
+<tr><th class="cap"><a href="../../../map/capabilities/execute.process.self/index.html">Run programs inside its own sandbox only</a></th>
+<td class="d d-unstated-cannot" title="it cannot, and the mandate does not say">·</td>
+</tr>
+<tr class="fam"><th colspan="2">network</th></tr>
+<tr><th class="cap"><a href="../../../map/capabilities/send.endpoint.allowed/index.html">Reach a permitted list of hosts</a></th>
+<td class="d d-shortfall" title="shortfall — it cannot, and you wanted it to">▼</td>
+</tr>
+<tr><th class="cap"><a href="../../../map/capabilities/send.endpoint.world/index.html">Reach any host on the internet</a></th>
+<td class="d d-excess" title="excess — it can, and you did not want it to">▲</td>
+</tr>
+<tr class="fam"><th colspan="2">identity</th></tr>
+<tr><th class="cap"><a href="../../../map/capabilities/read.credential.host/index.html">Read credentials stored where it runs</a></th>
+<td class="d d-unstated-cannot" title="it cannot, and the mandate does not say">·</td>
+</tr>
+<tr><th class="cap"><a href="../../../map/capabilities/authenticate-as.credential.tenant/index.html">Act in accounts with the credentials it holds</a></th>
+<td class="d d-aligned-can" title="aligned — it can, and you wanted it to">✓</td>
+</tr>
+<tr><th class="cap"><a href="../../../map/capabilities/grant.credential.self/index.html">Change its own permission settings</a></th>
+<td class="d d-unstated-cannot" title="it cannot, and the mandate does not say">·</td>
+</tr>
+<tr class="fam"><th colspan="2">communication</th></tr>
+<tr><th class="cap"><a href="../../../map/capabilities/send.message.world/index.html">Send a message to anyone</a></th>
+<td class="d d-unstated-cannot" title="it cannot, and the mandate does not say">·</td>
+</tr>
+<tr><th class="cap"><a href="../../../map/capabilities/read.message.tenant/index.html">Read mail or chat it is connected to</a></th>
+<td class="d d-unstated-cannot" title="it cannot, and the mandate does not say">·</td>
+</tr>
+<tr class="fam"><th colspan="2">code</th></tr>
+<tr><th class="cap"><a href="../../../map/capabilities/write.repository.project/index.html">Commit to the repository it was pointed at</a></th>
+<td class="d d-unstated-cannot" title="it cannot, and the mandate does not say">·</td>
+</tr>
+<tr><th class="cap"><a href="../../../map/capabilities/write.repository.tenant/index.html">Push to a code host (any branch it can reach)</a></th>
+<td class="d d-unstated-cannot" title="it cannot, and the mandate does not say">·</td>
+</tr>
+<tr><th class="cap"><a href="../../../map/capabilities/authenticate-as.credential.signing/index.html">Sign commits with the key it holds</a></th>
+<td class="d d-unstated-cannot" title="it cannot, and the mandate does not say">·</td>
+</tr>
+<tr><th class="cap"><a href="../../../map/capabilities/create.record.world/index.html">Publish packages, images or pages under the name it holds</a></th>
+<td class="d d-unstated-cannot" title="it cannot, and the mandate does not say">·</td>
+</tr>
+<tr class="fam"><th colspan="2">money</th></tr>
+<tr><th class="cap"><a href="../../../map/capabilities/write.budget.tenant/index.html">Spend money or tokens against an account it holds</a></th>
+<td class="d d-excess" title="excess — it can, and you did not want it to">▲</td>
+</tr>
+<tr class="fam"><th colspan="2">schedule</th></tr>
+<tr><th class="cap"><a href="../../../map/capabilities/create.schedule.host/index.html">Create something that outlives the turn where it runs (a cron, a service)</a><span class="mnote">unstated: it is itself scheduled; whether it may schedule more of itself is a real question and the mandate does not pretend to answer it</span></th>
+<td class="d d-unstated-can" title="it can, and the mandate does not say">?</td>
+</tr>
+<tr><th class="cap"><a href="../../../map/capabilities/create.schedule.tenant/index.html">Create something that outlives the session, on the platform (a routine, a scheduled trigger, a new session)</a></th>
+<td class="d d-unstated-cannot" title="it cannot, and the mandate does not say">·</td>
+</tr>
+<tr class="fam"><th colspan="2">browser</th></tr>
+<tr><th class="cap"><a href="../../../map/capabilities/read.record.browsing/index.html">Read every page you visit</a></th>
+<td class="d d-unstated-cannot" title="it cannot, and the mandate does not say">·</td>
+</tr>
+<tr class="tally"><th class="cap">The delta</th>
+<td><b class="d d-excess">▲ 2</b> <b class="d d-shortfall">▼ 1</b></td>
+</tr></tbody></table></div>
+  <h2 id="in-words">In words</h2>
+  <ul><li><b>Scheduled job — service account:</b> excess — Reach any host on the internet; Spend money or tokens against an account it holds. Shortfall — Reach a permitted list of hosts.</li></ul>
+  <h2 id="the-mandate-row-by-row">The mandate, row by row</h2>
+  <div class="tablewrap"><table><thead><tr><th>Capability</th><th>Position</th><th>Note</th></tr></thead><tbody><tr><td><a href="../../../map/capabilities/execute.process.host/index.html">Run programs as the account</a></td><td>want</td><td></td></tr><tr><td><a href="../../../map/capabilities/read.file.host/index.html">Read any file the account can reach</a></td><td>want</td><td></td></tr><tr><td><a href="../../../map/capabilities/send.endpoint.allowed/index.html">Reach a permitted list of hosts</a></td><td>want</td><td></td></tr><tr><td><a href="../../../map/capabilities/authenticate-as.credential.tenant/index.html">Act in accounts with the credentials it holds</a></td><td>want</td><td></td></tr><tr><td><a href="../../../map/capabilities/write.budget.tenant/index.html">Spend money or tokens against an account it holds</a></td><td>do not want</td><td></td></tr><tr><td><a href="../../../map/capabilities/send.endpoint.world/index.html">Reach any host on the internet</a></td><td>do not want</td><td></td></tr><tr><td><a href="../../../map/capabilities/create.schedule.host/index.html">Create something that outlives the turn where it runs (a cron, a service)</a></td><td>unstated</td><td>unstated: it is itself scheduled; whether it may schedule more of itself is a real question and the mandate does not pretend to answer it</td></tr></tbody></table></div>
+  <div class="note"><b>You cannot deny the excess rows.</b> The agent already has the access. What is left is how long you are prepared to live with each one and who says so — <a href="../../../what-next/index.html">what to do next</a>.</div>
+</main>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">what-can-it-do<span>.games.sgit.ai</span></div>
+    <p>A game about the gap between what your AI agent <em>can</em> do and what you <em>wanted</em> it to do. Free, no sign-up, nothing stored. <a href="../../../about/index.html" style="display:inline;padding:0">Who made it, and how to check what it says</a>.</p>
+    <p class="netline"><a href="https://riskmandate.ai"><b>↗ RiskMandate.ai</b></a> — where the delta this game hands you becomes a named owner and a time-bound decision · <a href="https://games.sgit.ai">↗ games.sgit.ai</a> — why we build games · <a href="https://sgit.ai">↗ sgit.ai</a> — the encrypted vault the game is published in · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — where the capability data comes from</p>
+    <p class="partnote">This game counts usage anonymously — no cookies, no analytics script, nothing that identifies you, and a pause switch on every screen. <a href="../../../what-we-learn/index.html" style="display:inline;padding:0">Exactly what is sent</a>.</p>
+    <p class="verline">site <a href="../../../admin/versions.html">v0.4.0</a> · <a href="../../../admin/index.html">engineering</a> · <a href="../../../llms.txt">llms.txt</a> · CC BY 4.0 · <a href="../../../map/mandates/scheduled-job-under-a-service-account/index.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The game</h4>
+    <a href="../../../index.html">&#8594; Play</a>
+    <a href="../../../how-it-is-scored/index.html">How it's scored</a>
+    <a href="../../../the-ceiling/index.html">Why some are impossible</a>
+    <a href="../../../what-next/index.html">What to do next</a>
+    <a href="../../../licence-to-operate/index.html">Licence to Operate</a>
+  </div>
+  <div>
+    <h4>The map</h4>
+    <a href="../../../map/index.html">What each agent can reach</a>
+    <a href="../../../map/deltas/index.html">The mandates and deltas</a>
+    <a href="../../../map/contribute/index.html">Contribute a row</a>
+    <a href="../../../data/index.html">The data pack</a>
+  </div>
+  <div>
+    <h4>Straight answers</h4>
+    <a href="../../../what-we-learn/index.html">What we learn from you</a>
+    <a href="../../../about/index.html">Who made it</a>
+    <a href="https://dev.vault.sgraph.ai/#f94c8b1d42352d95703ac3d39032735d9b4e388d16ab5b87c948928d8e111118%3A4evnlwrj">Open the game's source</a>
+  </div>
+  <div>
+    <h4>More</h4>
+    <a href="https://riskmandate.ai">&#8594; RiskMandate.ai</a>
+    <a href="https://games.sgit.ai">games.sgit.ai</a>
+    <a href="../../../admin/versions.html">Release history</a>
+    <a href="../../../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+</body>
+</html>

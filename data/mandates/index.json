@@ -1,0 +1,96 @@
+{
+  "type": "mandates-index/v1",
+  "_what_this_is": "Starting mandates — one per surface — for the delta pages. A mandate is what a reasonable person WANTED the agent to do, stated per capability as want / do not want / unstated. None of these were measured or surveyed: each is a first draft written to be argued with, and a pull request that changes one is the intended way to argue. The game hands every player a mandate of their own at the end of a run; these are the common ones the site shows against each profile.",
+  "capability_vocabulary": "primitives.json",
+  "mandates": [
+    {
+      "id": "coding-assistant-on-my-machine",
+      "label": "A coding assistant on my machine",
+      "surface": [
+        "cli"
+      ],
+      "applies_to": [
+        "anthropic/claude-code/local-default",
+        "anthropic/claude-code/local-confirmations-off"
+      ],
+      "file": "coding-assistant-on-my-machine.json"
+    },
+    {
+      "id": "coding-assistant-in-a-container",
+      "label": "A coding assistant in a container on the web",
+      "surface": [
+        "agentbox"
+      ],
+      "applies_to": [
+        "anthropic/claude-code-remote/ccr-container"
+      ],
+      "file": "coding-assistant-in-a-container.json"
+    },
+    {
+      "id": "desktop-app-with-local-tools",
+      "label": "The desktop app, with local tools switched on",
+      "surface": [
+        "desktop"
+      ],
+      "applies_to": [
+        "anthropic/claude-desktop/default"
+      ],
+      "file": "desktop-app-with-local-tools.json"
+    },
+    {
+      "id": "chat-with-connectors",
+      "label": "Chat, with connectors switched on",
+      "surface": [
+        "web"
+      ],
+      "applies_to": [
+        "anthropic/claude-web/connectors-on"
+      ],
+      "file": "chat-with-connectors.json"
+    },
+    {
+      "id": "chat-no-connectors",
+      "label": "Chat in the browser, nothing connected",
+      "surface": [
+        "web"
+      ],
+      "applies_to": [
+        "openai/chatgpt-web/default"
+      ],
+      "file": "chat-no-connectors.json"
+    },
+    {
+      "id": "ci-job",
+      "label": "A CI job on a hosted runner",
+      "surface": [
+        "ci"
+      ],
+      "applies_to": [
+        "github/actions-runner/ci"
+      ],
+      "file": "ci-job.json"
+    },
+    {
+      "id": "browser-extension-i-installed",
+      "label": "A browser extension I installed",
+      "surface": [
+        "extension"
+      ],
+      "applies_to": [
+        "generic/browser-extension/broad-host-permissions"
+      ],
+      "file": "browser-extension-i-installed.json"
+    },
+    {
+      "id": "scheduled-job-under-a-service-account",
+      "label": "A scheduled job under a service account",
+      "surface": [
+        "service"
+      ],
+      "applies_to": [
+        "generic/scheduled-job/service-account"
+      ],
+      "file": "scheduled-job-under-a-service-account.json"
+    }
+  ]
+}

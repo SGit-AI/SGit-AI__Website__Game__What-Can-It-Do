@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The capabilities — what-can-it-do.games.sgit.ai</title>
+<meta name="description" content="The 23 capability primitives every question is built from: a verb, an object class and a reach, each carrying whether its effect can be undone.">
+<link rel="canonical" href="https://what-can-it-do.games.sgit.ai/map/capabilities/index.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="what-can-it-do.games.sgit.ai">
+<meta property="og:url" content="https://what-can-it-do.games.sgit.ai/map/capabilities/index.html">
+<meta property="og:title" content="The capabilities — what-can-it-do.games.sgit.ai">
+<meta property="og:description" content="The 23 capability primitives every question is built from: a verb, an object class and a reach, each carrying whether its effect can be undone.">
+<meta name="twitter:card" content="summary">
+<link rel="alternate" type="text/markdown" href="index.md" title="This page as markdown">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="mask-icon" href="../../assets/favicon.svg" color="#0f766e">
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+
+<nav class="site"><div class="row">
+  <a class="brand" href="../../index.html">what-can-it-do<span>.games.sgit.ai</span></a>
+  <a class="parent" href="https://games.sgit.ai" title="games.sgit.ai — why this family builds games, and the others it has">↗ part of <b>games.sgit.ai</b></a>
+  <span class="stage-pill">about 5 minutes</span>
+  <a class="ver" href="../../admin/versions.html" title="Site release history">v0.4.0</a>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Menu">Menu</button>
+  <div class="nav-items">
+    <div class="ni"><a class="nl" href="../../index.html">Play</a></div>
+    <div class="ni ni-has">
+      <a class="nl here" href="../../map/index.html">The map<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../map/index.html">What each agent can reach</a>
+      <a class="sl" href="../../map/grants/index.html">The products</a>
+      <a class="sl here" href="../../map/capabilities/index.html">The capabilities</a>
+      <a class="sl" href="../../map/mandates/index.html">The mandates</a>
+      <a class="sl" href="../../map/deltas/index.html">The deltas</a>
+      <a class="sl" href="../../map/ceiling/index.html">Above the ceiling</a>
+      <a class="sl" href="../../map/questions/index.html">The questions</a>
+      <a class="sl" href="../../map/contribute/index.html">Contribute</a>
+      <a class="sl" href="../../data/index.html">The data pack</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../how-it-is-scored/index.html">How it works<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../how-it-is-scored/index.html">How it's scored</a>
+      <a class="sl" href="../../the-ceiling/index.html">Some questions are impossible</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../what-next/index.html">What next<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../what-next/index.html">What to do next</a>
+      <a class="sl" href="../../licence-to-operate/index.html">Licence to Operate — the delta, priced</a>
+      <a class="sl" href="https://riskmandate.ai">RiskMandate.ai &#8599;</a>
+      </div>
+    </div>
+    <div class="ni ni-has">
+      <a class="nl" href="../../about/index.html">About<span class="caret">&#9662;</span></a>
+      <div class="sub">
+      <a class="sl" href="../../about/index.html">About the game</a>
+      <a class="sl" href="../../what-we-learn/index.html">What we learn from you</a>
+      <a class="sl" href="../../admin/versions.html">Release history</a>
+      <a class="sl" href="../../admin/index.html">How this site is built</a>
+      </div>
+    </div>
+  </div>
+  <a class="gh" href="https://github.com/SGit-AI/SGit-AI__Website__Game__What-Can-It-Do">&#9733; GitHub</a>
+  <script src="../../assets/nav.js" defer></script>
+</div></nav>
+
+<main class="doc">
+  <p class="crumb"><a href="../../index.html">Play</a> / <a href="../../map/index.html">The map</a> / The capabilities</p>
+  <h1>The capabilities</h1>
+  <p class="lead">A capability is a <b>verb</b> crossed with an <b>object class</b> crossed with a <b>reach</b>, carrying whether its effect can be undone. <em>Read a file in the project</em> and <em>read a file anywhere the account can</em> are two capabilities; <code>/etc/passwd</code> is not a third — a specific path is an instance, never a new primitive.</p>
+  <div class="tablewrap"><table><thead><tr><th>Capability</th><th>Id</th><th>Family</th><th>Undo</th><th>Granted by</th><th>Reduction</th></tr></thead><tbody><tr><td><a href="../../map/capabilities/read.file.project/index.html">Read the project it is working on</a></td><td><code>read.file.project</code></td><td>filesystem</td><td>yes</td><td>7</td><td>yes</td></tr><tr><td><a href="../../map/capabilities/write.file.project/index.html">Change the project it is working on</a></td><td><code>write.file.project</code></td><td>filesystem</td><td>with-effort</td><td>5</td><td>yes</td></tr><tr><td><a href="../../map/capabilities/read.file.host/index.html">Read any file the account can reach</a></td><td><code>read.file.host</code></td><td>filesystem</td><td>no</td><td>7</td><td>yes</td></tr><tr><td><a href="../../map/capabilities/write.file.host/index.html">Change any file the account can reach</a></td><td><code>write.file.host</code></td><td>filesystem</td><td>with-effort</td><td>6</td><td>yes</td></tr><tr><td><a href="../../map/capabilities/delete.file.host/index.html">Delete files anywhere the account can reach</a></td><td><code>delete.file.host</code></td><td>filesystem</td><td>no</td><td>4</td><td>yes</td></tr><tr><td><a href="../../map/capabilities/read.record.history/index.html">Read a retained record: shell history, past sessions</a></td><td><code>read.record.history</code></td><td>filesystem</td><td>no</td><td>4</td><td>yes</td></tr><tr><td><a href="../../map/capabilities/execute.process.host/index.html">Run programs as the account</a></td><td><code>execute.process.host</code></td><td>process</td><td>with-effort</td><td>6</td><td>yes</td></tr><tr><td><a href="../../map/capabilities/execute.process.self/index.html">Run programs inside its own sandbox only</a></td><td><code>execute.process.self</code></td><td>process</td><td>yes</td><td>0</td><td>yes</td></tr><tr><td><a href="../../map/capabilities/send.endpoint.allowed/index.html">Reach a permitted list of hosts</a></td><td><code>send.endpoint.allowed</code></td><td>network</td><td>no</td><td>1</td><td>yes</td></tr><tr><td><a href="../../map/capabilities/send.endpoint.world/index.html">Reach any host on the internet</a></td><td><code>send.endpoint.world</code></td><td>network</td><td>no</td><td>6</td><td>yes</td></tr><tr><td><a href="../../map/capabilities/read.credential.host/index.html">Read credentials stored where it runs</a></td><td><code>read.credential.host</code></td><td>identity</td><td>no</td><td>4</td><td>yes</td></tr><tr><td><a href="../../map/capabilities/authenticate-as.credential.tenant/index.html">Act in accounts with the credentials it holds</a></td><td><code>authenticate-as.credential.tenant</code></td><td>identity</td><td>no</td><td>7</td><td>yes</td></tr><tr><td><a href="../../map/capabilities/grant.credential.self/index.html">Change its own permission settings</a></td><td><code>grant.credential.self</code></td><td>identity</td><td>yes</td><td>3</td><td>yes</td></tr><tr><td><a href="../../map/capabilities/send.message.world/index.html">Send a message to anyone</a></td><td><code>send.message.world</code></td><td>communication</td><td>no</td><td>0</td><td>yes</td></tr><tr><td><a href="../../map/capabilities/read.message.tenant/index.html">Read mail or chat it is connected to</a></td><td><code>read.message.tenant</code></td><td>communication</td><td>no</td><td>1</td><td>yes</td></tr><tr><td><a href="../../map/capabilities/write.repository.project/index.html">Commit to the repository it was pointed at</a></td><td><code>write.repository.project</code></td><td>code</td><td>with-effort</td><td>4</td><td>yes</td></tr><tr><td><a href="../../map/capabilities/write.repository.tenant/index.html">Push to a code host (any branch it can reach)</a></td><td><code>write.repository.tenant</code></td><td>code</td><td>with-effort</td><td>4</td><td>yes</td></tr><tr><td><a href="../../map/capabilities/authenticate-as.credential.signing/index.html">Sign commits with the key it holds</a></td><td><code>authenticate-as.credential.signing</code></td><td>code</td><td>no</td><td>3</td><td>yes</td></tr><tr><td><a href="../../map/capabilities/create.record.world/index.html">Publish packages, images or pages under the name it holds</a></td><td><code>create.record.world</code></td><td>code</td><td>no</td><td>2</td><td>yes</td></tr><tr><td><a href="../../map/capabilities/write.budget.tenant/index.html">Spend money or tokens against an account it holds</a></td><td><code>write.budget.tenant</code></td><td>money</td><td>no</td><td>1</td><td>yes</td></tr><tr><td><a href="../../map/capabilities/create.schedule.host/index.html">Create something that outlives the turn where it runs (a cron, a service)</a></td><td><code>create.schedule.host</code></td><td>schedule</td><td>yes</td><td>4</td><td>yes</td></tr><tr><td><a href="../../map/capabilities/create.schedule.tenant/index.html">Create something that outlives the session, on the platform (a routine, a scheduled trigger, a new session)</a></td><td><code>create.schedule.tenant</code></td><td>schedule</td><td>yes</td><td>1</td><td>—</td></tr><tr><td><a href="../../map/capabilities/read.record.browsing/index.html">Read every page you visit</a></td><td><code>read.record.browsing</code></td><td>browser</td><td>no</td><td>1</td><td>yes</td></tr></tbody></table></div>
+  <h2 id="the-rules-the-set-is-written-under">The rules the set is written under</h2>
+  <ul><li>A specific path, host or mailbox is an instance of a primitive, never a new one.</li><li>Reversibility sits on the primitive, not the instance, because it decides whether a gap is a nuisance or a loss — and this estate has settled that recoverability decides insurability.</li><li>A grant containing irreversible primitives is a different object from one that does not, however many rows each has.</li><li>The set is a starting set and will be wrong at the edges from the first week. A proposed primitive that is a specific thing is an instance; one that is a new verb, object class or reach needs a probe.</li><li>A label never says 'your' or 'as you': what host, tenant and world mean is the profile's to say (reach_names), because for an agent in a vendor's container 'host' is the container and 'tenant' is a scoped token, not your machine and not your accounts.</li></ul>
+  <h2 id="reach">Reach</h2>
+  <div class="tablewrap"><table><thead><tr><th>Reach</th><th>Means</th></tr></thead><tbody><tr><td>self</td><td>the agent's own process, sandbox or turn</td></tr><tr><td>project</td><td>the working tree or workspace it was pointed at</td></tr><tr><td>host</td><td>the machine, container or account it runs as</td></tr><tr><td>tenant</td><td>the organisation's accounts, repositories and services</td></tr><tr><td>world</td><td>anything on the internet</td></tr></tbody></table></div>
+  <p>Reach is the axis people get wrong. <em>Host</em> for an agent in a vendor's container is the container, and <em>tenant</em> is a scoped token; each product's page says what the words mean there.</p>
+</main>
+
+<footer class="site"><div class="cols">
+  <div>
+    <div class="brandline">what-can-it-do<span>.games.sgit.ai</span></div>
+    <p>A game about the gap between what your AI agent <em>can</em> do and what you <em>wanted</em> it to do. Free, no sign-up, nothing stored. <a href="../../about/index.html" style="display:inline;padding:0">Who made it, and how to check what it says</a>.</p>
+    <p class="netline"><a href="https://riskmandate.ai"><b>↗ RiskMandate.ai</b></a> — where the delta this game hands you becomes a named owner and a time-bound decision · <a href="https://games.sgit.ai">↗ games.sgit.ai</a> — why we build games · <a href="https://sgit.ai">↗ sgit.ai</a> — the encrypted vault the game is published in · <a href="https://pki.sgit.ai">↗ pki.sgit.ai</a> — where the capability data comes from</p>
+    <p class="partnote">This game counts usage anonymously — no cookies, no analytics script, nothing that identifies you, and a pause switch on every screen. <a href="../../what-we-learn/index.html" style="display:inline;padding:0">Exactly what is sent</a>.</p>
+    <p class="verline">site <a href="../../admin/versions.html">v0.4.0</a> · <a href="../../admin/index.html">engineering</a> · <a href="../../llms.txt">llms.txt</a> · CC BY 4.0 · <a href="../../map/capabilities/index.md">this page as markdown</a></p>
+  </div>
+  <div>
+    <h4>The game</h4>
+    <a href="../../index.html">&#8594; Play</a>
+    <a href="../../how-it-is-scored/index.html">How it's scored</a>
+    <a href="../../the-ceiling/index.html">Why some are impossible</a>
+    <a href="../../what-next/index.html">What to do next</a>
+    <a href="../../licence-to-operate/index.html">Licence to Operate</a>
+  </div>
+  <div>
+    <h4>The map</h4>
+    <a href="../../map/index.html">What each agent can reach</a>
+    <a href="../../map/deltas/index.html">The mandates and deltas</a>
+    <a href="../../map/contribute/index.html">Contribute a row</a>
+    <a href="../../data/index.html">The data pack</a>
+  </div>
+  <div>
+    <h4>Straight answers</h4>
+    <a href="../../what-we-learn/index.html">What we learn from you</a>
+    <a href="../../about/index.html">Who made it</a>
+    <a href="https://dev.vault.sgraph.ai/#f94c8b1d42352d95703ac3d39032735d9b4e388d16ab5b87c948928d8e111118%3A4evnlwrj">Open the game's source</a>
+  </div>
+  <div>
+    <h4>More</h4>
+    <a href="https://riskmandate.ai">&#8594; RiskMandate.ai</a>
+    <a href="https://games.sgit.ai">games.sgit.ai</a>
+    <a href="../../admin/versions.html">Release history</a>
+    <a href="../../llms.txt">llms.txt</a>
+  </div>
+</div></footer>
+</body>
+</html>
